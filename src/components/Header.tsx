@@ -54,9 +54,9 @@ const Header = () => {
         <ul
           className={`${
             isNavOpen
-              ? 'flex flex-col absolute top-[70px] bottom-0 left-0 h-[100vh] w-full items-start pl-4 pb-5 backdrop-blur-md'
+              ? 'flex flex-col absolute top-[70px] bottom-0 left-0 h-[100vh] w-full items-start pl-4 pb-5 backdrop-blur-md md:px-6'
               : 'hidden'
-          }  lg:flex lg:border-b-0 lg:pb-0 lg:static lg:w-auto lg:flex-row lg:items-center gap-5 `}
+          } lg:h-auto lg:flex lg:border-b-0 lg:pb-0 lg:static lg:w-auto lg:flex-row lg:items-center gap-5 `}
         >
           <NavLink
             to="/"
