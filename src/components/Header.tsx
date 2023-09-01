@@ -1,10 +1,10 @@
 import { Link, NavLink } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import ThemeSwitcher from './ThemeSwitcher'
 import { useTheme } from '../context/ThemeContext'
 
-const Header = () => {
+const Header: React.FC = () => {
   const { theme } = useTheme()
 
   const [isScrolled, setIsScrolled] = useState<boolean>(false)
@@ -47,6 +47,7 @@ const Header = () => {
       <Link
         to="/"
         className="text-activeColor text-[1rem] font-bold font-montosra"
+        onClick={closeNavMenu}
       >
         YOUSUF
       </Link>
