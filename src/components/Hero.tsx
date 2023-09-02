@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
         />
       </div>
       <div className="flex flex-col items-center gap-3 md:gap-5 font-montosra font-bold text-2xl tracking-[0.15rem] leading-[1.875rem] mt-10 xl:mt-[71px] md:text-3xl lg:flex-1 lg:items-start xl:flex-1 xl:items-start text-center xl:text-start lg:text-4xl xl:text-5xl xl:h-[400px] 2xl:text-7xl 2xl:leading-[100px]">
-        <span className="">HI, 👋 IAM YOUSUF</span>
+        <span className="">HI, 👋 I AM YOUSUF</span>
         <span className="">A Software Engineer</span>
         <button className="flex items-center gap-5 bg-activeColor text-white rounded-[10px] pr-14 pl-[10px] py-4 mt-10 lg:mt-[60px] hover:opacity-80 duration-150 ease-in">
           <img src={downloadIcon} alt="downloadIcon" />
