@@ -40,7 +40,7 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`sticky top-0 w-full flex items-center px-4 md:px-6 lg:px-10 py-5 border-b dark:border-b-0 bg-white/80 text-darkTxtColor dark:bg-gray-900/90 dark:text-white ${
+      className={`sticky top-0 w-full flex items-center px-4 md:px-6 lg:px-16 py-5 border-b dark:border-b-0 bg-white/80 text-darkTxtColor dark:bg-gray-900/90 dark:text-white ${
         isScrolled && 'backdrop-blur-sm'
       }`}
     >
