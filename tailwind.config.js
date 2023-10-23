@@ -8,6 +8,7 @@ export default {
         darkColor: '#0F172A',
         headerColor: '#101827',
         darkTxtColor: '#1E293B',
+        lightColor: '#F2F2F2',
       },
       fontFamily: {
         montosra: ['Montserrat', 'sans-serif'],
