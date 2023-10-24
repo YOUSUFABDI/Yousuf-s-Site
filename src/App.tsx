@@ -5,6 +5,7 @@ import Home from './components/Home'
 import Intro from './components/Intro'
 import SectionDivider from './components/SectionDivider'
 import About from './components/About'
+import Projects from './components/Projects'
 
 const App: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const App: React.FC = () => {
         <Intro />
         <SectionDivider />
         <About />
+        <Projects />
       </Home>
     </>
   )
