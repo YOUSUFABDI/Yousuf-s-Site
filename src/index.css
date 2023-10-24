@@ -2,10 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-.active {
-  @apply opacity-100;
+html {
+  --line-color: #e5e7eb;
 }
 
-.mx-for-all {
-  @apply mx-4 md:mx-[30px] lg:mx-[40px] xl:w-[1110px] xl:mx-auto;
+html.dark {
+  --line-color: rgba(255, 255, 255, 0.2);
+}
+
+.borderBlack {
+  @apply border border-black/10;
 }
