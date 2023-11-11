@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.selected_mood {
+  @apply bg-hoverLight font-bold dark:bg-hoverDark dark:text-white;
+}
+
+.mood_btn {
+  @apply transition-colors duration-150 ease-in-out;
+}
