@@ -1,7 +1,12 @@
 import React from 'react'
+import Home from '../components/Home'
 
 const HomePage: React.FC = () => {
-  return <div className="text-lightPrimary dark:text-darkPrimary">HomePage</div>
+  return (
+    <main>
+      <Home />
+    </main>
+  )
 }
 
 export default HomePage
