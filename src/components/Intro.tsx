@@ -1,6 +1,7 @@
 import React from 'react'
 import profileImg from './../assets/images/profile 1.png'
 import { FiArrowUpRight } from 'react-icons/fi'
+import { Link } from 'react-router-dom'
 import TitleSection from './TitleSection'
 import SubTitleSection from './SubTitleSection'
 import { platformInfos } from '../lib/data'
@@ -41,14 +42,21 @@ const Intro: React.FC = () => {
       </div>
 
       <div className="flex flex-col gap-3 lg:flex-row lg:gap-8">
-        <a className="flex items-center gap-2 lg:gap-3 text-lightSecondary dark:text-darkSecondary">
+        <a
+          href="mailto:yousufabdi34@gmail.com"
+          className="flex items-center gap-2 lg:gap-3 text-lightSecondary dark:text-darkSecondary"
+        >
           <FiArrowUpRight />
           <span>Email me</span>
         </a>
-        <a className="flex items-center gap-2 lg:gap-3 text-lightSecondary dark:text-darkSecondary">
+
+        <Link
+          to="/links"
+          className="flex items-center gap-2 lg:gap-3 text-lightSecondary dark:text-darkSecondary"
+        >
           <FiArrowUpRight />
           <span>More ways to connect</span>
-        </a>
+        </Link>
       </div>
     </div>
   )
