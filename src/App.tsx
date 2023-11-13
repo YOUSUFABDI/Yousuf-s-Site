@@ -8,7 +8,7 @@ import ProjectsPage from './pages/ProjectsPage'
 
 const App: React.FC = () => {
   return (
-    <main className="container px-5 lg:mx-auto">
+    <main className="max-w-[43.75rem] mx-5 md:mx-auto">
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />

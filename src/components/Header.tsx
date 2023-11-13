@@ -11,7 +11,7 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
 
   return (
-    <header className="flex items-center justify-between gap-5 my-3 relative">
+    <header className="flex items-center justify-between gap-5 py-3 bg-lightBg dark:bg-darkBg sticky top-0 z-50">
       <div>
         <NavLink
           to="/"
@@ -25,9 +25,9 @@ const Header: React.FC = () => {
         </NavLink>
       </div>
 
-      <div className="flex justify-end lg:justify-center text-lightSecondary hover:text-lightPrimary dark:text-darkSecondary dark:hover:text-darkPrimary  transition-colors duration-200 ease-in-out w-full">
+      <div className="flex justify-end md:justify-center text-lightSecondary hover:text-lightPrimary dark:text-darkSecondary dark:hover:text-darkPrimary  transition-colors duration-200 ease-in-out w-full">
         <button
-          className="font-medium text-sm flex items-center gap-1 lg:hidden cursor-pointer"
+          className="font-medium text-sm flex items-center gap-1 md:hidden cursor-pointer"
           onClick={() => {
             setIsMenuOpen(!isMenuOpen)
             setIsMoodOpen(false)

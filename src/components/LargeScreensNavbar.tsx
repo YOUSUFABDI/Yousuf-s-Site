@@ -4,7 +4,7 @@ import { links } from '../lib/data'
 
 const LargeScreensNavbar: React.FC = () => {
   return (
-    <nav className="hidden lg:flex items-center gap-6 text-sm">
+    <nav className="hidden md:flex items-center gap-6 text-sm">
       {links.map((link) => (
         <NavLink
           to={link.to}

@@ -29,17 +29,20 @@ export const themes = [
 export const platformInfos = [
   {
     id: 1,
+    name: 'Repository Stars',
+    info: '13',
     icon: React.createElement(AiFillGithub),
-    info: '0 Repository Stars',
   },
   {
     id: 2,
+    name: 'Total Blog',
+    info: '0',
     icon: React.createElement(MdOutlineShowChart),
-    info: '0 Total Blog',
   },
   {
     id: 3,
+    info: '0',
+    name: 'Total Blog Views',
     icon: React.createElement(AiFillEye),
-    info: '0 Total Blog Views',
   },
 ]
