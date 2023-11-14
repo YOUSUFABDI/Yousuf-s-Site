@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { AiOutlinePlus } from 'react-icons/ai'
 import { BsFillSunFill } from 'react-icons/bs'
 import { NavLink } from 'react-router-dom'
@@ -9,6 +9,27 @@ import LargeScreensNavbar from './LargeScreensNavbar'
 const Header: React.FC = () => {
   const [isMoodOpen, setIsMoodOpen] = useState<boolean>(false)
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
+
+  const menuRef = useRef<HTMLDivElement>(null)
+  const moodRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false)
+      }
+
+      if (moodRef.current && !moodRef.current.contains(event.target as Node)) {
+        setIsMoodOpen(false)
+      }
+    }
+
+    document.addEventListener('click', handleClickOutside)
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside)
+    }
+  }, [])
 
   return (
     <header className="flex items-center justify-between gap-5 py-3 bg-lightBg dark:bg-darkBg sticky top-0 z-50">
@@ -25,7 +46,10 @@ const Header: React.FC = () => {
         </NavLink>
       </div>
 
-      <div className="flex justify-end md:justify-center text-lightSecondary hover:text-lightPrimary dark:text-darkSecondary dark:hover:text-darkPrimary  transition-colors duration-200 ease-in-out w-full">
+      <div
+        ref={menuRef}
+        className="flex justify-end md:justify-center text-lightSecondary hover:text-lightPrimary dark:text-darkSecondary dark:hover:text-darkPrimary  transition-colors duration-200 ease-in-out w-full"
+      >
         <button
           className="font-medium text-sm flex items-center gap-1 md:hidden cursor-pointer"
           onClick={() => {
@@ -45,6 +69,7 @@ const Header: React.FC = () => {
       </div>
 
       <div
+        ref={moodRef}
         className="text-lightSecondary dark:text-darkSecondary"
         onClick={() => {
           setIsMoodOpen(!isMoodOpen)

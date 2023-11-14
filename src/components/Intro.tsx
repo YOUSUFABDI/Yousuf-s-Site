@@ -13,7 +13,7 @@ const Intro: React.FC = () => {
       className="flex flex-col gap-10"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.2 }}
+      transition={{ duration: 0.5, delay: 0.3 }}
     >
       <div className="flex flex-col gap-8 md:gap-0">
         <div className="flex flex-col gap-1">
@@ -74,7 +74,7 @@ const Intro: React.FC = () => {
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 1.2 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
         className="max-w-lg"
       >
         <p className="text-lightPrimary dark:text-darkPrimary font-medium text-sm">
@@ -89,9 +89,9 @@ const Intro: React.FC = () => {
         <motion.a
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 1.4 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
           href="mailto:yousufabdi34@gmail.com"
-          className="flex items-center gap-2 md:gap-3 text-lightSecondary dark:text-darkSecondary"
+          className="flex items-center gap-2 md:gap-3 text-lightSecondary dark:text-darkSecondary hover:text-lightPrimary dark:hover:text-darkPrimary transition-colors duration-300 ease-in-out"
         >
           <FiArrowUpRight />
           <span>Email me</span>
@@ -100,10 +100,13 @@ const Intro: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 1.6 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
           className="text-lightSecondary dark:text-darkSecondary"
         >
-          <Link to="/links" className="flex items-center gap-2 md:gap-3">
+          <Link
+            to="/links"
+            className="flex items-center gap-2 md:gap-3 hover:text-lightPrimary dark:hover:text-darkPrimary transition-colors duration-300 ease-in-out"
+          >
             <FiArrowUpRight />
             <span>More ways to connect</span>
           </Link>
