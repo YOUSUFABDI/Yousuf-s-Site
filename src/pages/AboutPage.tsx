@@ -1,8 +1,11 @@
 import React from 'react'
+import About from '../components/About'
 
 const AboutPage: React.FC = () => {
   return (
-    <div className="text-lightPrimary dark:text-darkPrimary">AboutPage</div>
+    <section>
+      <About />
+    </section>
   )
 }
 

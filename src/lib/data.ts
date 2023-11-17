@@ -65,3 +65,22 @@ export const lastestPosts = [
     to: '/vite',
   },
 ]
+
+export const aboutMe = [
+  {
+    id: 1,
+    info: "Hello world, I'm Yousuf Abdi!",
+  },
+  {
+    id: 2,
+    info: 'After graduating secondary in School, I decided to pursue my passion for technology and programming. I started university and learned Computer science',
+  },
+  {
+    id: 3,
+    info: 'My favorite part of programming is the problem-solving aspect. I love the feeling of finally figuring out a solution to a problem.',
+  },
+  {
+    id: 4,
+    info: "When I'm not at my desk I am probably lifting weights, playing basketball, playing video games, or at a coffee shop :)",
+  },
+]

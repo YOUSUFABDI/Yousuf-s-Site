@@ -3,9 +3,9 @@ import Home from '../components/Home'
 
 const HomePage: React.FC = () => {
   return (
-    <main>
+    <section>
       <Home />
-    </main>
+    </section>
   )
 }
 

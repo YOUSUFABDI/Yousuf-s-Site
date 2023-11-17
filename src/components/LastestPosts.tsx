@@ -1,5 +1,5 @@
 import React from 'react'
-import TitleSection from './TitleSection'
+import TitleSection from '../layouts/TitleSection'
 import { lastestPosts } from '../lib/data'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'

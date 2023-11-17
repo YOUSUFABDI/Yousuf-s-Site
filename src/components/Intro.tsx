@@ -3,8 +3,8 @@ import profileImg from './../assets/images/profile 1.png'
 import { FiArrowUpRight } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import TitleSection from './TitleSection'
-import SubTitleSection from './SubTitleSection'
+import TitleSection from '../layouts/TitleSection'
+import SubTitleSection from '../layouts/SubTitleSection'
 import { platformInfos } from '../lib/data'
 
 const Intro: React.FC = () => {
@@ -80,8 +80,7 @@ const Intro: React.FC = () => {
         <p className="text-lightPrimary dark:text-darkPrimary font-medium text-sm">
           Hi, I'm <span className="uppercase">Yousuf Abdi</span>, a software
           engineer who loves building cool things with code. In addition to
-          coding, I also make Blogging where I focus on tech, personal
-          development, and fitness.
+          coding, I also make Blogging where I focus on technology.
         </p>
       </motion.div>
 
