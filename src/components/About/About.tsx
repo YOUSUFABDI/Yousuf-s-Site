@@ -3,6 +3,7 @@ import AboutHeader from './AboutHeader'
 import AboutMe from './AboutMe'
 import Connect from './Connect'
 import Work from './Work'
+import Skills from './Skills'
 
 const About: React.FC = () => {
   return (
@@ -10,6 +11,7 @@ const About: React.FC = () => {
       <AboutHeader />
       <div className="flex flex-col gap-16 md:gap-36">
         <AboutMe />
+        <Skills />
         <Connect />
         <Work />
       </div>

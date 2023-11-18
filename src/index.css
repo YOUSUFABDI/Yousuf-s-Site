@@ -9,3 +9,12 @@
 .mood_btn {
   @apply transition-colors duration-150 ease-in-out;
 }
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hidden {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}

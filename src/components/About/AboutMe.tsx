@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 const AboutMe: React.FC = () => {
   return (
     <motion.div
-      className="flex flex-col gap-5 md:flex-row md:gap-[200px]"
+      className="flex flex-col gap-5 md:flex-row md:gap-[12.5rem]"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.3 }}
