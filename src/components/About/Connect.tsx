@@ -24,7 +24,7 @@ const Connect: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-7">
           <a
             href="mailto:yousufabdi34@gmail.com"
-            className="flex items-center justify-between border border-lightSecondary/50 dark:border-darkSecondary/50 w-full p-4 rounded-md hover:opacity-50 transition-opacity duration-[0.4s] ease-in-out"
+            className="flex items-center justify-between border dark:border-darkSecondary/50 w-full p-4 rounded-md hover:opacity-50 transition-opacity duration-[0.4s] ease-in-out"
           >
             <div className="flex items-center gap-3">
               <FaEnvelope />
@@ -35,7 +35,7 @@ const Connect: React.FC = () => {
           <a
             href="https://github.com/YOUSUFABDI"
             target="_blank"
-            className="flex items-center justify-between border border-lightSecondary/50 dark:border-darkSecondary/50 w-full p-4 rounded-md hover:opacity-50 transition-opacity duration-[0.4s] ease-in-out"
+            className="flex items-center justify-between border dark:border-darkSecondary/50 w-full p-4 rounded-md hover:opacity-50 transition-opacity duration-[0.4s] ease-in-out"
           >
             <div className="flex items-center gap-3">
               <FaGithub />
@@ -46,7 +46,7 @@ const Connect: React.FC = () => {
           <a
             href="https://www.instagram.com/yusuf_cabd/"
             target="_blank"
-            className="flex items-center justify-between border border-lightSecondary/50 dark:border-darkSecondary/50 w-full p-4 rounded-md hover:opacity-50 transition-opacity duration-[0.4s] ease-in-out"
+            className="flex items-center justify-between border dark:border-darkSecondary/50 w-full p-4 rounded-md hover:opacity-50 transition-opacity duration-[0.4s] ease-in-out"
           >
             <div className="flex items-center gap-3">
               <FaInstagram />
@@ -57,7 +57,7 @@ const Connect: React.FC = () => {
           <a
             href="https://www.linkedin.com/in/yousuf-abdi-743194279/"
             target="_blank"
-            className="flex items-center justify-between border border-lightSecondary/50 dark:border-darkSecondary/50 w-full p-4 rounded-md hover:opacity-50 transition-opacity duration-[0.4s] ease-in-out"
+            className="flex items-center justify-between border dark:border-darkSecondary/50 w-full p-4 rounded-md hover:opacity-50 transition-opacity duration-[0.4s] ease-in-out"
           >
             <div className="flex items-center gap-3">
               <FaLinkedin />

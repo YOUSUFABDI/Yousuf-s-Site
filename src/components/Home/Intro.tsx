@@ -9,25 +9,20 @@ import { platformInfos } from '../../lib/data'
 
 const Intro: React.FC = () => {
   return (
-    <motion.div
-      className="flex flex-col gap-10"
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.3 }}
-    >
+    <div className="flex flex-col gap-10">
       <div className="flex flex-col gap-8 md:gap-0">
         <div className="flex flex-col gap-1">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
           >
             <TitleSection>Yousuf Abdi</TitleSection>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
           >
             <SubTitleSection>I write code and have fun.</SubTitleSection>
           </motion.div>
@@ -37,7 +32,7 @@ const Intro: React.FC = () => {
           <motion.img
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
             className="h-20 w-20"
             src={profileImg}
             alt="profileImg"
@@ -46,7 +41,7 @@ const Intro: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
             className="flex flex-col gap-4 mt-8 md:mt-0"
           >
             {platformInfos.map((info) => (
@@ -59,7 +54,7 @@ const Intro: React.FC = () => {
                   <motion.span
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 1 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
                   >
                     {info.info}
                   </motion.span>
@@ -71,22 +66,22 @@ const Intro: React.FC = () => {
         </div>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="max-w-lg"
-      >
-        <p className="text-lightPrimary dark:text-darkPrimary font-medium text-sm">
+      <div className="max-w-lg">
+        <motion.p
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-lightPrimary dark:text-darkPrimary font-medium text-sm"
+        >
           Hi, I'm <span className="uppercase">Yousuf Abdi</span>, a software
           engineer who loves building cool things with code. In addition to
           coding, I also make Blogging where I focus on technology.
-        </p>
-      </motion.div>
+        </motion.p>
+      </div>
 
       <div className="flex flex-col gap-3 md:flex-row md:gap-8">
         <motion.a
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           href="mailto:yousufabdi34@gmail.com"
@@ -97,9 +92,9 @@ const Intro: React.FC = () => {
         </motion.a>
 
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
           className="text-lightSecondary dark:text-darkSecondary"
         >
           <Link
@@ -111,7 +106,7 @@ const Intro: React.FC = () => {
           </Link>
         </motion.div>
       </div>
-    </motion.div>
+    </div>
   )
 }
 

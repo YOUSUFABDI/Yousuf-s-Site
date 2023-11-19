@@ -16,6 +16,7 @@ const LastestPosts: React.FC = () => {
 
       {lastestPosts.map((post, index) => (
         <motion.div
+          key={post.id}
           className="mt-10"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}

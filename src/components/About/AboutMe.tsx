@@ -2,6 +2,8 @@ import React from 'react'
 import TitleSection from '../../layouts/TitleSection'
 import { aboutMe } from '../../lib/data'
 import { motion } from 'framer-motion'
+import { MdOutlineFileDownload } from 'react-icons/md'
+import cv from './../../assets/CV.pdf'
 
 const AboutMe: React.FC = () => {
   return (
@@ -19,6 +21,14 @@ const AboutMe: React.FC = () => {
         {aboutMe.map((info) => (
           <span key={info.id}>{info.info}</span>
         ))}
+        <a
+          href={cv}
+          download
+          className="flex items-center gap-2 md:gap-3 w-fit border dark:border-darkSecondary/50 whitespace-nowrap rounded-xl px-5 py-3 hover:opacity-50 transition-opacity duration-[0.4s] ease-in-out"
+        >
+          <MdOutlineFileDownload size={19} />
+          <span>Download CV</span>
+        </a>
       </div>
     </motion.div>
   )
