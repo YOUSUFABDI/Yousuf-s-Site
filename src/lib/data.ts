@@ -3,6 +3,8 @@ import { AiFillGithub, AiFillEye } from 'react-icons/ai'
 import { MdOutlineShowChart } from 'react-icons/md'
 import typeScriptLogo from './../assets/images/typescript-logo.png'
 import viteLogo from './../assets/images/vitejs-logo.png'
+import somBdImg from './../assets/images/somBDImg.png'
+import bargelleImg from './../assets/images/bargelleImg.png'
 
 export const links = [
   {
@@ -109,4 +111,23 @@ export const skills = [
   'MySQL',
   'Python',
   'Flask',
+]
+
+export const projects = [
+  {
+    id: 1,
+    name: 'som bd',
+    date: '2023',
+    desc: 'Somali Blood donation is a system that makes it easy for people to donate blood online in a timely manner for both donors and recipients.',
+    img: somBdImg,
+    url: '/sombd',
+  },
+  {
+    id: 2,
+    name: 'Baargeelle UC',
+    date: '2023',
+    desc: 'Baargelle uc is platform that pubg players in somalia can buy uc or pubg money using evc plus. i collaborate this project with another developer.',
+    img: bargelleImg,
+    url: '/bargelle',
+  },
 ]

@@ -10,6 +10,7 @@ export default {
         darkBg: '#111111',
         lightBg: '#FCFCFC',
         hoverDark: '#222222',
+        projectBg: '#282828',
       },
       colors: {
         darkPrimary: '#EEEEEE',

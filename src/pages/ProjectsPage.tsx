@@ -1,8 +1,11 @@
 import React from 'react'
+import Projects from '../components/Projects/Projects'
 
 const ProjectsPage: React.FC = () => {
   return (
-    <div className="text-lightPrimary dark:text-darkPrimary">ProjectsPage</div>
+    <section className="">
+      <Projects />
+    </section>
   )
 }
 
