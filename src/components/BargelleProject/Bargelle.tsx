@@ -14,12 +14,7 @@ import { motion } from 'framer-motion'
 
 const Bargelle: React.FC = () => {
   return (
-    <motion.div
-      className="flex flex-col gap-10 my-14 text-lightSecondary dark:text-darkSecondary"
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.1 }}
-    >
+    <motion.div className="flex flex-col gap-10 my-14 text-lightSecondary dark:text-darkSecondary">
       <BargelleHeader />
       <BaargelleDemo
         BaargelleTabletPhoneMockupSm={BaargelleTabletPhoneMockupSm}
@@ -30,8 +25,20 @@ const Bargelle: React.FC = () => {
         BaargellePhoneMockupLg={BaargellePhoneMockupLg}
       />
       <BaargelleTags />
-      <Connect />
-      <BackToProjects />
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+      >
+        <Connect />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+      >
+        <BackToProjects />
+      </motion.div>
     </motion.div>
   )
 }

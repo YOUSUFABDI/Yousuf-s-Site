@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import TitleSection from '../../layouts/TitleSection'
 
 const SomBDTags: React.FC = () => {
@@ -9,7 +10,12 @@ const SomBDTags: React.FC = () => {
   )
 
   return (
-    <div className="flex flex-col gap-5">
+    <motion.div
+      className="flex flex-col gap-5"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.1 }}
+    >
       <TitleSection>Tags</TitleSection>
       <div className="flex items-center gap-3 flex-wrap">
         {tags('Web app')}
@@ -18,7 +24,7 @@ const SomBDTags: React.FC = () => {
         {tags('Javascript')}
         {tags('Bootsrap')}
       </div>
-    </div>
+    </motion.div>
   )
 }
 

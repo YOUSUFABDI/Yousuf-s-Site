@@ -21,7 +21,7 @@ const Project: React.FC<ProjecTypeProps> = ({ name, date, desc, img, url }) => {
       className=""
     >
       <Link to={url} className="flex flex-col gap-5 md:flex-row cursor-pointer">
-        <div className="flex justify-center flex-[0.3] bg-[#F0F0F0] dark:bg-projectBg rounded-md w-full md:w-fit px-8 pt-7">
+        <div className="flex justify-center flex-[0.3] bg-[#E8E8E8] dark:bg-projectBg rounded-md w-full md:w-fit px-8 pt-7">
           <img
             className="object-contain self-end"
             src={img}

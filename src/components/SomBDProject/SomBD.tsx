@@ -14,12 +14,7 @@ import { motion } from 'framer-motion'
 
 const SomBD: React.FC = () => {
   return (
-    <motion.div
-      className="flex flex-col gap-10 my-14 text-lightSecondary dark:text-darkSecondary"
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.1 }}
-    >
+    <div className="flex flex-col gap-10 my-14 text-lightSecondary dark:text-darkSecondary">
       <SomBDHeader />
       <SomBDDemo
         SomBdTabletPhoneMockupSm={SomBdTabletPhoneMockupSm}
@@ -30,9 +25,21 @@ const SomBD: React.FC = () => {
         SomBdPhoneMockupLg={SomBdPhoneMockupLg}
       />
       <SomBDTags />
-      <Connect />
-      <BackToProjects />
-    </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+      >
+        <Connect />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+      >
+        <BackToProjects />
+      </motion.div>
+    </div>
   )
 }
 
