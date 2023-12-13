@@ -26,17 +26,25 @@ const LastestPosts: React.FC = () => {
             to={post.to}
             className="flex items-center justify-between hover:opacity-50 transition-opacity duration-[0.4s] ease-in-out"
           >
-            <div className="flex flex-col gap-3 md:flex-row md:gap-20">
-              <span className="text-lightSecondary dark:text-darkSecondary">
+            <div className="flex flex-col gap-3 md:flex-row md:gap-20 md:flex-1">
+              <span className="text-lightSecondary dark:text-darkSecondary md:flex-[0.20]">
                 {post.date}
               </span>
-              <span className="text-lightPrimary dark:text-darkPrimary font-medium ">
+              <span
+                style={{
+                  display: '-webkit-box',
+                  WebkitBoxOrient: 'vertical',
+                  overflow: 'hidden',
+                  WebkitLineClamp: 1,
+                }}
+                className="text-lightPrimary dark:text-darkPrimary font-medium overflow-hidden overflow-ellipsis md:flex-1 max-w-[50%]"
+              >
                 {post.name}
               </span>
             </div>
             <div className="flex md:hidden">
               <img
-                className="h-[50px] w-[50px]"
+                className="h-[50px] max-w-[50px] object-contain"
                 src={post.imgUrl}
                 alt="post img"
               />

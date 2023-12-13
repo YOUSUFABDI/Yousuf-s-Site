@@ -3,7 +3,7 @@ import About from '../components/About/About'
 
 const AboutPage: React.FC = () => {
   return (
-    <section>
+    <section className="pagePb">
       <About />
     </section>
   )

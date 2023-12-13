@@ -3,7 +3,7 @@ import SomBD from '../components/SomBDProject/SomBD'
 
 const SomBdPage: React.FC = () => {
   return (
-    <section>
+    <section className="pagePb">
       <SomBD />
     </section>
   )

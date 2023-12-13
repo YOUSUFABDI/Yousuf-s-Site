@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* spacing */
+.pagePb {
+  @apply pb-10;
+}
+
 .selected_mood {
   @apply bg-hoverLight font-bold dark:bg-hoverDark dark:text-white;
 }

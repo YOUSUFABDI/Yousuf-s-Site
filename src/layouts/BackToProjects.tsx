@@ -6,7 +6,7 @@ const BackToProjects: React.FC = () => {
   return (
     <Link
       to="/projects"
-      className="flex items-center gap-1 relative w-fit text-lightSecondary dark:text-lightSecondary hover:text-lightPrimary dark:hover:text-darkPrimary group transition-colors duration-150 ease-in-out"
+      className="flex items-center  gap-1 mb-4 relative w-fit text-lightSecondary dark:text-lightSecondary hover:text-lightPrimary dark:hover:text-darkPrimary group transition-colors duration-150 ease-in-out"
     >
       <IoIosArrowRoundBack className="text-4xl text-lightSecondary dark:text-lightSecondary group-hover:text-lightPrimary dark:group-hover:text-darkPrimary" />
       <span>All projects</span>

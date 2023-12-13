@@ -1,7 +1,7 @@
 import React from 'react'
 import { AiFillGithub, AiFillEye } from 'react-icons/ai'
 import { MdOutlineShowChart } from 'react-icons/md'
-import typeScriptLogo from './../assets/images/typescript-logo.png'
+import hormariye from './../assets/images/hormariye.png'
 import viteLogo from './../assets/images/vitejs-logo.png'
 import somBdImg from './../assets/images/somBDImg.png'
 import bargelleImg from './../assets/images/bargelleImg.png'
@@ -54,15 +54,15 @@ export const platformInfos = [
 export const lastestPosts = [
   {
     id: 1,
-    name: 'TypeScript',
+    name: '5 siyaabood oo aad ku noqon karto horumariye ama ‘Developer’ wanaagsan',
     date: 'Oct 17, 2023',
-    imgUrl: typeScriptLogo,
-    to: '/typescript',
+    imgUrl: hormariye,
+    to: '/horumariye-wanaagsan',
   },
   {
     id: 2,
     name: 'Vite',
-    date: 'Oct 20, 2023',
+    date: 'Nov 24, 2023',
     imgUrl: viteLogo,
     to: '/vite',
   },

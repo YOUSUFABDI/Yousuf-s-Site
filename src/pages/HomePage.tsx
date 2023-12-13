@@ -3,7 +3,7 @@ import Home from '../components/Home/Home'
 
 const HomePage: React.FC = () => {
   return (
-    <section>
+    <section className="pagePb">
       <Home />
     </section>
   )

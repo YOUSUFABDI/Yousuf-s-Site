@@ -3,7 +3,7 @@ import Projects from '../components/Projects/Projects'
 
 const ProjectsPage: React.FC = () => {
   return (
-    <section className="">
+    <section className="pagePb">
       <Projects />
     </section>
   )

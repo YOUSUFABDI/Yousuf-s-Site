@@ -3,7 +3,7 @@ import Bargelle from '../components/BargelleProject/Bargelle'
 
 const BargellePage: React.FC = () => {
   return (
-    <section>
+    <section className="pagePb">
       <Bargelle />
     </section>
   )
