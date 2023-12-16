@@ -101,11 +101,12 @@ export const skills = [
   'Framer Motion',
   'Node.js',
   'Git',
+  'Github',
   'Firebase',
   'MongoDB',
   'Redux',
-  'GraphQL',
-  'Apollo',
+  // 'GraphQL',
+  // 'Apollo',
   'Express',
   'PhP',
   'MySQL',
@@ -129,5 +130,22 @@ export const projects = [
     desc: 'Baargelle uc is platform that pubg players in somalia can buy uc or pubg money using evc plus. i collaborate this project with another developer.',
     img: bargelleImg,
     url: '/bargelle',
+  },
+]
+
+export const blogPostLinks = [
+  {
+    id: 1,
+    name: '5 siyaabood oo aad ku noqon karto horumariye ama ‘Developer’ wanaagsan',
+    createdDT: 'Oct 17, 2023',
+    to: '/hormariyewanagsan',
+    imgUrl: hormariye,
+  },
+  {
+    id: 2,
+    name: 'Vite',
+    createdDT: 'Nov 24, 2023',
+    to: '/vite',
+    imgUrl: viteLogo,
   },
 ]

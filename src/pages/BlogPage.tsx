@@ -1,10 +1,11 @@
 import React from 'react'
+import Blog from '../components/Blog/Blog'
 
 const BlogPage: React.FC = () => {
   return (
-    <div className="text-lightPrimary dark:text-darkPrimary pagePb">
-      BlogPage
-    </div>
+    <section className="pagePb">
+      <Blog />
+    </section>
   )
 }
 

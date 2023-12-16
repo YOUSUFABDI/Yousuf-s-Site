@@ -1,5 +1,5 @@
 import React from 'react'
-import profileImg from './../../assets/images/profile 1.png'
+import profileImg from './../../assets/images/yusuf-n-bg.png'
 import { FiArrowUpRight } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
@@ -33,7 +33,7 @@ const Intro: React.FC = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="h-20 w-20"
+            className="h-24 w-24 rounded-full object-cover object-top bg-[#2A2A2A]"
             src={profileImg}
             alt="profileImg"
           />
