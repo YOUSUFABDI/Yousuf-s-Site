@@ -8,6 +8,7 @@ import ProjectsPage from './pages/ProjectsPage'
 import SomBdPage from './pages/SomBdPage'
 import BargellePage from './pages/BargellePage'
 import Footer from './layouts/Footer'
+import LinksPage from './pages/LinksPage'
 
 const App: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ const App: React.FC = () => {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/blogs" element={<BlogPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/links" element={<LinksPage />} />
         <Route path="/sombd" element={<SomBdPage />} />
         <Route path="/bargelle" element={<BargellePage />} />
       </Routes>

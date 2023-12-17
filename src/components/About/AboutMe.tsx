@@ -3,7 +3,7 @@ import TitleSection from '../../layouts/TitleSection'
 import { aboutMe } from '../../lib/data'
 import { motion } from 'framer-motion'
 import { MdOutlineFileDownload } from 'react-icons/md'
-import cv from './../../assets/CV.pdf'
+import cv from './../../assets/yusuf-resume-pdf.pdf'
 
 const AboutMe: React.FC = () => {
   return (

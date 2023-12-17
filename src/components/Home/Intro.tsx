@@ -6,6 +6,9 @@ import { motion } from 'framer-motion'
 import TitleSection from '../../layouts/TitleSection'
 import SubTitleSection from '../../layouts/SubTitleSection'
 import { platformInfos } from '../../lib/data'
+import { MdOutlineFileDownload } from 'react-icons/md'
+import cv from './../../assets/yusuf-resume-pdf.pdf'
+import Avatar from '../../layouts/Avatar'
 
 const Intro: React.FC = () => {
   return (
@@ -29,14 +32,13 @@ const Intro: React.FC = () => {
         </div>
 
         <div className="flex flex-col md:flex-row md:items-center md:gap-5 md:mt-8">
-          <motion.img
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="h-24 w-24 rounded-full object-cover object-top bg-[#2A2A2A]"
-            src={profileImg}
-            alt="profileImg"
-          />
+          >
+            <Avatar img={profileImg} />
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -80,16 +82,33 @@ const Intro: React.FC = () => {
       </div>
 
       <div className="flex flex-col gap-3 md:flex-row md:gap-8">
-        <motion.a
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          href="mailto:yousufabdi34@gmail.com"
-          className="flex items-center gap-2 md:gap-3 text-lightSecondary dark:text-darkSecondary hover:text-lightPrimary dark:hover:text-darkPrimary transition-colors duration-300 ease-in-out"
         >
-          <FiArrowUpRight />
-          <span>Email me</span>
-        </motion.a>
+          <a
+            href="mailto:yousufabdi34@gmail.com"
+            className="flex items-center gap-2 md:gap-3 text-lightSecondary dark:text-darkSecondary hover:text-lightPrimary dark:hover:text-darkPrimary transition-colors duration-300 ease-in-out"
+          >
+            <FiArrowUpRight />
+            <span>Email me</span>
+          </a>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          <Link
+            to="/links"
+            className="flex items-center gap-2 md:gap-3 text-lightSecondary dark:text-darkSecondary hover:text-lightPrimary dark:hover:text-darkPrimary transition-colors duration-300 ease-in-out"
+          >
+            <FiArrowUpRight />
+            <span>More ways to connect</span>
+          </Link>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -97,13 +116,14 @@ const Intro: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-lightSecondary dark:text-darkSecondary"
         >
-          <Link
-            to="/links"
+          <a
+            href={cv}
+            download
             className="flex items-center gap-2 md:gap-3 hover:text-lightPrimary dark:hover:text-darkPrimary transition-colors duration-300 ease-in-out"
           >
-            <FiArrowUpRight />
-            <span>More ways to connect</span>
-          </Link>
+            <MdOutlineFileDownload size={19} />
+            <span>Download CV</span>
+          </a>
         </motion.div>
       </div>
     </div>

@@ -54,7 +54,7 @@ export const platformInfos = [
 export const lastestPosts = [
   {
     id: 1,
-    name: '5 siyaabood oo aad ku noqon karto horumariye ama ‘Developer’ wanaagsan',
+    name: '5 Ways you can becoming a good developer or awesome developer',
     date: 'Oct 17, 2023',
     imgUrl: hormariye,
     to: '/horumariye-wanaagsan',
@@ -136,7 +136,7 @@ export const projects = [
 export const blogPostLinks = [
   {
     id: 1,
-    name: '5 siyaabood oo aad ku noqon karto horumariye ama ‘Developer’ wanaagsan',
+    name: '5 Ways you can becoming a good developer or awesome developer',
     createdDT: 'Oct 17, 2023',
     to: '/hormariyewanagsan',
     imgUrl: hormariye,
