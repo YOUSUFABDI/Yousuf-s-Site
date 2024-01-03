@@ -1,5 +1,5 @@
 import React from 'react'
-// import BaargelleTabletPhoneMockupLg from './../../assets/images/BaargelleImgs/baargelleBdtablet-phoneMockupLg.png'
+import BaargelleTabletPhoneMockupLg from './../../assets/images/BaargelleImgs/baargelleBdtablet-phoneMockupLg.png'
 import BaargelleTabletPhoneMockupSm from './../../assets/images/BaargelleImgs/baargelleBdtablet-phoneMockupSm.png'
 import BaargelleTabletMockupSm from './../../assets/images/BaargelleImgs/baargelleBdtabletMockupnSm.png'
 import BaargelleTabletMockupLg from './../../assets/images/BaargelleImgs/baargelleBdtabletMockupnLg.png'
@@ -18,7 +18,7 @@ const Bargelle: React.FC = () => {
       <BargelleHeader />
       <BaargelleDemo
         BaargelleTabletPhoneMockupSm={BaargelleTabletPhoneMockupSm}
-        // BaargelleTabletPhoneMockupLg={BaargelleTabletPhoneMockupLg}
+        BaargelleTabletPhoneMockupLg={BaargelleTabletPhoneMockupLg}
         BaargelleTabletMockupSm={BaargelleTabletMockupSm}
         BaargelleTabletMockupLg={BaargelleTabletMockupLg}
         BaargellePhoneMockupSm={BaargellePhoneMockupSm}
