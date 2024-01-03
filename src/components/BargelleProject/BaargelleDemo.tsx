@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 type BaargelleDemoTypeProps = {
   BaargelleTabletPhoneMockupSm: string
-  BaargelleTabletPhoneMockupLg: string
+  BaargelleTabletPhoneMockupLg?: string
   BaargellePhoneMockupSm: string
   BaargellePhoneMockupLg: string
   BaargelleTabletMockupSm: string
