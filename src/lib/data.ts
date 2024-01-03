@@ -3,6 +3,9 @@ import { AiFillGithub, AiFillEye } from 'react-icons/ai'
 import { MdOutlineShowChart } from 'react-icons/md'
 import hormariye from './../assets/images/hormariye.png'
 import viteLogo from './../assets/images/vitejs-logo.png'
+import onlineCourseLogo from './../assets/images/are_online.png'
+import httpCodesLogo from './../assets/images/http_code.png'
+import csr_ssr_ssg_Logo from './../assets/images/csr_ssr_ssg.png'
 import somBdImg from './../assets/images/somBDImg.png'
 import bargelleImg from './../assets/images/bargelleImg.png'
 
@@ -14,13 +17,13 @@ export const links = [
   },
   {
     id: 2,
-    name: 'Blog',
-    to: '/blogs',
+    name: 'Projects',
+    to: '/projects',
   },
   {
     id: 3,
-    name: 'Projects',
-    to: '/projects',
+    name: 'Blog',
+    to: '/blogs',
   },
 ]
 
@@ -30,22 +33,60 @@ export const themes = [
   { name: 'Automatic', value: 'automatic' },
 ]
 
+export const blogPostLinks = [
+  {
+    id: 1,
+    name: 'Vite',
+    createdDT: 'Nov 20, 2023',
+    to: '/vite',
+    imgUrl: viteLogo,
+  },
+  {
+    id: 2,
+    name: '5 Ways you can becoming a good developer or awesome developer',
+    createdDT: 'Dec 15, 2023',
+    to: '/hormariyewanagsan',
+    imgUrl: hormariye,
+  },
+  {
+    id: 3,
+    name: 'Are online courses worth?',
+    createdDT: 'Dec 20, 2023',
+    to: '/are_online_worthy',
+    imgUrl: onlineCourseLogo,
+  },
+  {
+    id: 4,
+    name: 'Any important HTTP code',
+    createdDT: 'Dec 24, 2023',
+    to: '/any_http_code',
+    imgUrl: httpCodesLogo,
+  },
+  {
+    id: 5,
+    name: 'Client Side Rendering, Server Side Rendering, Static Site Generation',
+    createdDT: 'Dec 29, 2023',
+    to: '/csr_ssr_ssg',
+    imgUrl: csr_ssr_ssg_Logo,
+  },
+]
+
 export const platformInfos = [
   {
     id: 1,
     name: 'Repository Stars',
-    info: '13',
+    info: '14',
     icon: React.createElement(AiFillGithub),
   },
   {
     id: 2,
     name: 'Total Blog',
-    info: '0',
+    info: blogPostLinks.length,
     icon: React.createElement(MdOutlineShowChart),
   },
   {
     id: 3,
-    info: '0',
+    info: 0,
     name: 'Total Blog Views',
     icon: React.createElement(AiFillEye),
   },
@@ -130,22 +171,5 @@ export const projects = [
     desc: 'Baargelle uc is platform that pubg players in somalia can buy uc or pubg money using evc plus. i collaborate this project with another developer.',
     img: bargelleImg,
     url: '/bargelle',
-  },
-]
-
-export const blogPostLinks = [
-  {
-    id: 1,
-    name: '5 Ways you can becoming a good developer or awesome developer',
-    createdDT: 'Oct 17, 2023',
-    to: '/hormariyewanagsan',
-    imgUrl: hormariye,
-  },
-  {
-    id: 2,
-    name: 'Vite',
-    createdDT: 'Nov 24, 2023',
-    to: '/vite',
-    imgUrl: viteLogo,
   },
 ]

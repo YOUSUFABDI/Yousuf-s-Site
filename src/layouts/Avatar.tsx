@@ -2,14 +2,15 @@ import React from 'react'
 
 type AvatarTypeProps = {
   img: string
+  customClasses?: string
 }
 
-const Avatar: React.FC<AvatarTypeProps> = ({ img }) => {
+const Avatar: React.FC<AvatarTypeProps> = ({ img, customClasses }) => {
   return (
     <img
-      className="h-24 w-24 rounded-full object-cover object-top bg-[#2A2A2A]"
+      className={`object-cover object-top bg-[#2A2A2A] ${customClasses}`}
       src={img}
-      alt="yusuf img"
+      alt="img"
     />
   )
 }

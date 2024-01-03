@@ -37,7 +37,7 @@ const Intro: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
           >
-            <Avatar img={profileImg} />
+            <Avatar img={profileImg} customClasses="h-24 w-24 rounded-full " />
           </motion.div>
 
           <motion.div

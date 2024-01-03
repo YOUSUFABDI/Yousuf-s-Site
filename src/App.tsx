@@ -9,6 +9,7 @@ import SomBdPage from './pages/SomBdPage'
 import BargellePage from './pages/BargellePage'
 import Footer from './layouts/Footer'
 import LinksPage from './pages/LinksPage'
+import ViteBlogPage from './pages/BlogPages/ViteBlogPage'
 
 const App: React.FC = () => {
   return (
@@ -20,8 +21,11 @@ const App: React.FC = () => {
         <Route path="/blogs" element={<BlogPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/links" element={<LinksPage />} />
+        {/* for projects */}
         <Route path="/sombd" element={<SomBdPage />} />
         <Route path="/bargelle" element={<BargellePage />} />
+        {/* for blog */}
+        <Route path="/vite" element={<ViteBlogPage />} />
       </Routes>
       <Footer />
     </main>

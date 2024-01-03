@@ -36,7 +36,7 @@ const Blog: React.FC = () => {
           <Link
             key={link.id}
             to={link.to}
-            className="flex items-center justify-between mt-3 hover:opacity-50 transition-opacity duration-[0.4s] ease-in-out"
+            className="flex items-center mb-10 justify-between mt-3 md:mb-7 hover:opacity-50 transition-opacity duration-[0.4s] ease-in-out"
           >
             <div className="flex flex-col gap-3 md:flex-row md:gap-20   md:flex-1 ">
               <span className="text-lightSecondary dark:text-darkSecondary md:flex-[0.20]">

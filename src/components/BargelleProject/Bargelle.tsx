@@ -9,7 +9,7 @@ import BargelleHeader from './BargelleHeader'
 import BaargelleDemo from './BaargelleDemo'
 import BaargelleTags from './BaargelleTags'
 import Connect from './../../layouts/Connect'
-import BackToProjects from '../../layouts/BackToProjects'
+import GoBack from '../../layouts/GoBack'
 import { motion } from 'framer-motion'
 
 const Bargelle: React.FC = () => {
@@ -37,7 +37,7 @@ const Bargelle: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
       >
-        <BackToProjects />
+        <GoBack link="projects" text="All projects" />
       </motion.div>
     </motion.div>
   )
