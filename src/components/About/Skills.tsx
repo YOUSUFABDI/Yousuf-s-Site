@@ -19,7 +19,7 @@ const Skills: React.FC = () => {
         <ul className="grid grid-cols-3 gap-2 text-sm h-[12.5rem] overflow-y-auto scrollbar-hidden">
           {skills.map((skill, index) => (
             <li
-              className="border dark:border-darkSecondary/50 whitespace-nowrap rounded-xl px-5 py-3 dark:bg-transparent"
+              className="border dark:border-darkSecondary/50 whitespace-nowrap rounded-xl px-5 py-3 dark:bg-transparent text-center"
               key={index}
             >
               {skill}
