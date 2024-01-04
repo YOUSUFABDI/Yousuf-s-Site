@@ -1,5 +1,4 @@
 import React from 'react'
-import profileImg from './../../assets/images/yusuf-n-bg.png'
 import { FiArrowUpRight } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
@@ -7,7 +6,6 @@ import TitleSection from '../../layouts/TitleSection'
 import SubTitleSection from '../../layouts/SubTitleSection'
 import { platformInfos } from '../../lib/data'
 import { MdOutlineFileDownload } from 'react-icons/md'
-import cv from './../../assets/yusuf-resume-pdf.pdf'
 import Avatar from '../../layouts/Avatar'
 
 const Intro: React.FC = () => {
@@ -37,7 +35,10 @@ const Intro: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
           >
-            <Avatar img={profileImg} customClasses="h-24 w-24 rounded-full " />
+            <Avatar
+              img="./images/yusuf-n-bg.png"
+              customClasses="h-24 w-24 rounded-full "
+            />
           </motion.div>
 
           <motion.div
@@ -117,7 +118,7 @@ const Intro: React.FC = () => {
           className="text-lightSecondary dark:text-darkSecondary"
         >
           <a
-            href={cv}
+            href="./yusuf-resume-pdf.pdf"
             download
             className="flex items-center gap-2 md:gap-3 hover:text-lightPrimary dark:hover:text-darkPrimary transition-colors duration-300 ease-in-out"
           >

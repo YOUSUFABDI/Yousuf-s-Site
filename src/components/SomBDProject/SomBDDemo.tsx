@@ -1,23 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-type SomBDDemoTypeProps = {
-  SomBdTabletPhoneMockupSm: string
-  SomBdTabletPhoneMockupLg: string
-  SomBdPhoneMockupSm: string
-  SomBdPhoneMockupLg: string
-  SomBdTabletMockupSm: string
-  SomBdTabletMockupLg: string
-}
-
-const SomBDDemo: React.FC<SomBDDemoTypeProps> = ({
-  SomBdTabletPhoneMockupSm,
-  SomBdTabletPhoneMockupLg,
-  SomBdPhoneMockupSm,
-  SomBdPhoneMockupLg,
-  SomBdTabletMockupSm,
-  SomBdTabletMockupLg,
-}) => {
+const SomBDDemo: React.FC = () => {
   return (
     <motion.div
       className="flex flex-col gap-10"
@@ -27,27 +11,27 @@ const SomBDDemo: React.FC<SomBDDemoTypeProps> = ({
     >
       <div className="flex justify-center bg-[#E8E8E8] dark:bg-projectBg h-[233px] md:h-[400px] rounded-md">
         <img
-          src={SomBdTabletPhoneMockupSm}
-          className="block md:hidden"
+          src="./images/somBdImgs/somBdTablet-phonemockup.png"
+          // className="block md:hidden"
           alt="SomBdTabletPhoneMockupSm"
         />
-        <img
+        {/* <img
           className="hidden md:block"
-          src={SomBdTabletPhoneMockupLg}
+          src="./images/somBdImgs/somBdTablet-phonemockupSm.png"
           alt="SomBdTabletPhoneMockup"
-        />
+        /> */}
       </div>
 
       <div className="flex flex-col gap-5">
         <div className="flex justify-center bg-[#E8E8E8] dark:bg-projectBg h-[233px] md:h-[400px] rounded-md">
           <img
-            src={SomBdPhoneMockupSm}
+            src="./images/somBdImgs/somBdtabletMockupSm.png"
             className="block md:hidden"
             alt="SomBdTabletPhoneMockupSm"
           />
           <img
             className="hidden md:block"
-            src={SomBdPhoneMockupLg}
+            src="./images/somBdImgs/somBdtabletMockupnLg.png"
             alt="SomBdTabletPhoneMockup"
           />
         </div>
@@ -60,13 +44,13 @@ const SomBDDemo: React.FC<SomBDDemoTypeProps> = ({
 
       <div className="flex justify-center bg-[#E8E8E8] dark:bg-projectBg h-[233px] md:h-[400px] rounded-md">
         <img
-          src={SomBdTabletMockupSm}
+          src="./images/somBdImgs/somBdMockupMobileSm.png"
           className="block md:hidden"
           alt="SomBdTabletPhoneMockupSm"
         />
         <img
           className="hidden md:block"
-          src={SomBdTabletMockupLg}
+          src="./images/somBdImgs/somBdMockupMobileLg.png"
           alt="SomBdTabletPhoneMockup"
         />
       </div>

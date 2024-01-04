@@ -1,12 +1,14 @@
 import React from 'react'
 import Avatar from '../../layouts/Avatar'
 import TitleSection from '../../layouts/TitleSection'
-import profileImg from './../../assets/images/yusuf-n-bg.png'
 
 const LinksIntro: React.FC = () => {
   return (
     <div className="flex flex-col gap-5 items-center">
-      <Avatar img={profileImg} customClasses="h-24 w-24 rounded-full " />
+      <Avatar
+        img="./images/yusuf-n-bg.png"
+        customClasses="h-24 w-24 rounded-full "
+      />
 
       <div className="flex flex-col gap-1 items-center">
         <TitleSection>Yousuf Abdi</TitleSection>

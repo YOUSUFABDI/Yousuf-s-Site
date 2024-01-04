@@ -1,7 +1,6 @@
 import React from 'react'
 import TitleSection from '../../layouts/TitleSection'
 import { motion } from 'framer-motion'
-import rasiinLogo from './../../assets/images/rasin-logo.png'
 import SubTitleSection from '../../layouts/SubTitleSection'
 
 const Work: React.FC = () => {
@@ -26,7 +25,7 @@ const Work: React.FC = () => {
         </div>
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-9">
-            <img src={rasiinLogo} alt="rasiinLogo" />
+            <img src="./images/rasin-logo.png" alt="rasiinLogo" />
             <div className="flex flex-col gap-1">
               <TitleSection>Full Stack Engineer</TitleSection>
               <SubTitleSection>Rasin Tech</SubTitleSection>

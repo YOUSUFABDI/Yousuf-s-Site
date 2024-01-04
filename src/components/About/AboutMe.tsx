@@ -3,7 +3,6 @@ import TitleSection from '../../layouts/TitleSection'
 import { aboutMe } from '../../lib/data'
 import { motion } from 'framer-motion'
 import { MdOutlineFileDownload } from 'react-icons/md'
-import cv from './../../assets/yusuf-resume-pdf.pdf'
 
 const AboutMe: React.FC = () => {
   return (
@@ -22,7 +21,7 @@ const AboutMe: React.FC = () => {
           <span key={info.id}>{info.info}</span>
         ))}
         <a
-          href={cv}
+          href="./yusuf-resume-pdf.pdf"
           download
           className="flex items-center gap-2 md:gap-3 w-fit border dark:border-darkSecondary/50 whitespace-nowrap rounded-xl px-5 py-3 text-lightSecondary dark:text-darkSecondary hover:border-lightPrimary dark:hover:border-darkPrimary hover:text-lightPrimary dark:hover:text-darkPrimary transition-colors duration-300 ease-in-out"
         >

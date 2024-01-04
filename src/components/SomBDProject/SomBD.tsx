@@ -1,10 +1,4 @@
 import React from 'react'
-import SomBdTabletPhoneMockupLg from './../../assets/images/somBdImgs/somBdTablet-phonemockup.png'
-import SomBdTabletPhoneMockupSm from './../../assets/images/somBdImgs/somBdTablet-phonemockupSm.png'
-import SomBdTabletMockupSm from './../../assets/images/somBdImgs/somBdtabletMockupSm.png'
-import SomBdTabletMockupLg from './../../assets/images/somBdImgs/somBdtabletMockupnLg.png'
-import SomBdPhoneMockupSm from './../../assets/images/somBdImgs/somBdMockupMobileSm.png'
-import SomBdPhoneMockupLg from './../../assets/images/somBdImgs/somBdMockupMobileLg.png'
 import SomBDHeader from './SomBDHeader'
 import SomBDDemo from './SomBDDemo'
 import SomBDTags from './SomBDTags'
@@ -16,14 +10,7 @@ const SomBD: React.FC = () => {
   return (
     <div className="flex flex-col gap-10 my-14 text-lightSecondary dark:text-darkSecondary">
       <SomBDHeader />
-      <SomBDDemo
-        SomBdTabletPhoneMockupSm={SomBdTabletPhoneMockupSm}
-        SomBdTabletPhoneMockupLg={SomBdTabletPhoneMockupLg}
-        SomBdTabletMockupSm={SomBdTabletMockupSm}
-        SomBdTabletMockupLg={SomBdTabletMockupLg}
-        SomBdPhoneMockupSm={SomBdPhoneMockupSm}
-        SomBdPhoneMockupLg={SomBdPhoneMockupLg}
-      />
+      <SomBDDemo />
       <SomBDTags />
       <motion.div
         initial={{ opacity: 0, y: 50 }}

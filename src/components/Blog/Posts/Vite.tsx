@@ -4,14 +4,6 @@ import SubTitleSection from '../../../layouts/SubTitleSection'
 import Paragraph from '../../../layouts/Paragraph'
 import Box from '../../../layouts/blogs/Box'
 import BlogTitle from '../../../layouts/blogs/BlogTitle'
-import viteBlogImg from '../../../assets/images/vite_blog_img.png'
-import viteBlogImg2 from '../../../assets/images/vite_blog_img2.png'
-import viteInstallationImg1 from '../../../assets/images/vite_instaltion_img1.png'
-import viteInstallationImg2 from '../../../assets/images/vite_instaltion_img2.png'
-import viteInstallationImg3 from '../../../assets/images/vite_instaltion_img3.png'
-import viteInstallationImg4 from '../../../assets/images/vite_instaltion_img4.png'
-import viteInstallationImg5 from '../../../assets/images/vite_instaltion_img5.png'
-import viteInstallationImg6 from '../../../assets/images/vite_instaltion_img6.png'
 import Avatar from '../../../layouts/Avatar'
 import Wrapper from '../../../layouts/blogs/Wrapper'
 import BlogContainer from '../../../layouts/blogs/BlogContainer'
@@ -65,7 +57,10 @@ const Vite: React.FC = () => {
 
         <Box>
           <BlogTitle>Waa maxay Vite</BlogTitle>
-          <Avatar img={viteBlogImg} customClasses="w-[1020px] rounded-md" />
+          <Avatar
+            img="./images/vite_blog_img.png"
+            customClasses="w-[1020px] rounded-md"
+          />
           <Paragraph>
             Si lama filaan ah, waxaa jiray koror degdeg ah oo ku saabsan
             korsashada Vite, kaas oo bilaabay isbeddel cusub oo ku saabsan
@@ -171,7 +166,10 @@ const Vite: React.FC = () => {
             kor loogu qaado xawaaraha iyo waxtarka marka la horumarinayo ama
             ‘during the develeopment’.
           </Paragraph>
-          <Avatar img={viteBlogImg2} customClasses="rounded-md" />
+          <Avatar
+            img="./images/vite_blog_img2.png"
+            customClasses="rounded-md"
+          />
         </Box>
 
         <Box>
@@ -259,18 +257,33 @@ const Vite: React.FC = () => {
               )}
             </List>
             <List>{lists('Laso dag  vite ado isticmalaya npm')}</List>
-            <Avatar img={viteInstallationImg1} customClasses="w-[296px]" />
+            <Avatar
+              img="./images/vite_instaltion_img1.png"
+              customClasses="w-[296px]"
+            />
           </Box>
           <Box>
             <BlogTitle>Create a Vite Project</BlogTitle>
-            <Avatar img={viteInstallationImg2} customClasses="w-[414px]" />
+            <Avatar
+              img="./images/vite_instaltion_img2.png"
+              customClasses="w-[414px]"
+            />
             <List>{lists('Projectiga sida aad rabto kadhigo')}</List>
-            <Avatar img={viteInstallationImg3} customClasses="w-[298px]" />
-            <Avatar img={viteInstallationImg4} customClasses="w-[412px]" />
-            <Avatar img={viteInstallationImg6} customClasses="w-[412px]" />
+            <Avatar
+              img="./images/vite_instaltion_img3.png"
+              customClasses="w-[298px]"
+            />
+            <Avatar
+              img="./images/vite_instaltion_img4.png"
+              customClasses="w-[412px]"
+            />
+            <Avatar
+              img="./images/vite_instaltion_img6.png"
+              customClasses="w-[412px]"
+            />
             <List>{lists('Projectiga waa diyaar')}</List>
             <Avatar
-              img={viteInstallationImg5}
+              img="./images/vite_instaltion_img5.png"
               customClasses="w-[1020px] rounded-md"
             />
           </Box>

@@ -1,13 +1,6 @@
 import React from 'react'
 import { AiFillGithub, AiFillEye } from 'react-icons/ai'
 import { MdOutlineShowChart } from 'react-icons/md'
-import hormariye from './../assets/images/hormariye.png'
-import viteLogo from './../assets/images/vitejs-logo.png'
-import onlineCourseLogo from './../assets/images/are_online.png'
-import httpCodesLogo from './../assets/images/http_code.png'
-import csr_ssr_ssg_Logo from './../assets/images/csr_ssr_ssg.png'
-import somBdImg from './../assets/images/somBDImg.png'
-import bargelleImg from './../assets/images/bargelleImg.png'
 
 export const links = [
   {
@@ -39,35 +32,35 @@ export const blogPostLinks = [
     name: 'Vite',
     createdDT: 'Nov 20, 2023',
     to: '/vite',
-    imgUrl: viteLogo,
+    imgUrl: './images/vitejs-logo.png',
   },
   {
     id: 2,
     name: '5 Ways you can becoming a good developer or awesome developer',
     createdDT: 'Dec 15, 2023',
     to: '/hormariyewanagsan',
-    imgUrl: hormariye,
+    imgUrl: './images/hormariye.png',
   },
   {
     id: 3,
     name: 'Are online courses worth?',
     createdDT: 'Dec 20, 2023',
     to: '/are_online_worthy',
-    imgUrl: onlineCourseLogo,
+    imgUrl: './images/are_online.png',
   },
   {
     id: 4,
     name: 'Any important HTTP code',
     createdDT: 'Dec 24, 2023',
     to: '/any_http_code',
-    imgUrl: httpCodesLogo,
+    imgUrl: './images/http_code.png',
   },
   {
     id: 5,
     name: 'Client Side Rendering, Server Side Rendering, Static Site Generation',
     createdDT: 'Dec 29, 2023',
     to: '/csr_ssr_ssg',
-    imgUrl: csr_ssr_ssg_Logo,
+    imgUrl: './images/csr_ssr_ssg.png',
   },
 ]
 
@@ -95,17 +88,17 @@ export const platformInfos = [
 export const lastestPosts = [
   {
     id: 1,
-    name: '5 Ways you can becoming a good developer or awesome developer',
-    date: 'Oct 17, 2023',
-    imgUrl: hormariye,
-    to: '/horumariye-wanaagsan',
+    name: 'Vite',
+    date: 'Nov 20, 2023',
+    imgUrl: './images/vitejs-logo.png',
+    to: '/vite',
   },
   {
     id: 2,
-    name: 'Vite',
-    date: 'Nov 24, 2023',
-    imgUrl: viteLogo,
-    to: '/vite',
+    name: '5 Ways you can becoming a good developer or awesome developer',
+    date: 'Dec 15, 2023',
+    imgUrl: './images/somBDImg.png',
+    to: '/horumariye-wanaagsan',
   },
 ]
 
@@ -161,7 +154,7 @@ export const projects = [
     name: 'som bd',
     date: '2023',
     desc: 'Somali Blood donation is a system that makes it easy for people to donate blood online in a timely manner for both donors and recipients.',
-    img: somBdImg,
+    img: './images/somBDImg.png',
     url: '/sombd',
   },
   {
@@ -169,7 +162,7 @@ export const projects = [
     name: 'Baargeelle UC',
     date: '2023',
     desc: 'Baargelle uc is platform that pubg players in somalia can buy uc or pubg money using evc plus. i collaborate this project with another developer.',
-    img: bargelleImg,
+    img: './images/bargelleImg.png',
     url: '/bargelle',
   },
 ]
