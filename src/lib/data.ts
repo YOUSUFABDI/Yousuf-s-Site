@@ -97,7 +97,7 @@ export const lastestPosts = [
     id: 2,
     name: '5 Ways you can becoming a good developer or awesome developer',
     date: 'Dec 15, 2023',
-    imgUrl: './images/somBDImg.png',
+    imgUrl: './images/hormariye.png',
     to: '/horumariye-wanaagsan',
   },
 ]
