@@ -9,7 +9,7 @@ const SomBDConnect: React.FC = () => {
         Need more project details, or interested in working together? Reach out
         to me directly at{' '}
         <strong className="text-lightPrimary dark:text-darkPrimary">
-          yousufabdi34@gmail.com.
+          <a href="mailto:yousufabdi34@gmail.com">yousufabdi34@gmail.com</a>.
         </strong>
         I'd be happy to connect!
       </p>

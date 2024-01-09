@@ -31,7 +31,7 @@ const Work: React.FC = () => {
               <SubTitleSection>Rasin Tech</SubTitleSection>
             </div>
           </div>
-          <span>2022</span>
+          <span>2023</span>
         </div>
       </div>
     </motion.div>

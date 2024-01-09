@@ -14,8 +14,8 @@ const LinksIntro: React.FC = () => {
         <TitleSection>Yousuf Abdi</TitleSection>
         <p className="max-w-sm mx-auto text-center text-lightSecondary dark:text-darkSecondary">
           Software engineer who loves building cool things with code. In
-          addition to coding, I also make Blog posts. Find me elsewhere
-          @yusuf_cabd
+          addition to coding, I also make Blog posts. Find me elsewhere{' '}
+          <a href="http://instagram.com/yousuf_cabd">@yusuf_cabd</a>
         </p>
       </div>
     </div>

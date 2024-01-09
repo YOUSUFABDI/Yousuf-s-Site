@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { AiOutlinePlus } from 'react-icons/ai'
-import { BsFillSunFill } from 'react-icons/bs'
-import { NavLink } from 'react-router-dom'
-import ThemeSwitch from './ThemeSwitch'
-import SmallScreensNavbar from './SmallScreensNavbar'
-import LargeScreensNavbar from './LargeScreensNavbar'
+import React, { useState, useEffect, useRef } from "react"
+import { AiOutlinePlus } from "react-icons/ai"
+import { BsFillSunFill } from "react-icons/bs"
+import { NavLink } from "react-router-dom"
+import ThemeSwitch from "./ThemeSwitch"
+import SmallScreensNavbar from "./SmallScreensNavbar"
+import LargeScreensNavbar from "./LargeScreensNavbar"
 
 const Header: React.FC = () => {
   const [isMoodOpen, setIsMoodOpen] = useState<boolean>(false)
@@ -24,15 +24,15 @@ const Header: React.FC = () => {
       }
     }
 
-    document.addEventListener('click', handleClickOutside)
+    document.addEventListener("click", handleClickOutside)
 
     return () => {
-      document.removeEventListener('click', handleClickOutside)
+      document.removeEventListener("click", handleClickOutside)
     }
   }, [])
 
   return (
-    <header className="flex items-center justify-between gap-5 py-3 bg-lightBg dark:bg-darkBg sticky top-0 z-50">
+    <header className="flex items-center justify-between gap-5 py-3  backdrop-blur-md bg-lightBg/70 dark:bg-darkBg/70 sticky top-0 z-50">
       <div>
         <NavLink
           to="/"

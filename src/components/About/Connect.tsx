@@ -19,7 +19,7 @@ const Connect: React.FC = () => {
       <div className="flex flex-col gap-5 flex-1 text-sm text-lightPrimary dark:text-darkPrimary">
         <p>
           Have a question or just want to chat? Feel free to email me. Try
-          finding me anywhere else at @yousufabdi
+          finding me anywhere else at <a href="http://instagram.com/yousuf_cabd">@yusuf_cabd</a>
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-7">
           <a
