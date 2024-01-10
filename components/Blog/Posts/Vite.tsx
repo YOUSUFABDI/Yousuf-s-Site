@@ -12,18 +12,18 @@ import List from "../../../layouts/blogs/List"
 import Note from "../../../layouts/Note"
 import GoBack from "../../../layouts/GoBack"
 
-const lists = (list: string) => <li>&#x2022; {list}</li>
+const lists = (list: string) => <li>. {list}</li>
 
 const Vite: React.FC = () => {
   return (
     <BlogContainer>
       <BlogHeader>
         <BlogTitle>
-          Waa maxay Vite, aan ka hadalno waxa vite u yahay iyo fa’idadisa.
+          Waa maxay Vite, aan ka hadalno waxa vite u yahay iyo fa'idadisa.
         </BlogTitle>
         <SubTitle>
           Tan waa sababta aan u jeclahay inaa vite isticmalo oo aan project
-          weliba uga dabaqo{" "}
+          weliba uga dabaqo
         </SubTitle>
       </BlogHeader>
 
