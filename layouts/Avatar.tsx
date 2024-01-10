@@ -15,7 +15,7 @@ const Avatar: React.FC<AvatarTypeProps> = ({
   width,
 }) => {
   return (
-    <img
+    <Image
       className={`object-cover object-top bg-[#2A2A2A] ${customClasses}`}
       src={img}
       width={width}
