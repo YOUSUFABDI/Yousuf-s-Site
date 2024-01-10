@@ -12,7 +12,7 @@ import List from "../../../layouts/blogs/List"
 import Note from "../../../layouts/Note"
 import GoBack from "../../../layouts/GoBack"
 
-const lists = (list: string) => <li>. {list}</li>
+const lists = (list: string) => <li>&#x2022; {list}</li>
 
 const Vite: React.FC = () => {
   return (
