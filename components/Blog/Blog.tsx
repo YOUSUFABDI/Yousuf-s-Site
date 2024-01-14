@@ -1,13 +1,35 @@
 "use client"
 
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { blogPostLinks } from "../../lib/data"
 import Title from "@/layouts/Title"
 import SubTitle from "@/layouts/SubTitle"
 import { motion } from "framer-motion"
 import Link from "next/link"
+import { useTheme } from "@/context/ThemeContex"
 
 const Blog: React.FC = () => {
+  const [isMobile, setIsMobile] = useState(true)
+
+  const { theme } = useTheme()
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768) // Adjust the breakpoint as needed
+    }
+
+    // Initial check
+    handleResize()
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize)
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize)
+    }
+  }, [])
+
   return (
     <div className="flex flex-col gap-[4.375rem] my-14">
       <div className="flex flex-col gap-1">
@@ -33,6 +55,9 @@ const Blog: React.FC = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
+        className={`h-[20rem] overflow-y-auto ${
+          theme == "light" ? "light_scroll" : "dark_scroll"
+        } ${isMobile ? "scrollbar-hidden" : ""}`}
       >
         {blogPostLinks.map((link) => (
           <Link

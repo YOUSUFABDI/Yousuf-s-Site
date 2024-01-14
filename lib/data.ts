@@ -62,6 +62,20 @@ export const blogPostLinks = [
     to: "/csr_ssr_ssg",
     imgUrl: "./images/csr_ssr_ssg.png",
   },
+  {
+    id: 6,
+    name: "Unleashing the Power of Next.js: A Comprehensive Guide",
+    createdDT: "Jan 3, 2024",
+    to: "/next",
+    imgUrl: "./images/nextjs_blog.png",
+  },
+  {
+    id: 7,
+    name: "Do you need to know math to be a programmer?",
+    createdDT: "Jan 5, 2024",
+    to: "/next",
+    imgUrl: "./images/doyouneedmath.png",
+  },
 ]
 
 export const platformInfos = [
