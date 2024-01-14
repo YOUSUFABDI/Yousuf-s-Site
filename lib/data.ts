@@ -181,11 +181,15 @@ export const projects = [
   },
 ]
 
-// const v = [
-//   {
-//     id: 1,
-//     blogName: 'Vite',
-//     date: 'Nov 20, 2023',
-//   },
-//   {}
-// ]
+const vite = [
+  {
+    id: 1,
+    blogName: "Vite",
+    date: "Nov 20, 2023",
+  },
+  [
+    {
+      mainTitle: "Vite",
+    },
+  ],
+]
