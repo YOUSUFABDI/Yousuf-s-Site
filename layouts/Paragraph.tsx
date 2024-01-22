@@ -1,10 +1,7 @@
-import React, { ReactNode } from 'react'
+import React from "react"
+import { ParagraphPropsDT } from "@/lib/types"
 
-type ParagraphPropsType = {
-  children: ReactNode
-}
-
-const Paragraph: React.FC<ParagraphPropsType> = ({ children }) => {
+const Paragraph: React.FC<ParagraphPropsDT> = ({ children }) => {
   return (
     <p className="text-lightSecondary dark:text-darkSecondary text-sm">
       {children}

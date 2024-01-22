@@ -1,10 +1,7 @@
-import React from 'react'
+import { BlogTitlePropsDT } from "@/lib/types"
+import React from "react"
 
-type BlogTitleProps = {
-  children: React.ReactNode
-}
-
-const BlogTitle: React.FC<BlogTitleProps> = ({ children }) => {
+const BlogTitle: React.FC<BlogTitlePropsDT> = ({ children }) => {
   return (
     <h1 className="text-lightPrimary dark:text-darkPrimary text-sm font-bold capitalize">
       {children}

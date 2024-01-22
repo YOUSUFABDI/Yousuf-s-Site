@@ -1,10 +1,7 @@
-import React, { ReactNode } from 'react'
+import React from "react"
+import { WrapperPropsDT } from "@/lib/types"
 
-type WrapperPropsType = {
-  children: ReactNode
-}
-
-const Wrapper: React.FC<WrapperPropsType> = ({ children }) => {
+const Wrapper: React.FC<WrapperPropsDT> = ({ children }) => {
   return <div className="flex flex-col gap-5 mt-8 mb-6">{children}</div>
 }
 

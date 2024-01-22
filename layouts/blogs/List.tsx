@@ -1,10 +1,7 @@
-import React, { ReactNode } from 'react'
+import React from "react"
+import { ListPropsDT } from "@/lib/types"
 
-type ListPropsType = {
-  children: ReactNode
-}
-
-const List: React.FC<ListPropsType> = ({ children }) => {
+const List: React.FC<ListPropsDT> = ({ children }) => {
   return (
     <ul className="text-lightSecondary dark:text-darkSecondary text-sm">
       {children}

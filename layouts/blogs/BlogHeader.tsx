@@ -1,10 +1,7 @@
-import React, { ReactNode } from 'react'
+import React from "react"
+import { BlogHeaderPropsDT } from "@/lib/types"
 
-type BlogHeaderPropsType = {
-  children: ReactNode
-}
-
-const BlogHeader: React.FC<BlogHeaderPropsType> = ({ children }) => {
+const BlogHeader: React.FC<BlogHeaderPropsDT> = ({ children }) => {
   return <div className="flex flex-col gap-3 mb-10">{children}</div>
 }
 

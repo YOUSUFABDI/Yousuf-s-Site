@@ -1,10 +1,7 @@
-import React, { ReactNode } from 'react'
+import { BoxPropsDT } from "@/lib/types"
+import React from "react"
 
-type BoxPropsType = {
-  children: ReactNode
-}
-
-const Box: React.FC<BoxPropsType> = ({ children }) => {
+const Box: React.FC<BoxPropsDT> = ({ children }) => {
   return <div className="flex flex-col gap-5">{children}</div>
 }
 

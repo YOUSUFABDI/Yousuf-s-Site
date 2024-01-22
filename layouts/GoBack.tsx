@@ -1,13 +1,9 @@
+import { GoBackPropsDT } from "@/lib/types"
 import Link from "next/link"
 import React from "react"
 import { IoIosArrowRoundBack } from "react-icons/io"
 
-type GoBackPropsType = {
-  link: string
-  text: string
-}
-
-const GoBack: React.FC<GoBackPropsType> = ({ text, link }) => {
+const GoBack: React.FC<GoBackPropsDT> = ({ text, link }) => {
   return (
     <Link
       href={`/${link}`}

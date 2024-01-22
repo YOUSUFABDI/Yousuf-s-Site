@@ -1,14 +1,8 @@
 import React from "react"
 import Image from "next/image"
+import { AvatarPropsDT } from "@/lib/types"
 
-type AvatarTypeProps = {
-  img: string
-  customClasses?: string
-  height?: number
-  width?: number
-}
-
-const Avatar: React.FC<AvatarTypeProps> = ({
+const Avatar: React.FC<AvatarPropsDT> = ({
   img,
   customClasses,
   height,

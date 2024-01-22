@@ -1,10 +1,7 @@
 import React from "react"
+import { SubTitlePropsDT } from "@/lib/types"
 
-type SubTitleProps = {
-  children: React.ReactNode
-}
-
-const SubTitle: React.FC<SubTitleProps> = ({ children }) => {
+const SubTitle: React.FC<SubTitlePropsDT> = ({ children }) => {
   return (
     <h3 className="text-lightSecondary dark:text-darkSecondary text-sm">
       {children}

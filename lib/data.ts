@@ -182,14 +182,34 @@ export const projects = [
 ]
 
 const vite = [
-  {
-    id: 1,
-    blogName: "Vite",
-    date: "Nov 20, 2023",
-  },
   [
-    {
-      mainTitle: "Vite",
-    },
+    // intro
+    [
+      {
+        mainTitle:
+          "Waa maxay Vite, aan  ka hadalno waxa vite u yahay iyo fa’idadisa.",
+      },
+      {
+        decription:
+          "Tan waa sababta aan u jeclahay inaa vite isticmalo oo aan project weliba uga dabaqo",
+      },
+      {
+        blogName: "Vite",
+        date: "Nov 20, 2023",
+        views: 0,
+        writer: "Yousuf Abdi",
+        writerImg: "",
+        blogCoverImg: "",
+      },
+    ],
+    // blog section one
+    [
+      {
+        title:
+          "Waa maxay sababta build tools loo isticmalo ama “Why build tools matter?”",
+        paragraph:
+          "Aaladaha la dhiso ama “Build toolska” waxay noo ogoladaan inaan horumarino is-dhexgal isticmaale ama “user interfaces” oo adag oo leh walxo badan, kuwaas oo markii hore ahaa caqabad ama aan la heli karin in la abuuro iyadoo la adeegsanayo HTML, CSS, iyo JavaScript. Intaa waxaa dheer, waxay awood noo siinayaan inaan yareyno oo aan isku duubno codeka, ugu  dambeyntiina kor u qaadaya waxtarka shabakadaha ama “web pageska”.",
+      },
+    ],
   ],
 ]

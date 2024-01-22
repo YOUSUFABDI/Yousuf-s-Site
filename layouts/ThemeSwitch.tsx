@@ -1,13 +1,10 @@
-import { useState } from 'react'
-import { AiOutlineCheck } from 'react-icons/ai'
-import { useTheme } from '../context/ThemeContex'
-import { themes } from '../lib/data'
+import { useState } from "react"
+import { AiOutlineCheck } from "react-icons/ai"
+import { useTheme } from "../context/ThemeContex"
+import { themes } from "../lib/data"
+import { ThemeSwitchPropsDT } from "@/lib/types"
 
-type ThemeSwitchProps = {
-  setIsMoodOpen: (isMoodOpen: boolean) => void
-}
-
-const ThemeSwitch = ({ setIsMoodOpen }: ThemeSwitchProps) => {
+const ThemeSwitch = ({ setIsMoodOpen }: ThemeSwitchPropsDT) => {
   const { darkMode, lightMode, autoMode, theme } = useTheme()
 
   const initialMood = {
@@ -34,14 +31,14 @@ const ThemeSwitch = ({ setIsMoodOpen }: ThemeSwitchProps) => {
         <button
           key={t.value}
           className={`flex items-center gap-2 px-2 h-10 relative text-lightPrimary dark:text-darkPrimary font-medium text-sm rounded-md hover:bg-hoverLight dark:hover:bg-hoverDark mood_btn ${
-            theme === t.value && 'selected_mood'
+            theme === t.value && "selected_mood"
           }`}
           onClick={() =>
             handleButtonClick(
               t.value,
-              t.value === 'light'
+              t.value === "light"
                 ? lightMode
-                : t.value === 'dark'
+                : t.value === "dark"
                 ? darkMode
                 : autoMode
             )

@@ -1,13 +1,9 @@
 import React from "react"
 import Avatar from "../Avatar"
 import SubTitle from "../SubTitle"
+import { BlogInroPropsDT } from "@/lib/types"
 
-type BlogInroProps = {
-  views: number
-  date: string
-}
-
-const BlogInro: React.FC<BlogInroProps> = ({ views, date }) => {
+const BlogInro: React.FC<BlogInroPropsDT> = ({ views, date }) => {
   return (
     <div className="flex items-center gap-5">
       <Avatar

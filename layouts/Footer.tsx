@@ -10,13 +10,23 @@ const Footer: React.FC = () => {
         <span className="text-lightSecondary dark:text-darkSecondary">©</span>
         <SubTitle>YOUSUF {getCurrentYear()}</SubTitle>
       </div>
-      <Link
-        href={"/privacy"}
-        className="text-sm group text-lightSecondary dark:text-darkSecondary relative hover:text-lightPrimary hover:dark:text-darkPrimary transition-colors duration-200 ease-in"
-      >
-        <span>Privacy Policy</span>
-        <span className="border-b border-lightSecondary dark:border-darkSecondary h-[1px] w-[95px] pb-0 absolute bottom-0 left-0 right-0 group-hover:border-lightPrimary dark:group-hover:border-darkPrimary"></span>
-      </Link>
+      <div className="flex items-center justify-center gap-2 mt-1">
+        <Link
+          href={"/privacy-policy"}
+          className="text-sm group text-lightSecondary dark:text-darkSecondary relative hover:text-lightPrimary hover:dark:text-darkPrimary transition-colors duration-200 ease-in underline"
+        >
+          <span>Privacy Policy</span>
+        </Link>
+        <span className=" group text-lightSecondary dark:text-darkSecondary">
+          &#x2022;
+        </span>
+        <Link
+          href={"/terms-and-conditions"}
+          className="text-sm group text-lightSecondary dark:text-darkSecondary relative hover:text-lightPrimary hover:dark:text-darkPrimary transition-colors duration-200 ease-in underline"
+        >
+          <span>Terms and conditions</span>
+        </Link>
+      </div>
     </footer>
   )
 }

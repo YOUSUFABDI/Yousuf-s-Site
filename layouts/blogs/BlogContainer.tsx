@@ -1,10 +1,7 @@
-import React, { ReactNode } from 'react'
+import React from "react"
+import { BlogContainerPropsDT } from "@/lib/types"
 
-type BlogContainerPropsType = {
-  children: ReactNode
-}
-
-const BlogContainer: React.FC<BlogContainerPropsType> = ({ children }) => {
+const BlogContainer: React.FC<BlogContainerPropsDT> = ({ children }) => {
   return <div className="flex flex-col my-14">{children}</div>
 }
 

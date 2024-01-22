@@ -8,6 +8,7 @@ import Link from "next/link"
 import { links } from "@/lib/data"
 import clsx from "clsx"
 import { useActiveSectionContext } from "@/context/active-section-context"
+import { SmallScreensNavbarPropsDT } from "@/lib/types"
 
 const Header: React.FC = () => {
   const [isMoodOpen, setIsMoodOpen] = useState<boolean>(false)
@@ -93,12 +94,7 @@ const Header: React.FC = () => {
 
 export default Header
 
-type SmallScreensNavbarProps = {
-  setIsMenuOpen: (isMenuOpen: boolean) => void
-  isMenuOpen: boolean
-}
-
-const SmallScreensNavbar: React.FC<SmallScreensNavbarProps> = ({
+const SmallScreensNavbar: React.FC<SmallScreensNavbarPropsDT> = ({
   isMenuOpen,
   setIsMenuOpen,
 }) => {
