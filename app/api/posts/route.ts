@@ -22,7 +22,7 @@ export async function GET(req: NextRequest) {
           await prisma.blog.update({
             where: { blogID: post.blogID },
             data: {
-              views: { increment: 1 },
+              views: post.views + 1,
             },
           })
         })
