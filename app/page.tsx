@@ -4,11 +4,11 @@ import axios from "axios"
 
 export default async function HomePage() {
   // get total number of github repositories
-  // const response = await axios.get(`${process.env.BASE_URL}/api/github`, {
-  //   method: "GET",
-  // })
-  // const data = await response.data
-  // const repos = data.repos
+  const response = await axios.get(`${process.env.BASE_URL}/api/github`, {
+    method: "GET",
+  })
+  const data = await response.data
+  const repos = data.repos
 
   // const posts = await axios.get(`${process.env.BASE_URL}/api/posts`, {
   //   method: "GET",
@@ -33,12 +33,7 @@ export default async function HomePage() {
   return (
     <main className="pagePb">
       <h1>home</h1>
-      {/* <Home
-        repos={repos}
-        totalPost={totalOfPost}
-        totalViews={totalViews}
-        mostViewedPosts={mostViewedPosts}
-      /> */}
+      <Home repos={repos} totalPost={0} totalViews={0} mostViewedPosts={[]} />
     </main>
   )
 }
