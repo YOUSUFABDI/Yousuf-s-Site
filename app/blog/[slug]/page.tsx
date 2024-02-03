@@ -11,7 +11,7 @@ import GoBack from "../../../layouts/GoBack"
 import { BlogPostDT, PostPagePropsDT } from "@/lib/types"
 
 export default async function page({ params }: PostPagePropsDT) {
-  const response = await fetch(`${process.env.BASE_URL}/api/posts`, {
+  const response = await fetch(`https://www.yusufdev.com/api/posts`, {
     method: "GET",
   })
   const posts = await response.json()

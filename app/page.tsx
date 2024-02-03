@@ -3,13 +3,13 @@ import { BlogPostDT } from "@/lib/types"
 
 export default async function HomePage() {
   // get total number of github repositories
-  const response = await fetch(`${process.env.BASE_URL}/api/github`, {
+  const response = await fetch(`https://www.yusufdev.com/api/github`, {
     method: "GET",
   })
   const data = await response.json()
   const repos = data.repos
 
-  const posts = await fetch(`${process.env.BASE_URL}/api/posts`, {
+  const posts = await fetch(`https://www.yusufdev.com/api/posts`, {
     method: "GET",
   })
   const postsResponse = await posts.json()
