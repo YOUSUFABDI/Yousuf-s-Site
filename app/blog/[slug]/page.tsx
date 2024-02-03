@@ -16,6 +16,7 @@ export default async function page({ params }: PostPagePropsDT) {
     params: {
       slug: params.slug,
     },
+    method: "GET",
   })
   const posts = (await response.data) || null
 
