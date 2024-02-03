@@ -2,6 +2,16 @@ import prisma from "@/prisma/client"
 import { NextRequest } from "next/server"
 
 export async function GET(req: NextRequest) {
+  const searchParams = req.nextUrl.searchParams
+  const slugString: string | null = searchParams.get("slug")
+
+  let slug: number = 0
+
+  if (slugString !== null) {
+    slug = parseInt(slugString, 10)
+    if (!slug) return new Response("Please provide a slug", { status: 200 })
+  }
+
   try {
     const posts = await prisma.blog.findMany({
       include: {
@@ -20,7 +30,7 @@ export async function GET(req: NextRequest) {
       await Promise.all(
         posts.map(async (post) => {
           await prisma.blog.update({
-            where: { blogID: post.blogID },
+            where: { blogID: slug },
             data: {
               views: post.views + 1,
             },
@@ -32,7 +42,7 @@ export async function GET(req: NextRequest) {
       await Promise.all(
         posts.map(async (post) => {
           await prisma.blog.update({
-            where: { blogID: post.blogID },
+            where: { blogID: slug },
             data: {
               views: post.views,
             },
