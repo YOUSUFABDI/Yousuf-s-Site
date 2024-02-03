@@ -1,4 +1,5 @@
 import { NextRequest } from "next/server"
+import axios from "axios"
 
 export async function GET(req: NextRequest) {
   const username = "YOUSUFABDI"
@@ -8,8 +9,8 @@ export async function GET(req: NextRequest) {
 
   try {
     const url = `https://api.github.com/users/${username}/repos?per_page=100`
-    const response = await fetch(url)
-    const data = await response.json()
+    const response = await axios.get(url)
+    const data = await response.data
     const repos = data.length
     return Response.json({ repos })
   } catch (err) {
