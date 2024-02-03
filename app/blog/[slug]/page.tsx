@@ -9,12 +9,11 @@ import Article from "../components/ui/Article"
 import Note from "../../../layouts/Note"
 import GoBack from "../../../layouts/GoBack"
 import { BlogPostDT, PostPagePropsDT } from "@/lib/types"
+import axios from "axios"
 
 export default async function page({ params }: PostPagePropsDT) {
-  const response = await fetch(`${process.env.BASE_URL}/api/posts`, {
-    method: "GET",
-  })
-  const posts = await response.json()
+  const response = await axios.get(`/api/posts`)
+  const posts = await response.data
 
   const post: BlogPostDT = posts.find(
     (post: BlogPostDT) => post.blogID === parseInt(params.slug, 10)
