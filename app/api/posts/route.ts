@@ -3,7 +3,7 @@ import { NextRequest } from "next/server"
 
 export async function GET(req: NextRequest) {
   try {
-    const posts = await prisma.blog.findMany({
+    const post = await prisma.blog.findMany({
       include: {
         titles: {
           include: {
@@ -18,7 +18,7 @@ export async function GET(req: NextRequest) {
     if (process.env.NODE_ENV !== "development") {
       // Increment the view count in production
       await Promise.all(
-        posts.map(async (post) => {
+        post.map(async (post) => {
           await prisma.blog.update({
             where: { blogID: post.blogID },
             data: {
@@ -30,7 +30,7 @@ export async function GET(req: NextRequest) {
     } else {
       // Get view count without incrementing in local environment
       await Promise.all(
-        posts.map(async (post) => {
+        post.map(async (post) => {
           await prisma.blog.update({
             where: { blogID: post.blogID },
             data: {
@@ -41,11 +41,11 @@ export async function GET(req: NextRequest) {
       )
     }
 
-    if (!posts) {
+    if (!post) {
       return new Response("Post not found", { status: 404 })
     }
 
-    return Response.json(posts, { status: 200 })
+    return Response.json(post, { status: 200 })
   } catch (error) {
     console.log(error)
     return new Response("Internal Server Error", { status: 500 })
