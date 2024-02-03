@@ -6,12 +6,18 @@ export default async function HomePage() {
   const response = await fetch(`${process.env.BASE_URL}/api/github`, {
     method: "GET",
   })
+  if (!response.ok) {
+    throw new Error(`Failed to fetch GitHub data: ${response.statusText}`)
+  }
   const data = await response.json()
   const repos = data.repos
 
   const posts = await fetch(`${process.env.BASE_URL}/api/posts`, {
     method: "GET",
   })
+  if (!posts.ok) {
+    throw new Error(`Failed to posts data: ${posts.statusText}`)
+  }
   const postsResponse = await posts.json()
 
   // get total of posts
