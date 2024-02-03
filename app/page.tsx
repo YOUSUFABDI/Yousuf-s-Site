@@ -19,16 +19,16 @@ export default async function HomePage() {
   const totalOfPost = postsResponse?.length
 
   // get total views of all posts
-  // const totalViews: number = postsResponse.reduce(
-  //   (acc: number, post: BlogPostDT) => acc + (post.views || 0),
-  //   0
-  // )
+  const totalViews: number = postsResponse.reduce(
+    (acc: number, post: BlogPostDT) => acc + (post.views || 0),
+    0
+  )
 
   // get top 3 of the most viewed posts
-  // const topViewedPosts: BlogPostDT[] = postsResponse.sort(
-  //   (a: any, b: any) => (b.views || 0) - (a.views || 0)
-  // )
-  // const mostViewedPosts: BlogPostDT[] = topViewedPosts.slice(0, 3)
+  const topViewedPosts: BlogPostDT[] = postsResponse.sort(
+    (a: any, b: any) => (b.views || 0) - (a.views || 0)
+  )
+  const mostViewedPosts: BlogPostDT[] = topViewedPosts.slice(0, 3)
 
   return (
     <main className="pagePb">
@@ -36,8 +36,8 @@ export default async function HomePage() {
       <Home
         repos={repos}
         totalPost={totalOfPost}
-        totalViews={0}
-        mostViewedPosts={[]}
+        totalViews={totalViews}
+        mostViewedPosts={mostViewedPosts}
       />
     </main>
   )
