@@ -9,7 +9,6 @@ export default async function page() {
 
   return (
     <main className="pagePb">
-      <h1>list of posts</h1>
       <PostList posts={posts} />
     </main>
   )

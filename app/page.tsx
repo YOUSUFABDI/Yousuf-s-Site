@@ -32,7 +32,6 @@ export default async function HomePage() {
 
   return (
     <main className="pagePb">
-      <h1>home</h1>
       <Home
         repos={repos}
         totalPost={totalOfPost}
