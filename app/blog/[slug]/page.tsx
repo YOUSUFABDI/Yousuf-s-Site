@@ -12,7 +12,9 @@ import { BlogPostDT, PostPagePropsDT } from "@/lib/types"
 import axios from "axios"
 
 export default async function page({ params }: PostPagePropsDT) {
-  const response = await axios.get(`/api/posts`, { method: "GET" })
+  const response = await axios.get(`${process.env.BASE_URL}/api/posts`, {
+    method: "GET",
+  })
   const posts = await response.data
 
   const post: BlogPostDT = posts.find(

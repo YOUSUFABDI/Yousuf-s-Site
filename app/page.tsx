@@ -4,15 +4,19 @@ import axios from "axios"
 
 export default async function HomePage() {
   // get total number of github repositories
-  const response = await axios.get(`/api/github`, { method: "GET" })
+  const response = await axios.get(`${process.env.BASE_URL}/api/github`, {
+    method: "GET",
+  })
   const data = await response.data
   const repos = data.repos
 
-  const posts = await axios.get(`/api/posts`, { method: "GET" })
+  const posts = await axios.get(`${process.env.BASE_URL}/api/posts`, {
+    method: "GET",
+  })
   const postsResponse = await posts.data
 
   // get total of posts
-  const totalOfPost = postsResponse.length
+  const totalOfPost = postsResponse?.length
 
   // get total views of all posts
   const totalViews: number = postsResponse.reduce(
