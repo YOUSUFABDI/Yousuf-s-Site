@@ -11,9 +11,12 @@ import GoBack from "../../../layouts/GoBack"
 import { BlogPostDT, PostPagePropsDT } from "@/lib/types"
 
 export default async function page({ params }: PostPagePropsDT) {
-  const response = await fetch(`https://www.yusufdev.com/api/posts`, {
-    method: "GET",
-  })
+  const response = await fetch(
+    `https://yousuf-s-site-git-main-yousufabdi.vercel.app/api/posts`,
+    {
+      method: "GET",
+    }
+  )
   const posts = await response.json()
 
   const post: BlogPostDT = posts.find(
