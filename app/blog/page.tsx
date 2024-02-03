@@ -4,9 +4,9 @@ export default async function BlogsPage() {
   const response = await fetch(`${process.env.BASE_URL}/api/posts`, {
     method: "GET",
   })
-  if (!response.ok) {
-    throw new Error(`Failed to posts data: ${response.statusText}`)
-  }
+  // if (!response.ok) {
+  //   throw new Error(`Failed to posts data: ${response.statusText}`)
+  // }
   const posts = await response.json()
 
   return (
