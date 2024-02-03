@@ -10,7 +10,7 @@ import Note from "../../../layouts/Note"
 import GoBack from "../../../layouts/GoBack"
 import { BlogPostDT, PostPagePropsDT } from "@/lib/types"
 
-export default async function Post({ params }: PostPagePropsDT) {
+export default async function page({ params }: PostPagePropsDT) {
   const response = await fetch(`${process.env.BASE_URL}/api/posts`, {
     method: "GET",
   })
