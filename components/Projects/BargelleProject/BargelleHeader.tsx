@@ -20,7 +20,7 @@ const BargelleHeader: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <SubTitle>.</SubTitle>
+          <SubTitle>&#x2022;</SubTitle>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -28,7 +28,8 @@ const BargelleHeader: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           <Link
-            href=""
+            href="https://github.com/YOUSUFABDI/Baargeele"
+            target="blank"
             className="group text-sm transition-colors duration-150 ease-in-out"
           >
             <span className="group-hover:text-lightPrimary dark:group-hover:text-darkPrimary">

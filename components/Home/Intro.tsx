@@ -3,12 +3,14 @@ import { FiArrowUpRight } from "react-icons/fi"
 import { motion } from "framer-motion"
 import Title from "../../layouts/Title"
 import SubTitle from "../../layouts/SubTitle"
-import { platformInfos } from "../../lib/data"
-import { MdOutlineFileDownload } from "react-icons/md"
+import { MdOutlineFileDownload, MdOutlineShowChart } from "react-icons/md"
 import Avatar from "../../layouts/Avatar"
 import Link from "next/link"
+import { BASE_URL } from "../../lib/data"
+import { AiFillEye, AiFillGithub } from "react-icons/ai"
+import { IntroPropsDT } from "@/lib/types"
 
-const Intro: React.FC = () => {
+const Intro: React.FC<IntroPropsDT> = ({ repos, totalPost, totalViews }) => {
   return (
     <div className="flex flex-col gap-10">
       <div className="flex flex-col gap-8 md:gap-0">
@@ -36,7 +38,7 @@ const Intro: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.5 }}
           >
             <Avatar
-              img="/images/yusuf-n-bg.png"
+              img={`${BASE_URL}/images/yusuf-n-bg.png`}
               customClasses="h-24 w-24 rounded-full"
               height={24}
               width={24}
@@ -49,24 +51,53 @@ const Intro: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="flex flex-col gap-4 mt-8 md:mt-0"
           >
-            {platformInfos.map((info) => (
-              <div
-                className="flex items-center gap-1 text-lightSecondary dark:text-darkSecondary"
-                key={info.id}
-              >
-                <div className="flex items-center gap-3">
-                  <span>{info.icon}</span>
-                  <motion.span
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                  >
-                    {info.info}
-                  </motion.span>
-                </div>
-                <span>{info.name}</span>
+            <div className="flex items-center gap-1 text-lightSecondary dark:text-darkSecondary">
+              <div className="flex items-center gap-3">
+                <span>
+                  <AiFillGithub />
+                </span>
+                <motion.span
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                >
+                  {repos}
+                </motion.span>
               </div>
-            ))}
+              <span>Repository</span>
+            </div>
+
+            <div className="flex items-center gap-1 text-lightSecondary dark:text-darkSecondary">
+              <div className="flex items-center gap-3">
+                <span>
+                  <MdOutlineShowChart />
+                </span>
+                <motion.span
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                >
+                  {totalPost}
+                </motion.span>
+              </div>
+              <span>Total Blog</span>
+            </div>
+
+            <div className="flex items-center gap-1 text-lightSecondary dark:text-darkSecondary">
+              <div className="flex items-center gap-3">
+                <span>
+                  <AiFillEye />
+                </span>
+                <motion.span
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                >
+                  {totalViews}
+                </motion.span>
+              </div>
+              <span>Total Blog Views</span>
+            </div>
           </motion.div>
         </div>
       </div>

@@ -22,15 +22,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-lightBg dark:bg-darkBg`}>
-        <main className="max-w-[43.75rem] mx-5 md:mx-auto">
-          <ThemeContextProvider>
-            <ActiveSectionContextProvider>
-              <Header />
-              {children}
-              <Footer />
-            </ActiveSectionContextProvider>
-          </ThemeContextProvider>
-        </main>
+        <ThemeContextProvider>
+          <ActiveSectionContextProvider>
+            <Header />
+            <main className="max-w-[43.75rem] mx-5 md:mx-auto">{children}</main>
+            <Footer />
+          </ActiveSectionContextProvider>
+        </ThemeContextProvider>
       </body>
     </html>
   )

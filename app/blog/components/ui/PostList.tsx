@@ -1,35 +1,13 @@
 "use client"
 
-import React, { useEffect, useState } from "react"
-import { blogPostLinks } from "../../lib/data"
+import React from "react"
 import Title from "@/layouts/Title"
 import SubTitle from "@/layouts/SubTitle"
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { useTheme } from "@/context/ThemeContex"
+import { PostListPropsDT } from "@/lib/types"
 
-const Blog: React.FC = () => {
-  const [isMobile, setIsMobile] = useState(true)
-
-  const { theme } = useTheme()
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768) // Adjust the breakpoint as needed
-    }
-
-    // Initial check
-    handleResize()
-
-    // Add event listener for window resize
-    window.addEventListener("resize", handleResize)
-
-    // Clean up the event listener on component unmount
-    return () => {
-      window.removeEventListener("resize", handleResize)
-    }
-  }, [])
-
+const PostList = ({ posts }: PostListPropsDT) => {
   return (
     <div className="flex flex-col gap-[4.375rem] my-14">
       <div className="flex flex-col gap-1">
@@ -45,9 +23,7 @@ const Blog: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <SubTitle>
-            {blogPostLinks.length} posts about tech, code, more...
-          </SubTitle>
+          <SubTitle>{posts.length} posts about tech, code, more...</SubTitle>
         </motion.div>
       </div>
 
@@ -55,19 +31,16 @@ const Blog: React.FC = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
-        className={`h-[20rem] overflow-y-auto ${
-          theme == "light" ? "light_scroll" : "dark_scroll"
-        } ${isMobile ? "scrollbar-hidden" : ""}`}
       >
-        {blogPostLinks.map((link) => (
+        {posts.map((post) => (
           <Link
-            key={link.id}
-            href={link.to}
+            key={post.blogID}
+            href={`blog/${post.blogID}`}
             className="flex items-center mb-10 justify-between mt-3 md:mb-7 hover:opacity-50 transition-opacity duration-[0.4s] ease-in-out"
           >
             <div className="flex flex-col gap-3 md:flex-row md:gap-20   md:flex-1 ">
               <span className="text-lightSecondary dark:text-darkSecondary md:flex-[0.20]">
-                {link.createdDT}
+                {post.createdDate}
               </span>
               <span
                 style={{
@@ -78,13 +51,13 @@ const Blog: React.FC = () => {
                 }}
                 className="text-lightPrimary dark:text-darkPrimary font-medium overflow-hidden overflow-ellipsis md:flex-1 max-w-[50%]"
               >
-                {link.name}
+                {post.mainTitle}
               </span>
             </div>
             <div className="flex md:hidden">
               <img
                 className="h-[50px] max-w-[50px] object-contain"
-                src={link.imgUrl}
+                src={post.coverImage}
                 alt="post img"
               />
             </div>
@@ -95,4 +68,4 @@ const Blog: React.FC = () => {
   )
 }
 
-export default Blog
+export default PostList

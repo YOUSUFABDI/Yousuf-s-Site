@@ -50,7 +50,7 @@ export type TitlePropsDT = {
   children: React.ReactNode
 }
 
-export type BlogContainerPropsDT = {
+export type ArticlePropsDT = {
   children: React.ReactNode
 }
 
@@ -61,6 +61,8 @@ export type BlogHeaderPropsDT = {
 export type BlogInroPropsDT = {
   views: number
   date: string
+  img: string
+  name: string
 }
 
 export type BlogTitlePropsDT = {
@@ -77,4 +79,74 @@ export type ListPropsDT = {
 
 export type WrapperPropsDT = {
   children: React.ReactNode
+}
+export type PostPagePropsDT = {
+  params: {
+    slug: string
+    id: string
+  }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
+
+// .........
+export type BlogPostTitleDT = {
+  titleID: number
+  title: string
+  blogID: number
+  paragraphs: BlogPostParagraphDT[]
+  images: BlogPostImagesDT[]
+}
+
+export type BlogPostAllImgsDT = {
+  imageID: number
+  image: string
+  blogID: number
+}
+
+export type BlogPostParagraphDT = {
+  paragraph_id: number
+  paragraph: string
+}
+
+export type BlogPostImagesDT = {
+  imageID: number
+  image: string
+  titleID: number
+}
+
+export type BlogPostImageDT = {
+  imageID: number
+  image: string
+  blogID: number
+}
+
+export type BlogPostDT = {
+  blogID: number
+  mainTitle: string
+  description: string
+  views: number
+  createdDate: string
+  creatorImage: string
+  coverImage: string
+  creatorName: string
+  titles: BlogPostTitleDT[]
+  images: BlogPostImageDT[]
+  allImages: BlogPostAllImgsDT[]
+}
+
+export type PostListPropsDT = {
+  posts: BlogPostDT[]
+}
+
+export type HomePropsDT = {
+  repos: number
+  totalPost: number
+  totalViews: number
+  mostViewedPosts: BlogPostDT[]
+}
+
+export type IntroPropsDT = {
+  repos: number
+  totalPost: number
+  totalViews: number
 }

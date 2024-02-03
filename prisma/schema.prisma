@@ -1,0 +1,59 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Blog {
+  blogID       Int     @id @default(autoincrement())
+  mainTitle    String
+  description  String?
+  views        Int     @default(0)
+  createdDate  String
+  creatorImage String?
+  creatorName  String
+  coverImage   String?
+  titles       Title[]
+  allImages    AllImages[]
+}
+
+model Title {
+  titleID    Int         @id @default(autoincrement())
+  title      String
+  blogID     Int
+  images     Image[]
+  paragraphs Paragraph[]
+  blog       Blog        @relation(fields: [blogID], references: [blogID])
+
+  @@index([blogID], map: "Title_blogID_fkey")
+}
+
+model Paragraph {
+  paragraph_id Int    @id @default(autoincrement())
+  paragraph    String @db.VarChar(2000)
+  titleID      Int
+  title        Title  @relation(fields: [titleID], references: [titleID])
+
+  @@index([titleID], map: "Paragraph_titleID_fkey")
+}
+
+model Image {
+  imageID Int    @id @default(autoincrement())
+  image   String
+  titleID Int
+  title   Title  @relation(fields: [titleID], references: [titleID])
+
+  @@index([titleID], map: "Image_titleID_fkey")
+}
+
+model AllImages {
+  imageID    Int         @id @default(autoincrement())
+  image      String
+  blogID     Int
+  blog       Blog        @relation(fields: [blogID], references: [blogID])
+
+   @@index([blogID], map: "Title_blogID_fkey")
+}

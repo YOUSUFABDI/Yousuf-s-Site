@@ -1,5 +1,6 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React from "react"
+import { motion } from "framer-motion"
+import { BASE_URL } from "@/lib/data"
 
 const BaargelleDemo: React.FC = () => {
   return (
@@ -11,13 +12,13 @@ const BaargelleDemo: React.FC = () => {
     >
       <div className="flex justify-center bg-[#E8E8E8] dark:bg-projectBg h-[233px] md:h-[400px] rounded-md">
         <img
-          src="./images/baargelleImgs/baargelleBdtablet-phoneMockupSm.png"
+          src={`${BASE_URL}/images/baargelleImgs/baargelleBdtablet-phoneMockupSm.png`}
           className="block md:hidden"
           alt="BaargelleTabletPhoneMockupSm"
         />
         <img
           className="hidden md:block"
-          src="./images/baargelleImgs/baargelleBdtablet-phoneMockupLg.png"
+          src={`${BASE_URL}/images/baargelleImgs/baargelleBdtablet-phoneMockupLg.png`}
           alt="BaargelleTabletPhoneMockup"
         />
       </div>
@@ -25,13 +26,13 @@ const BaargelleDemo: React.FC = () => {
       <div className="flex flex-col gap-5">
         <div className="flex justify-center bg-[#E8E8E8] dark:bg-projectBg h-[233px] md:h-[400px] rounded-md">
           <img
-            src="./images/baargelleImgs/baargelleBdtabletMockupnSm.png"
+            src={`${BASE_URL}/images/baargelleImgs/baargelleBdtabletMockupnSm.png`}
             className="block md:hidden"
             alt="BaargelleTabletPhoneMockupSm"
           />
           <img
             className="hidden md:block"
-            src="./images/baargelleImgs/baargelleBdtabletMockupnLg.png"
+            src={`${BASE_URL}/images/baargelleImgs/baargelleBdtabletMockupnLg.png`}
             alt="BaargelleTabletPhoneMockup"
           />
         </div>
@@ -44,13 +45,13 @@ const BaargelleDemo: React.FC = () => {
 
       <div className="flex justify-center bg-[#E8E8E8] dark:bg-projectBg h-[233px] md:h-[400px] rounded-md">
         <img
-          src="./images/baargelleImgs/BaargelleBdphoneMockupSm.png"
+          src={`${BASE_URL}/images/baargelleImgs/BaargelleBdphoneMockupSm.png`}
           className="block md:hidden"
           alt="BaargelleTabletPhoneMockupSm"
         />
         <img
           className="hidden md:block"
-          src="./images/baargelleImgs/BaargelleBdphoneMockupLg.png"
+          src={`${BASE_URL}/images/baargelleImgs/BaargelleBdphoneMockupLg.png`}
           alt="BaargelleTabletPhoneMockup"
         />
       </div>

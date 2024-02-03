@@ -1,33 +1,35 @@
 import React from "react"
 import Title from "../../layouts/Title"
-import { lastestPosts } from "../../lib/data"
 import { motion } from "framer-motion"
 import Link from "next/link"
+import { BlogPostDT } from "@/lib/types"
 
-const LastestPosts: React.FC = () => {
+const TopViewedPosts: React.FC<{ mostViewedPosts: BlogPostDT[] }> = ({
+  mostViewedPosts,
+}) => {
   return (
     <motion.section
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.2 }}
     >
-      <Title>Lastest Posts</Title>
+      <Title>Top Viewed Posts</Title>
 
-      {lastestPosts.map((post, index) => (
+      {mostViewedPosts.map((post, index) => (
         <motion.div
-          key={post.id}
+          key={post.blogID}
           className="mt-10"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
         >
           <Link
-            href={post.to}
+            href={`blog/${post.blogID}`}
             className="flex items-center justify-between hover:opacity-50 transition-opacity duration-[0.4s] ease-in-out"
           >
             <div className="flex flex-col gap-3 md:flex-row md:gap-20 md:flex-1">
               <span className="text-lightSecondary dark:text-darkSecondary md:flex-[0.20]">
-                {post.date}
+                {post.createdDate}
               </span>
               <span
                 style={{
@@ -38,13 +40,13 @@ const LastestPosts: React.FC = () => {
                 }}
                 className="text-lightPrimary dark:text-darkPrimary font-medium overflow-hidden overflow-ellipsis md:flex-1 max-w-[50%]"
               >
-                {post.name}
+                {post.mainTitle}
               </span>
             </div>
             <div className="flex md:hidden">
               <img
                 className="h-[50px] max-w-[50px] object-contain"
-                src={post.imgUrl}
+                src={post.coverImage}
                 alt="post img"
               />
             </div>
@@ -53,7 +55,7 @@ const LastestPosts: React.FC = () => {
       ))}
 
       <div className="mt-10 text-lightSecondary dark:text-darkSecondary hover:text-lightPrimary dark:hover:text-darkPrimary transition-colors duration-300 ease-in-out font-medium text-sm">
-        <Link href="/blogs" className="underline">
+        <Link href="/blog" className="underline">
           See All
         </Link>
       </div>
@@ -61,4 +63,4 @@ const LastestPosts: React.FC = () => {
   )
 }
 
-export default LastestPosts
+export default TopViewedPosts

@@ -1,5 +1,6 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React from "react"
+import { motion } from "framer-motion"
+import { BASE_URL } from "@/lib/data"
 
 const SomBDDemo: React.FC = () => {
   return (
@@ -11,27 +12,21 @@ const SomBDDemo: React.FC = () => {
     >
       <div className="flex justify-center bg-[#E8E8E8] dark:bg-projectBg h-[233px] md:h-[400px] rounded-md">
         <img
-          src="./images/somBdImgs/somBdTablet-phonemockup.png"
-          // className="block md:hidden"
+          src={`${BASE_URL}/images/somBdImgs/somBdTablet-phonemockup.png`}
           alt="SomBdTabletPhoneMockupSm"
         />
-        {/* <img
-          className="hidden md:block"
-          src="./images/somBdImgs/somBdTablet-phonemockupSm.png"
-          alt="SomBdTabletPhoneMockup"
-        /> */}
       </div>
 
       <div className="flex flex-col gap-5">
         <div className="flex justify-center bg-[#E8E8E8] dark:bg-projectBg h-[233px] md:h-[400px] rounded-md">
           <img
-            src="./images/somBdImgs/somBdtabletMockupSm.png"
+            src={`${BASE_URL}/images/somBdImgs/somBdtabletMockupSm.png`}
             className="block md:hidden"
             alt="SomBdTabletPhoneMockupSm"
           />
           <img
             className="hidden md:block"
-            src="./images/somBdImgs/somBdtabletMockupnLg.png"
+            src={`${BASE_URL}/images/somBdImgs/somBdtabletMockupnLg.png`}
             alt="SomBdTabletPhoneMockup"
           />
         </div>
@@ -44,13 +39,13 @@ const SomBDDemo: React.FC = () => {
 
       <div className="flex justify-center bg-[#E8E8E8] dark:bg-projectBg h-[233px] md:h-[400px] rounded-md">
         <img
-          src="./images/somBdImgs/somBdMockupMobileSm.png"
+          src={`${BASE_URL}/images/somBdImgs/somBdMockupMobileSm.png`}
           className="block md:hidden"
           alt="SomBdTabletPhoneMockupSm"
         />
         <img
           className="hidden md:block"
-          src="./images/somBdImgs/somBdMockupMobileLg.png"
+          src={`${BASE_URL}/images/somBdImgs/somBdMockupMobileLg.png`}
           alt="SomBdTabletPhoneMockup"
         />
       </div>

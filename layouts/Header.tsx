@@ -39,55 +39,57 @@ const Header: React.FC = () => {
   }, [])
 
   return (
-    <header className="flex items-center justify-between gap-5 py-3  backdrop-blur-md bg-lightBg/70 dark:bg-darkBg/70 sticky top-0 z-50">
-      <div>
-        <Link
-          href="/"
+    <header className="backdrop-blur-md bg-lightBg/70 dark:bg-darkBg/70 sticky top-0 z-50">
+      <div className="flex items-center justify-between gap-5 py-3 max-w-[43.75rem] mx-5 md:mx-auto  relative bg-transparent">
+        <div>
+          <Link
+            href="/"
+            onClick={() => {
+              setActiveSection("")
+              setIsMenuOpen(false)
+              setIsMoodOpen(false)
+            }}
+            className="text-lightPrimary font-bold text-sm dark:text-darkPrimary"
+          >
+            YOUSUF
+          </Link>
+        </div>
+
+        <div
+          ref={menuRef}
+          className="flex justify-end md:justify-center text-lightSecondary hover:text-lightPrimary dark:text-darkSecondary dark:hover:text-darkPrimary  transition-colors duration-200 ease-in-out w-full"
+        >
+          <button
+            className="font-medium text-sm flex items-center gap-1 md:hidden cursor-pointer"
+            onClick={() => {
+              setIsMenuOpen(!isMenuOpen)
+              setIsMoodOpen(false)
+            }}
+          >
+            <span>Menu</span>
+            <AiOutlinePlus className="h-5 w-5" />
+          </button>
+
+          <LargeScreensNavbar />
+          <SmallScreensNavbar
+            isMenuOpen={isMenuOpen}
+            setIsMenuOpen={setIsMenuOpen}
+          />
+        </div>
+
+        <div
+          ref={moodRef}
+          className="text-lightSecondary dark:text-darkSecondary"
           onClick={() => {
-            setActiveSection("")
+            setIsMoodOpen(!isMoodOpen)
             setIsMenuOpen(false)
-            setIsMoodOpen(false)
-          }}
-          className="text-lightPrimary font-bold text-sm dark:text-darkPrimary"
-        >
-          YOUSUF
-        </Link>
-      </div>
-
-      <div
-        ref={menuRef}
-        className="flex justify-end md:justify-center text-lightSecondary hover:text-lightPrimary dark:text-darkSecondary dark:hover:text-darkPrimary  transition-colors duration-200 ease-in-out w-full"
-      >
-        <button
-          className="font-medium text-sm flex items-center gap-1 md:hidden cursor-pointer"
-          onClick={() => {
-            setIsMenuOpen(!isMenuOpen)
-            setIsMoodOpen(false)
           }}
         >
-          <span>Menu</span>
-          <AiOutlinePlus className="h-5 w-5" />
-        </button>
+          <BsFillSunFill className="h-5 w-5 cursor-pointer hover:text-lightPrimary transition-colors duration-200 ease-in-out dark:hover:text-darkPrimary" />
+        </div>
 
-        <LargeScreensNavbar />
-        <SmallScreensNavbar
-          isMenuOpen={isMenuOpen}
-          setIsMenuOpen={setIsMenuOpen}
-        />
+        {isMoodOpen && <ThemeSwitch setIsMoodOpen={setIsMoodOpen} />}
       </div>
-
-      <div
-        ref={moodRef}
-        className="text-lightSecondary dark:text-darkSecondary"
-        onClick={() => {
-          setIsMoodOpen(!isMoodOpen)
-          setIsMenuOpen(false)
-        }}
-      >
-        <BsFillSunFill className="h-5 w-5 cursor-pointer hover:text-lightPrimary transition-colors duration-200 ease-in-out dark:hover:text-darkPrimary" />
-      </div>
-
-      {isMoodOpen && <ThemeSwitch setIsMoodOpen={setIsMoodOpen} />}
     </header>
   )
 }
