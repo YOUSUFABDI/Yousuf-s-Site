@@ -13,7 +13,8 @@ import axios from "axios"
 
 export default async function page({ params }: PostPagePropsDT) {
   const response = await axios.get(
-    `${process.env.BASE_URL}/api/posts/?slug=${params.slug}`
+    `${process.env.BASE_URL}/api/posts/?slug=${params.slug}`,
+    { method: "GET" }
   )
   const post: BlogPostDT = (await response.data) || null
 
