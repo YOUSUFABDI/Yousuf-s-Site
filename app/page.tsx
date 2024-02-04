@@ -6,12 +6,14 @@ export default async function HomePage() {
   // get total number of github repositories
   const response = await axios.get(`${process.env.BASE_URL}/api/github`, {
     method: "GET",
+    headers: { "Cache-Control": "no-cache" },
   })
   const data = await response.data
   const repos = data.repos
 
   const posts = await axios.get(`${process.env.BASE_URL}/api/posts`, {
     method: "GET",
+    headers: { "Cache-Control": "no-cache" },
   })
   const postsResponse = (await posts.data) || null
 
