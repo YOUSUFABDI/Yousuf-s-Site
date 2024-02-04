@@ -3,12 +3,12 @@ import { BlogPostDT } from "@/lib/types"
 import axios from "axios"
 
 export default async function HomePage() {
-  // // get total number of github repositories
-  // const response = await axios.get(`${process.env.BASE_URL}/api/github`, {
-  //   method: "GET",
-  // })
-  // const data = await response.data
-  // const repos = data.repos
+  // get total number of github repositories
+  const response = await axios.get(`${process.env.BASE_URL}/api/github`, {
+    method: "GET",
+  })
+  const data = await response.data
+  const repos = data.repos
 
   // const posts = await axios.get(`${process.env.BASE_URL}/api/posts`, {
   //   method: "GET",
@@ -32,7 +32,7 @@ export default async function HomePage() {
 
   return (
     <main className="pagePb">
-      <Home repos={0} totalPost={0} totalViews={0} mostViewedPosts={[]} />
+      <Home repos={repos} totalPost={0} totalViews={0} mostViewedPosts={[]} />
     </main>
   )
 }
