@@ -12,16 +12,15 @@ import { BlogPostDT, PostPagePropsDT } from "@/lib/types"
 import axios from "axios"
 
 export default async function page({ params }: PostPagePropsDT) {
-  // const response = await axios.get(
-  //   `${process.env.BASE_URL}/api/posts/?slug=${params.slug}`,
-  //   { method: "GET" }
-  // )
-  // const post: BlogPostDT = (await response.data) || null
+  const response = await axios.get(
+    `${process.env.BASE_URL}/api/posts/?slug=${params.slug}`,
+    { method: "GET" }
+  )
+  const post: BlogPostDT = (await response.data) || null
 
   return (
     <Article>
-      <h1>ho</h1>
-      {/* <Box>
+      <Box>
         <BlogTitle>{post.mainTitle}</BlogTitle>
         <SubTitle>{post.description}</SubTitle>
         <BlogInro
@@ -71,7 +70,7 @@ export default async function page({ params }: PostPagePropsDT) {
         />
       </div>
 
-      <GoBack text="All blogs" link="blog" /> */}
+      <GoBack text="All blogs" link="blog" />
     </Article>
   )
 }
