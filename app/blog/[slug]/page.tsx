@@ -14,7 +14,7 @@ import axios from "axios"
 export default async function page({ params }: PostPagePropsDT) {
   const response = await axios.get(
     `${process.env.BASE_URL}/api/posts/?slug=${params.slug}`,
-    { method: "GET" }
+    { method: "GET", headers: { "Cache-Control": "no-cache" } }
   )
   const post: BlogPostDT = (await response.data) || null
 
