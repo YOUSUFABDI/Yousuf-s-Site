@@ -4,6 +4,7 @@ import axios from "axios"
 export default async function page() {
   const response = await axios.get(`${process.env.BASE_URL}/api/posts`, {
     method: "GET",
+    headers: { "Cache-Control": "no-cache" },
   })
   const posts = (await response.data) || null
 

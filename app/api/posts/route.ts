@@ -31,14 +31,14 @@ export async function GET(req: NextRequest) {
       }
 
       // Increment the view count in production
-      if (process.env.NODE_ENV !== "development") {
-        await prisma.blog.update({
-          where: { blogID: slug },
-          data: {
-            views: visitedPost.views + 1,
-          },
-        })
-      }
+      // if (process.env.NODE_ENV !== "development") {
+      await prisma.blog.update({
+        where: { blogID: slug },
+        data: {
+          views: visitedPost.views + 1,
+        },
+      })
+      // }
 
       return Response.json(visitedPost, { status: 200 })
     }
