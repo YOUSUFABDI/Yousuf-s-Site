@@ -43,7 +43,7 @@ export async function GET(req: NextRequest) {
       return Response.json(visitedPost, { status: 200 })
     }
 
-    // If no slug provided, fetch all posts
+    // If no slug fetch all posts
     const posts = await prisma.blog.findMany({
       include: {
         titles: {

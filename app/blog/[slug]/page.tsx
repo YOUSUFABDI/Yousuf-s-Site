@@ -18,10 +18,6 @@ export default async function page({ params }: PostPagePropsDT) {
   )
   const post: BlogPostDT = (await response.data) || null
 
-  // const post: BlogPostDT = posts.find(
-  //   (post: BlogPostDT) => post.blogID === parseInt(params.slug, 10)
-  // )
-
   return (
     <Article>
       <Box>
