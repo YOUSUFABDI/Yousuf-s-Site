@@ -10,7 +10,7 @@ const SomBDConnect: React.FC = () => {
         to me directly at{" "}
         <strong className="text-lightPrimary dark:text-darkPrimary">
           <a href="mailto:yousufabdi34@gmail.com">yousufabdi34@gmail.com</a>.
-        </strong>
+        </strong>{" "}
         I'd be happy to connect!
       </p>
     </div>

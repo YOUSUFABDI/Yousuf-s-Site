@@ -1,9 +1,9 @@
-import SomBD from "@/components/Projects/SomBDProject/SomBD"
+import Bargelle from "@/app/projects/bargelle/components/Bargelle"
 
 export default function SomBDPage() {
   return (
     <main className="pagePb">
-      <SomBD />
+      <Bargelle />
     </main>
   )
 }
