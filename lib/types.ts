@@ -80,6 +80,34 @@ export type ListPropsDT = {
 export type WrapperPropsDT = {
   children: React.ReactNode
 }
+
+// projects page types
+export type PostListPropsDT = {
+  posts: BlogPostDT[]
+}
+
+export type ProjectsDT = {
+  id: number
+  projectName: string
+  createdDT: number
+  description: string
+  coverImage: string
+  images: string[]
+  tags: string[]
+}
+
+export type ProjectListPropsDT = {
+  projects: ProjectsDT[]
+}
+
+export type ProjecTypePropsDT = {
+  id: number
+  projectName: string
+  createdDT: number
+  description: string
+  coverImage: string
+}
+
 export type PostPagePropsDT = {
   params: {
     slug: string
@@ -88,7 +116,30 @@ export type PostPagePropsDT = {
   searchParams: { [key: string]: string | string[] | undefined }
 }
 
-// .........
+export type ProjectPagePropsDT = {
+  params: {
+    id: string
+  }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
+
+export type ProjectHeaderPropsDT = {
+  createdDT: number
+  projectName: string
+  describtion: string
+  githubLink: string
+  liveDemo: string
+}
+
+export type ProjectDemoPropsDT = {
+  images: string[]
+}
+
+export type ProjectTagPropsDT = {
+  tags: string[]
+}
+
+// Blog page types
 export type BlogPostTitleDT = {
   titleID: number
   title: string
@@ -134,10 +185,7 @@ export type BlogPostDT = {
   allImages: BlogPostAllImgsDT[]
 }
 
-export type PostListPropsDT = {
-  posts: BlogPostDT[]
-}
-
+// home page types
 export type HomePropsDT = {
   repos: number
   totalPost: number

@@ -1,10 +1,18 @@
+"use client"
+
 import React from "react"
 import SubTitle from "@/layouts/SubTitle"
 import Title from "@/layouts/Title"
 import { motion } from "framer-motion"
 import Link from "next/link"
+import { ProjectHeaderPropsDT } from "@/lib/types"
 
-const BargelleHeader: React.FC = () => {
+const ProjectHeader: React.FC<ProjectHeaderPropsDT> = ({
+  createdDT,
+  projectName,
+  describtion,
+  githubLink,
+}) => {
   return (
     <div className="flex flex-col gap-5">
       <div className="flex items-center gap-3 relative w-fit">
@@ -13,7 +21,7 @@ const BargelleHeader: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <SubTitle>2023</SubTitle>
+          <SubTitle>{createdDT}</SubTitle>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -28,7 +36,7 @@ const BargelleHeader: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           <Link
-            href="https://github.com/YOUSUFABDI/Baargeele"
+            href={githubLink}
             target="blank"
             className="group text-sm transition-colors duration-150 ease-in-out"
           >
@@ -43,17 +51,13 @@ const BargelleHeader: React.FC = () => {
         className="flex flex-col gap-3"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.1 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <Title>Baargeelle UC</Title>
-        <p>
-          Baargelle uc is platform that pubg players in somalia can buy uc or
-          pubg money using evc plus. i collaborate this project with another
-          developer.
-        </p>
+        <Title>{projectName}</Title>
+        <p>{describtion}</p>
       </motion.div>
     </div>
   )
 }
 
-export default BargelleHeader
+export default ProjectHeader

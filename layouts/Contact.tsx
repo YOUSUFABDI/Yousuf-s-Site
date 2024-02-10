@@ -1,7 +1,7 @@
 import React from "react"
 import Title from "./Title"
 
-const SomBDConnect: React.FC = () => {
+const Contact: React.FC = () => {
   return (
     <div className="flex flex-col gap-5">
       <Title>Contact</Title>
@@ -17,4 +17,4 @@ const SomBDConnect: React.FC = () => {
   )
 }
 
-export default SomBDConnect
+export default Contact

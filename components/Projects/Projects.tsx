@@ -2,10 +2,10 @@
 
 import React from "react"
 import ProjectsHeader from "./ProjectsHeader"
-import { projects } from "../../lib/data"
 import Project from "./Project"
+import { ProjectListPropsDT } from "@/lib/types"
 
-const Projects: React.FC = () => {
+const Projects = ({ projects }: ProjectListPropsDT) => {
   return (
     <div className="flex flex-col gap-[4.375rem] md:gap-20 my-14">
       <ProjectsHeader />

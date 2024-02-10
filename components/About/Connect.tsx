@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react"
 import Title from "@/layouts/Title"
 import { motion } from "framer-motion"
