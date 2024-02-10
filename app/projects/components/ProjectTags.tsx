@@ -16,8 +16,11 @@ const ProjectTags: React.FC<ProjectTagPropsDT> = ({ tags }) => {
       <Title>Tags</Title>
 
       <div className="flex items-center gap-3 flex-wrap">
-        {tags.map((tag) => (
-          <span className="bg-[#E8E8E8] dark:bg-projectBg px-6 py-3 rounded-md">
+        {tags.map((tag, index) => (
+          <span
+            className="bg-[#E8E8E8] dark:bg-projectBg px-6 py-3 rounded-md"
+            key={index}
+          >
             {tag}
           </span>
         ))}
