@@ -1,7 +1,7 @@
-import { NextResponse } from "next/server"
+import { NextRequest } from "next/server"
 import { getProjects } from "@/lib/utils"
 
-export async function GET(req: NextResponse) {
+export async function GET(req: NextRequest) {
   try {
     const projects = await getProjects()
 
