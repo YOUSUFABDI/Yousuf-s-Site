@@ -12,7 +12,8 @@ export default async function page({ params }: ProjectPagePropsDT) {
     headers: { "Cache-Control": "no-cache" },
   })
   const projects = (await response.data) || null
-  const project = projects.find((project: any) => project.id == params.id)
+  const project =
+    projects.find((project: any) => project.id == params.id) || null
 
   return (
     <main className="flex flex-col gap-10 my-14 pagePb text-lightSecondary dark:text-darkSecondary">
