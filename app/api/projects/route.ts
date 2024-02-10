@@ -1,11 +1,15 @@
-import { getProjects } from "@/lib/utils"
 import { NextResponse } from "next/server"
+import { getProjects } from "@/lib/utils"
 
-export async function GET() {
+export async function GET(req: NextResponse) {
   try {
     const projects = await getProjects()
 
-    return NextResponse.json(projects, { status: 200 })
+    if (!projects) {
+      return new Response("projects not found", { status: 404 })
+    }
+
+    return Response.json(projects, { status: 200 })
   } catch (error) {
     console.log(error)
   }
