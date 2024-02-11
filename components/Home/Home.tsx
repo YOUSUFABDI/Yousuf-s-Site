@@ -5,11 +5,15 @@ import Intro from "./Intro"
 import TopViewedPosts from "./TopViewedPosts"
 import { HomePropsDT } from "@/lib/types"
 
-const Home: React.FC<HomePropsDT> = ({ totalPost, totalViews }) => {
+const Home: React.FC<HomePropsDT> = ({
+  totalPost,
+  totalViews,
+  mostViewedPosts,
+}) => {
   return (
     <div className="flex flex-col gap-[4.375rem] md:gap-20 my-14">
       <Intro totalPost={totalPost} totalViews={totalViews} />
-      <TopViewedPosts />
+      <TopViewedPosts mostViewedPosts={mostViewedPosts} />
     </div>
   )
 }

@@ -2,22 +2,11 @@ import React from "react"
 import Title from "../../layouts/Title"
 import { motion } from "framer-motion"
 import Link from "next/link"
-import useSWR from "swr"
-import Fetcher from "@/lib/fetcher"
 import { BlogPostDT } from "@/lib/types"
 
-const TopViewedPosts: React.FC = () => {
-  const { data } = useSWR(`/api/posts`, Fetcher, {
-    revalidateOnFocus: false,
-  })
-  const posts = data
-
-  // get top 3 of the most viewed posts
-  const topViewedPosts: BlogPostDT[] = posts?.sort(
-    (a: any, b: any) => (b.views || 0) - (a.views || 0)
-  )
-  const mostViewedPosts: BlogPostDT[] = topViewedPosts?.slice(0, 3)
-
+const TopViewedPosts: React.FC<{ mostViewedPosts: BlogPostDT[] }> = ({
+  mostViewedPosts,
+}) => {
   return (
     <motion.section
       initial={{ opacity: 0, y: 50 }}
@@ -26,7 +15,7 @@ const TopViewedPosts: React.FC = () => {
     >
       <Title>Top Viewed Posts</Title>
 
-      {mostViewedPosts.map((post, index) => (
+      {mostViewedPosts?.map((post, index) => (
         <motion.div
           key={post.blogID}
           className="mt-10"

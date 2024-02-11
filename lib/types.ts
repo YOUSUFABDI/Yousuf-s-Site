@@ -189,6 +189,7 @@ export type BlogPostDT = {
 export type HomePropsDT = {
   totalPost: number
   totalViews: number
+  mostViewedPosts: BlogPostDT[]
 }
 
 export type IntroPropsDT = {

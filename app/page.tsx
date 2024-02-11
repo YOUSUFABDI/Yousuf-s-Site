@@ -20,9 +20,19 @@ export default function HomePage() {
     0
   )
 
+  // get top 3 of the most viewed posts
+  const topViewedPosts: BlogPostDT[] = posts?.sort(
+    (a: any, b: any) => (b.views || 0) - (a.views || 0)
+  )
+  const mostViewedPosts: BlogPostDT[] = topViewedPosts?.slice(0, 3)
+
   return (
     <main className="pagePb">
-      <Home totalPost={totalOfPost} totalViews={totalViews} />
+      <Home
+        totalPost={totalOfPost}
+        totalViews={totalViews}
+        mostViewedPosts={mostViewedPosts}
+      />
     </main>
   )
 }
