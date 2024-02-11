@@ -1,12 +1,11 @@
 import PostList from "@/app/blog/components/ui/PostList"
-import axios from "axios"
 
 export default async function page() {
-  const response = await axios.get(`${process.env.BASE_URL}/api/posts`, {
+  const response = await fetch(`${process.env.BASE_URL}/api/posts`, {
     method: "GET",
-    headers: { "Cache-Control": "no-cache" },
+    cache: "no-cache",
   })
-  const posts = (await response.data) || null
+  const posts = (await response.json()) || null
 
   return (
     <main className="pagePb">

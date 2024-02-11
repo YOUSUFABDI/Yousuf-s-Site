@@ -1,4 +1,4 @@
-import { ProjectPagePropsDT, ProjectsDT } from "@/lib/types"
+import { ProjectPagePropsDT } from "@/lib/types"
 import ProjectHeader from "../components/ProjectHeader"
 import ProjectDemo from "../components/ProjectDemo"
 import ProjectTags from "../components/ProjectTags"

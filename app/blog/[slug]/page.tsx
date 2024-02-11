@@ -9,14 +9,13 @@ import Article from "../components/ui/Article"
 import Note from "../../../layouts/Note"
 import GoBack from "../../../layouts/GoBack"
 import { BlogPostDT, PostPagePropsDT } from "@/lib/types"
-import axios from "axios"
 
 export default async function page({ params }: PostPagePropsDT) {
-  const response = await axios.get(
+  const response = await fetch(
     `${process.env.BASE_URL}/api/posts/?slug=${params.slug}`,
-    { method: "GET", headers: { "Cache-Control": "no-cache" } }
+    { method: "GET", cache: "no-cache" }
   )
-  const post: BlogPostDT = (await response.data) || null
+  const post: BlogPostDT = (await response.json()) || null
 
   return (
     <Article>
