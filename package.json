@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@prisma/client": "^5.8.1",
-    "axios": "^1.6.7",
     "clsx": "^2.1.0",
     "framer-motion": "^10.17.12",
     "next": "14.0.4",

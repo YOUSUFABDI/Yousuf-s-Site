@@ -11,7 +11,7 @@ import Fetcher from "@/lib/fetcher"
 import Article from "@/app/blog/components/ui/Article"
 import Skeleton from "@/layouts/Skeleton"
 
-export default function page({ params }: ProjectPagePropsDT) {
+export default function Page({ params }: ProjectPagePropsDT) {
   const { data, isLoading } = useSWR(`/api/projects`, Fetcher, {
     revalidateOnFocus: false,
   })
