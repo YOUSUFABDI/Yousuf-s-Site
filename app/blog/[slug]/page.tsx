@@ -16,6 +16,7 @@ export default async function page({ params }: PostPagePropsDT) {
     { method: "GET", cache: "no-cache" }
   )
   const post: BlogPostDT = (await response.json()) || null
+  console.log(post.views)
 
   return (
     <Article>
