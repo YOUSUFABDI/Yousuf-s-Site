@@ -1,3 +1,5 @@
+"use client"
+
 import Projects from "@/components/Projects/Projects"
 import Fetcher from "@/lib/fetcher"
 import useSWR from "swr"
