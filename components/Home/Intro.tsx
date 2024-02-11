@@ -9,8 +9,15 @@ import Link from "next/link"
 import { BASE_URL } from "../../lib/data"
 import { AiFillEye, AiFillGithub } from "react-icons/ai"
 import { IntroPropsDT } from "@/lib/types"
+import useSWR from "swr"
+import Fetcher from "@/lib/fetcher"
 
-const Intro: React.FC<IntroPropsDT> = ({ repos, totalPost, totalViews }) => {
+const Intro: React.FC<IntroPropsDT> = ({ totalPost, totalViews }) => {
+  const { data } = useSWR(`/api/github`, Fetcher, {
+    revalidateOnFocus: false,
+  })
+  const repos = data?.repos
+
   return (
     <div className="flex flex-col gap-10">
       <div className="flex flex-col gap-8 md:gap-0">
