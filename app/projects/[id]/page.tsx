@@ -1,19 +1,32 @@
+"use client"
+
 import { ProjectPagePropsDT } from "@/lib/types"
 import ProjectHeader from "../components/ProjectHeader"
 import ProjectDemo from "../components/ProjectDemo"
 import ProjectTags from "../components/ProjectTags"
 import GoBack from "@/layouts/GoBack"
 import Contact from "@/layouts/Contact"
-import axios from "axios"
+import useSWR from "swr"
+import Fetcher from "@/lib/fetcher"
+import Article from "@/app/blog/components/ui/Article"
+import Skeleton from "@/layouts/Skeleton"
 
-export default async function page({ params }: ProjectPagePropsDT) {
-  const response = await axios.get(`${process.env.BASE_URL}/api/projects`, {
-    method: "GET",
-    headers: { "Cache-Control": "no-cache" },
+export default function page({ params }: ProjectPagePropsDT) {
+  const { data, isLoading } = useSWR(`/api/projects`, Fetcher, {
+    revalidateOnFocus: false,
   })
-  const projects = await response.data
-  const project =
-    (await projects.find((project: any) => project.id == params.id)) || null
+  const projects = data
+  const project = projects?.find((project: any) => project.id == params.id)
+
+  if (isLoading) {
+    return (
+      <Article>
+        {[1, 2, 3, 4, 5].map((el, index) => (
+          <Skeleton key={`${el + index}`} />
+        ))}
+      </Article>
+    )
+  }
 
   return (
     <main className="flex flex-col gap-10 my-14 pagePb text-lightSecondary dark:text-darkSecondary">
