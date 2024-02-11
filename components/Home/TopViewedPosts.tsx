@@ -7,16 +7,16 @@ import Fetcher from "@/lib/fetcher"
 import { BlogPostDT } from "@/lib/types"
 
 const TopViewedPosts: React.FC = () => {
-  // const { data } = useSWR(`/api/posts`, Fetcher, {
-  //   revalidateOnFocus: false,
-  // })
-  // const posts = data
+  const { data } = useSWR(`/api/posts`, Fetcher, {
+    revalidateOnFocus: false,
+  })
+  const posts = data
 
-  // // get top 3 of the most viewed posts
-  // const topViewedPosts: BlogPostDT[] = posts?.sort(
-  //   (a: any, b: any) => (b.views || 0) - (a.views || 0)
-  // )
-  // const mostViewedPosts: BlogPostDT[] = topViewedPosts?.slice(0, 3)
+  // get top 3 of the most viewed posts
+  const topViewedPosts: BlogPostDT[] = posts?.sort(
+    (a: any, b: any) => (b.views || 0) - (a.views || 0)
+  )
+  const mostViewedPosts: BlogPostDT[] = topViewedPosts?.slice(0, 3)
 
   return (
     <motion.section
@@ -26,7 +26,7 @@ const TopViewedPosts: React.FC = () => {
     >
       <Title>Top Viewed Posts</Title>
 
-      {/* {mostViewedPosts.map((post, index) => (
+      {mostViewedPosts.map((post, index) => (
         <motion.div
           key={post.blogID}
           className="mt-10"
@@ -63,7 +63,7 @@ const TopViewedPosts: React.FC = () => {
             </div>
           </Link>
         </motion.div>
-      ))} */}
+      ))}
 
       <div className="mt-10 text-lightSecondary dark:text-darkSecondary hover:text-lightPrimary dark:hover:text-darkPrimary transition-colors duration-300 ease-in-out font-medium text-sm">
         <Link href="/blog" className="underline">
