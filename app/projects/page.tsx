@@ -1,11 +1,10 @@
 import Projects from "@/components/Projects/Projects"
 import Fetcher from "@/lib/fetcher"
-import axios from "axios"
 import useSWR from "swr"
 import Article from "../blog/components/ui/Article"
 import Skeleton from "@/layouts/Skeleton"
 
-export default async function ProjectsPage() {
+export default function ProjectsPage() {
   const { data, isLoading } = useSWR(`/api/projects`, Fetcher, {
     revalidateOnFocus: false,
   })
