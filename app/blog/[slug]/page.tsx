@@ -15,7 +15,7 @@ import Skeleton from "../components/ui/Skeleton"
 import useSWR from "swr"
 import Fetcher from "@/lib/fetcher"
 
-export default function page({ params }: PostPagePropsDT) {
+export default function Page({ params }: PostPagePropsDT) {
   const { data, isLoading } = useSWR(
     `/api/posts/?slug=${params.slug}`,
     Fetcher,
