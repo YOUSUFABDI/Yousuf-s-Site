@@ -11,7 +11,7 @@ import Article from "../components/ui/Article"
 import Note from "../../../layouts/Note"
 import GoBack from "../../../layouts/GoBack"
 import { BlogPostDT, PostPagePropsDT } from "@/lib/types"
-import Skeleton from "../components/ui/Skeleton"
+import Skeleton from "../../../layouts/Skeleton"
 import useSWR from "swr"
 import Fetcher from "@/lib/fetcher"
 

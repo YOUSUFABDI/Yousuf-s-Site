@@ -1,7 +1,7 @@
 "use client"
 
 import PostList from "@/app/blog/components/ui/PostList"
-import Skeleton from "./components/ui/Skeleton"
+import Skeleton from "../../layouts/Skeleton"
 import Article from "./components/ui/Article"
 import Fetcher from "@/lib/fetcher"
 import useSWR from "swr"
