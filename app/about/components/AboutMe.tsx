@@ -1,6 +1,6 @@
 import React from "react"
 import Title from "@/layouts/Title"
-import { aboutMe } from "../../lib/data"
+import { aboutMe } from "../../../lib/data"
 import { motion } from "framer-motion"
 import { MdOutlineFileDownload } from "react-icons/md"
 

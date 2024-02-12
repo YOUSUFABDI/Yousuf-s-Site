@@ -1,6 +1,6 @@
 import React from "react"
 import Title from "@/layouts/Title"
-import { skills } from "../../lib/data"
+import { skills } from "../../../lib/data"
 import { motion } from "framer-motion"
 
 const Skills: React.FC = () => {

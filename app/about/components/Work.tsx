@@ -2,7 +2,6 @@ import React from "react"
 import Title from "@/layouts/Title"
 import { motion } from "framer-motion"
 import SubTitle from "@/layouts/SubTitle"
-import { BASE_URL } from "@/lib/data"
 
 const Work: React.FC = () => {
   return (
@@ -26,7 +25,10 @@ const Work: React.FC = () => {
         </div>
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-9">
-            <img src={`${BASE_URL}/images/rasin-logo.png`} alt="rasiinLogo" />
+            <img
+              src="https://www.yusufdev.com/images/rasin-logo.png"
+              alt="rasiinLogo"
+            />
             <div className="flex flex-col gap-1">
               <Title>Full Stack Engineer</Title>
               <SubTitle>Rasin Tech</SubTitle>

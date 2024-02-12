@@ -6,7 +6,6 @@ import SubTitle from "../../layouts/SubTitle"
 import { MdOutlineFileDownload, MdOutlineShowChart } from "react-icons/md"
 import Avatar from "../../layouts/Avatar"
 import Link from "next/link"
-import { BASE_URL } from "../../lib/data"
 import { AiFillEye, AiFillGithub } from "react-icons/ai"
 import { IntroPropsDT } from "@/lib/types"
 import useSWR from "swr"
@@ -46,7 +45,7 @@ const Intro: React.FC<IntroPropsDT> = ({ totalPost, totalViews }) => {
             transition={{ duration: 0.5, delay: 0.5 }}
           >
             <Avatar
-              img={`${BASE_URL}/images/yusuf-n-bg.png`}
+              img="https://www.yusufdev.com/images/yusuf-n-bg.png"
               customClasses="h-24 w-24 rounded-full"
               height={24}
               width={24}

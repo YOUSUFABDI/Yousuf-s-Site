@@ -29,20 +29,5 @@
     "tags": ["Web app", "Php", "Python", "Mysql", "Reactjs", "CSS"],
     "githubLink": "https://github.com/YOUSUFABDI/Baargeele",
     "liveDemo": ""
-  },
-  {
-    "id": 3,
-    "projectName": "NOTE TAKER APP",
-    "createdDT": 2024,
-    "description": "Store your notes and access any time any where, start exploring it will be cool 😎.",
-    "coverImage": "images/noteTakerImg.png",
-    "images": [
-      "/images/noteTakerImgs/noteTakerphoneMockup1.png",
-      "/images/noteTakerImgs/NoteTakertabletMockup2.png",
-      "/images/noteTakerImgs/noteTakerphoneMockup3.png"
-    ],
-    "tags": ["Mobile app", "React native", "Typescript", "Python", "Mysql"],
-    "githubLink": "https://github.com/YOUSUFABDI/NoteTakerRN",
-    "liveDemo": ""
   }
 ]

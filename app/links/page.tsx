@@ -1,4 +1,4 @@
-import Links from "@/components/Links/Links"
+import Links from "@/app/links/components/Links"
 
 export default function LinksPage() {
   return (

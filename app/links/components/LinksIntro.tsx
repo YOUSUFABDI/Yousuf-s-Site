@@ -1,5 +1,5 @@
 import React from "react"
-import Avatar from "../../layouts/Avatar"
+import Avatar from "../../../layouts/Avatar"
 import Title from "@/layouts/Title"
 
 const LinksIntro: React.FC = () => {
