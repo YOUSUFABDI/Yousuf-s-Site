@@ -6,6 +6,7 @@ import SubTitle from "@/layouts/SubTitle"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { PostListPropsDT } from "@/lib/types"
+import FlipNumber from "@/layouts/FlipNumber"
 
 const PostList = ({ posts }: PostListPropsDT) => {
   return (
@@ -23,7 +24,10 @@ const PostList = ({ posts }: PostListPropsDT) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <SubTitle>{posts.length} posts about tech, code, more...</SubTitle>
+          <SubTitle>
+            <FlipNumber>{posts.length}</FlipNumber> posts about tech, code,
+            more...
+          </SubTitle>
         </motion.div>
       </div>
 

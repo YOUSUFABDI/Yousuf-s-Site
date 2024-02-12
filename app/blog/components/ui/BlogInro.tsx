@@ -2,6 +2,7 @@ import React from "react"
 import Avatar from "../../../../layouts/Avatar"
 import SubTitle from "../../../../layouts/SubTitle"
 import { BlogInroPropsDT } from "@/lib/types"
+import FlipNumber from "@/layouts/FlipNumber"
 
 const BlogInro: React.FC<BlogInroPropsDT> = ({ views, date, img, name }) => {
   return (
@@ -17,7 +18,7 @@ const BlogInro: React.FC<BlogInroPropsDT> = ({ views, date, img, name }) => {
           {name}
         </h1>
         <SubTitle>
-          {date} • {views} views
+          {date} • <FlipNumber>{views}</FlipNumber> views
         </SubTitle>
       </div>
     </div>

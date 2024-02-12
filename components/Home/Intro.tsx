@@ -11,6 +11,7 @@ import { AiFillEye, AiFillGithub } from "react-icons/ai"
 import { IntroPropsDT } from "@/lib/types"
 import useSWR from "swr"
 import Fetcher from "@/lib/fetcher"
+import FlipNumber from "@/layouts/FlipNumber"
 
 const Intro: React.FC<IntroPropsDT> = ({ totalPost, totalViews }) => {
   const { data } = useSWR(`/api/github`, Fetcher, {
@@ -58,7 +59,11 @@ const Intro: React.FC<IntroPropsDT> = ({ totalPost, totalViews }) => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="flex flex-col gap-4 mt-8 md:mt-0"
           >
-            <div className="flex items-center gap-1 text-lightSecondary dark:text-darkSecondary">
+            <Link
+              href="https://github.com/YOUSUFABDI"
+              target="blank"
+              className="flex items-center gap-1 text-lightSecondary dark:text-darkSecondary hover:opacity-75 transition-opacity duration-150"
+            >
               <div className="flex items-center gap-3">
                 <span>
                   <AiFillGithub />
@@ -68,13 +73,16 @@ const Intro: React.FC<IntroPropsDT> = ({ totalPost, totalViews }) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
                 >
-                  {repos}
+                  <FlipNumber>{repos}</FlipNumber>
                 </motion.span>
               </div>
               <span>Repository</span>
-            </div>
+            </Link>
 
-            <div className="flex items-center gap-1 text-lightSecondary dark:text-darkSecondary">
+            <Link
+              href="/blog"
+              className="flex items-center gap-1 text-lightSecondary dark:text-darkSecondary hover:opacity-75 transition-opacity duration-150"
+            >
               <div className="flex items-center gap-3">
                 <span>
                   <MdOutlineShowChart />
@@ -84,13 +92,16 @@ const Intro: React.FC<IntroPropsDT> = ({ totalPost, totalViews }) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
                 >
-                  {totalPost}
+                  <FlipNumber>{totalPost}</FlipNumber>
                 </motion.span>
               </div>
               <span>Total Blog</span>
-            </div>
+            </Link>
 
-            <div className="flex items-center gap-1 text-lightSecondary dark:text-darkSecondary">
+            <Link
+              href="/blog"
+              className="flex items-center gap-1 text-lightSecondary dark:text-darkSecondary hover:opacity-75 transition-opacity duration-150"
+            >
               <div className="flex items-center gap-3">
                 <span>
                   <AiFillEye />
@@ -100,11 +111,11 @@ const Intro: React.FC<IntroPropsDT> = ({ totalPost, totalViews }) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
                 >
-                  {totalViews}
+                  <FlipNumber>{totalViews}</FlipNumber>
                 </motion.span>
               </div>
               <span>Total Blog Views</span>
-            </div>
+            </Link>
           </motion.div>
         </div>
       </div>
