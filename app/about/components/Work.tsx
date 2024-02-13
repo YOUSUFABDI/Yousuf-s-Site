@@ -26,7 +26,7 @@ const Work: React.FC = () => {
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-9">
             <img
-              src="https://www.yusufdev.com/images/rasin-logo.png"
+              src="https://blog.yusufdev.com/images/rasin-logo.png"
               alt="rasiinLogo"
             />
             <div className="flex flex-col gap-1">
