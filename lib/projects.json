@@ -4,11 +4,11 @@
     "projectName": "Som BD",
     "createdDT": 2023,
     "description": "Somali Blood donation is a system that makes it easy for people to donate blood online in a timely manner for both donors and recipients.",
-    "coverImage": "https://www.yusufdev.com/images/somBDImg.png",
+    "coverImage": "https://blog.yusufdev.com/images/somBDImg.png",
     "images": [
-      "https://www.yusufdev.com/images/somBdImgs/somBdTablet-phonemockup.png",
-      "https://www.yusufdev.com/images/somBdImgs/somBdtabletMockupSm.png",
-      "https://www.yusufdev.com/images/somBdImgs/somBdtabletMockupnLg.png"
+      "https://blog.yusufdev.com/images/somBdImgs/somBdTablet-phonemockup.png",
+      "https://blog.yusufdev.com/images/somBdImgs/somBdtabletMockupSm.png",
+      "https://blog.yusufdev.com/images/somBdImgs/somBdtabletMockupnLg.png"
     ],
     "tags": ["Web app", "Php", "Mysql", "Javascript", "Bootsrap"],
     "githubLink": "https://github.com/YOUSUFABDI/som-bd-system",
@@ -19,12 +19,12 @@
     "projectName": "Baargeelle",
     "createdDT": 2023,
     "description": "Baargelle uc is platform that pubg players in somalia can buy uc or pubg money using evc plus. i collaborate this project with another developer.",
-    "coverImage": "https://www.yusufdev.com/images/bargelleImg.png",
+    "coverImage": "https://blog.yusufdev.com/images/bargelleImg.png",
     "images": [
-      "https://www.yusufdev.com/images/baargelleImgs/baargelleBdtablet-phoneMockupLg.png",
-      "https://www.yusufdev.com/images/baargelleImgs/baargelleBdtabletMockupnSm.png",
-      "https://www.yusufdev.com/images/baargelleImgs/baargelleBdtabletMockupnLg.png",
-      "https://www.yusufdev.com/images/baargelleImgs/BaargelleBdphoneMockupLg.png"
+      "https://blog.yusufdev.com/images/baargelleImgs/baargelleBdtablet-phoneMockupLg.png",
+      "https://blog.yusufdev.com/images/baargelleImgs/baargelleBdtabletMockupnSm.png",
+      "https://blog.yusufdev.com/images/baargelleImgs/baargelleBdtabletMockupnLg.png",
+      "https://blog.yusufdev.com/images/baargelleImgs/BaargelleBdphoneMockupLg.png"
     ],
     "tags": ["Web app", "Php", "Python", "Mysql", "Reactjs", "CSS"],
     "githubLink": "https://github.com/YOUSUFABDI/Baargeele",
