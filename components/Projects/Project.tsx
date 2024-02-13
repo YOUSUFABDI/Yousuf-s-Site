@@ -21,7 +21,7 @@ const Project: React.FC<ProjecTypePropsDT> = ({
     >
       <Link
         href={`projects/${id}`}
-        className="flex flex-col gap-5 md:flex-row cursor-pointer hover:opacity-60 hover:border transition-opacity duration-150"
+        className="flex flex-col gap-5 md:flex-row cursor-pointer hover:opacity-60  transition-opacity duration-150"
       >
         <div className="flex justify-center flex-[0.3] bg-[#E8E8E8] dark:bg-projectBg rounded-md w-full md:w-fit px-8 pt-7">
           <img
