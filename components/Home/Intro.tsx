@@ -45,7 +45,7 @@ const Intro: React.FC<IntroPropsDT> = ({ totalPost, totalViews }) => {
             transition={{ duration: 0.5, delay: 0.5 }}
           >
             <Avatar
-              img="https://www.yusufdev.com/images/yusuf-n-bg.png"
+              img="https://blog.yusufdev.com/images/yusuf-n-bg.png"
               customClasses="h-24 w-24 rounded-full"
               height={24}
               width={24}

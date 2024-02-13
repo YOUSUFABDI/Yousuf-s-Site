@@ -6,7 +6,7 @@ const LinksIntro: React.FC = () => {
   return (
     <div className="flex flex-col gap-5 items-center">
       <Avatar
-        img="/images/yusuf-n-bg.png"
+        img="https://blog.yusufdev.com/images/yusuf-n-bg.png"
         customClasses="h-24 w-24 rounded-full"
         width={24}
         height={24}
