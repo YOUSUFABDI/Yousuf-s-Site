@@ -57,3 +57,7 @@
 .light_scroll::-webkit-scrollbar-thumb:hover {
   background-color: #555;
 }
+
+.btns {
+  @apply mt-4 p-2 bg-hoverDark  text-darkPrimary rounded-md hover:bg-darkBg focus:outline-none focus:bg-darkBg dark:bg-lightBg dark:text-lightPrimary dark:hover:bg-lightSecondary dark:focus:bg-lightSecondary transition-all duration-150 ease-in-out;
+}
