@@ -102,7 +102,7 @@ const CreateBlogForm = () => {
     setLoading(true)
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/createPost",
+        "https://www.yusufdev.com/api/createPost",
         filteredFormData
       )
       const data = await response.data
