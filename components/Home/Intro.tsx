@@ -65,7 +65,7 @@ const Intro: React.FC<IntroPropsDT> = ({ totalPost, totalViews }) => {
             >
               <div className="flex items-center gap-3">
                 <span>
-                  <AiFillGithub />
+                  <AiFillGithub size={18} />
                 </span>
                 <motion.span
                   initial={{ opacity: 0, y: 10 }}
@@ -84,7 +84,7 @@ const Intro: React.FC<IntroPropsDT> = ({ totalPost, totalViews }) => {
             >
               <div className="flex items-center gap-3">
                 <span>
-                  <MdOutlineShowChart />
+                  <MdOutlineShowChart size={18} />
                 </span>
                 <motion.span
                   initial={{ opacity: 0, y: 10 }}
@@ -103,7 +103,7 @@ const Intro: React.FC<IntroPropsDT> = ({ totalPost, totalViews }) => {
             >
               <div className="flex items-center gap-3">
                 <span>
-                  <AiFillEye />
+                  <AiFillEye size={18} />
                 </span>
                 <motion.span
                   initial={{ opacity: 0, y: 10 }}
