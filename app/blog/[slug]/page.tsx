@@ -14,6 +14,7 @@ import { BlogPostDT, PostPagePropsDT } from "@/lib/types"
 import Skeleton from "../../../layouts/Skeleton"
 import useSWR from "swr"
 import Fetcher from "@/lib/fetcher"
+import AddBanner from "@/components/ads"
 
 export default function Page({ params }: PostPagePropsDT) {
   const { data, isLoading } = useSWR(
@@ -38,6 +39,12 @@ export default function Page({ params }: PostPagePropsDT) {
   return (
     <Article>
       <Box>
+        {/* <AddBanner
+          data-ad-slot=""
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        /> */}
+
         <BlogTitle>{post?.mainTitle}</BlogTitle>
         <SubTitle>{post?.description}</SubTitle>
         <BlogInro

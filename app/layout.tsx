@@ -21,6 +21,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {process.env.NODE_ENV === "production" && (
+          <script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.NEXT_PUBLIC_ADS_CLIENT_ID}`}
+            crossOrigin="anonymous"
+          ></script>
+        )}
+      </head>
       <body className={`${inter.className} bg-lightBg dark:bg-darkBg`}>
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
