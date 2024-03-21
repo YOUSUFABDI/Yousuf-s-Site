@@ -3,8 +3,27 @@
 import { useState } from "react"
 import axios from "axios"
 
+type Title = {
+  title: string
+  images: { image: string }[]
+  paragraphs: { paragraph: string }[]
+}
+
+type FormData = {
+  mainTitle: string
+  description: string
+  views: number
+  createdDate: string
+  creatorImage: string
+  creatorName: string
+  coverImage: string
+  tag: string
+  titles: Title[]
+  allImages: { image: string }[]
+}
+
 const CreateBlogForm = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     mainTitle: "",
     description: "",
     views: 0,

@@ -15,7 +15,7 @@ type BlogPostDT = {
   creatorImage: string
   creatorName: string
   coverImage: string
-  tag: string
+  tag: any
   titles: TitleDT[]
   allImages: { image: string }[]
 }
