@@ -8,16 +8,17 @@ datasource db {
 }
 
 model Blog {
-  blogID       Int     @id @default(autoincrement())
+  blogID       Int         @id @default(autoincrement())
   mainTitle    String
   description  String?
-  views        Int     @default(0)
+  views        Int         @default(0)
   createdDate  String
   creatorImage String?
   creatorName  String
   coverImage   String?
-  titles       Title[]
+  tag          Int
   allImages    AllImages[]
+  titles       Title[]
 }
 
 model Title {
@@ -26,7 +27,7 @@ model Title {
   blogID     Int
   images     Image[]
   paragraphs Paragraph[]
-  blog       Blog        @relation(fields: [blogID], references: [blogID])
+  blog       Blog        @relation(fields: [blogID], references: [blogID], onDelete: Cascade)
 
   @@index([blogID], map: "Title_blogID_fkey")
 }
@@ -35,7 +36,7 @@ model Paragraph {
   paragraph_id Int    @id @default(autoincrement())
   paragraph    String @db.VarChar(2000)
   titleID      Int
-  title        Title  @relation(fields: [titleID], references: [titleID])
+  title        Title  @relation(fields: [titleID], references: [titleID], onDelete: Cascade)
 
   @@index([titleID], map: "Paragraph_titleID_fkey")
 }
@@ -44,16 +45,16 @@ model Image {
   imageID Int    @id @default(autoincrement())
   image   String
   titleID Int
-  title   Title  @relation(fields: [titleID], references: [titleID])
+  title   Title  @relation(fields: [titleID], references: [titleID], onDelete: Cascade)
 
   @@index([titleID], map: "Image_titleID_fkey")
 }
 
 model AllImages {
-  imageID    Int         @id @default(autoincrement())
-  image      String
-  blogID     Int
-  blog       Blog        @relation(fields: [blogID], references: [blogID])
+  imageID Int    @id @default(autoincrement())
+  image   String
+  blogID  Int
+  blog    Blog   @relation(fields: [blogID], references: [blogID], onDelete: Cascade)
 
-   @@index([blogID], map: "Title_blogID_fkey")
+  @@index([blogID], map: "Title_blogID_fkey")
 }

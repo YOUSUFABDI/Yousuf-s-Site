@@ -39,7 +39,7 @@ const Header: React.FC = () => {
   }, [])
 
   return (
-    <header className="backdrop-blur-md bg-lightBg/70 dark:bg-darkBg/70 sticky top-0 z-50">
+    <header className="backdrop-blur-md bg-lightBg/70 dark:bg-darkBg/70 sticky top-0 z-50 border-b dark:border-darkSecondary/10">
       <div className="flex items-center justify-between gap-5 py-3 max-w-[43.75rem] mx-5 md:mx-auto  relative bg-transparent">
         <div>
           <Link
