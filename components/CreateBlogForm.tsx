@@ -12,6 +12,7 @@ const CreateBlogForm = () => {
     creatorImage: "",
     creatorName: "",
     coverImage: "",
+    tag: "",
     titles: [
       { title: "", images: [{ image: "" }], paragraphs: [{ paragraph: "" }] },
     ],
@@ -161,6 +162,13 @@ const CreateBlogForm = () => {
         value={formData.coverImage}
         onChange={(e) => handleInputChange("coverImage", e.target.value)}
         placeholder="Cover Image URL"
+        className="block w-full mt-2 p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+      />
+      <input
+        type="text"
+        value={formData.tag}
+        onChange={(e) => handleInputChange("tag", e.target.value)}
+        placeholder="Tag"
         className="block w-full mt-2 p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
       />
 

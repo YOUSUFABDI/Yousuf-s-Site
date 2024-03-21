@@ -15,6 +15,7 @@ type BlogPostDT = {
   creatorImage: string
   creatorName: string
   coverImage: string
+  tag: string
   titles: TitleDT[]
   allImages: { image: string }[]
 }
@@ -31,6 +32,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
         creatorImage,
         creatorName,
         coverImage,
+        tag,
         titles,
         allImages,
       } = body as BlogPostDT
@@ -44,6 +46,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
           creatorImage,
           creatorName,
           coverImage,
+          tag,
           titles: {
             create: titles.map((title) => ({
               title: title.title,
