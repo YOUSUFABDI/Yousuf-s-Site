@@ -16,7 +16,7 @@ model Blog {
   creatorImage String?
   creatorName  String
   coverImage   String?
-  tag          String      @db.VarChar(2000)
+  tag          String
   allImages    AllImages[]
   titles       Title[]
 }

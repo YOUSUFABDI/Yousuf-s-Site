@@ -25,7 +25,7 @@ const PostList = ({ posts }: PostListPropsDT) => {
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <SubTitle>
-            <FlipNumber>{posts.length}</FlipNumber> posts about tech, code,
+            <FlipNumber>{posts?.length}</FlipNumber> posts about tech, code,
             more...
           </SubTitle>
         </motion.div>
@@ -36,7 +36,7 @@ const PostList = ({ posts }: PostListPropsDT) => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
       >
-        {posts.map((post) => (
+        {posts?.map((post) => (
           <Link
             key={post.blogID}
             href={`blog/${post.blogID}`}

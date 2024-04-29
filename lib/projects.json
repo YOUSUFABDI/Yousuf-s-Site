@@ -12,7 +12,7 @@
     ],
     "tags": ["Web app", "Php", "Mysql", "Javascript", "Bootsrap"],
     "githubLink": "https://github.com/YOUSUFABDI/som-bd-system",
-    "liveDemo": ""
+    "liveDemo": "https://som-bd.yusufdev.com/som-bd-system/views/home.php"
   },
   {
     "id": 2,
@@ -28,6 +28,6 @@
     ],
     "tags": ["Web app", "Php", "Python", "Mysql", "Reactjs", "CSS"],
     "githubLink": "https://github.com/YOUSUFABDI/Baargeele",
-    "liveDemo": ""
+    "liveDemo": "https://github.com/YOUSUFABDI/Baargeele"
   }
 ]

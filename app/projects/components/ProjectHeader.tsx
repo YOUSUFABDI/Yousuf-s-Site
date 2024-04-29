@@ -12,6 +12,7 @@ const ProjectHeader: React.FC<ProjectHeaderPropsDT> = ({
   projectName,
   describtion,
   githubLink,
+  liveDemo,
 }) => {
   return (
     <div className="flex flex-col gap-5">
@@ -36,7 +37,7 @@ const ProjectHeader: React.FC<ProjectHeaderPropsDT> = ({
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           <Link
-            href={githubLink}
+            href={liveDemo}
             target="blank"
             className="group text-sm transition-colors duration-150 ease-in-out"
           >
