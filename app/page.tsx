@@ -6,7 +6,7 @@ import useSWR from "swr"
 import Fetcher from "@/lib/fetcher"
 
 export default function HomePage() {
-  const { data } = useSWR(`/api/posts`, Fetcher, {
+  const { data } = useSWR(`/api/posts/get_posts`, Fetcher, {
     revalidateOnFocus: false,
   })
   const posts = data

@@ -17,7 +17,7 @@ import Fetcher from "@/lib/fetcher"
 
 export default function Page({ params }: PostPagePropsDT) {
   const { data, isLoading } = useSWR(
-    `/api/posts/?slug=${params.slug}`,
+    `/api/posts/get_posts?slug=${params.slug}`,
     Fetcher,
     {
       revalidateOnFocus: false,

@@ -36,6 +36,7 @@ export type NotePropsDT = {
 
 export type ParagraphPropsDT = {
   children: React.ReactNode
+  customClasses?: string
 }
 
 export type SubTitlePropsDT = {
@@ -48,6 +49,7 @@ export type ThemeSwitchPropsDT = {
 
 export type TitlePropsDT = {
   children: React.ReactNode
+  customClasses?: string
 }
 
 export type ArticlePropsDT = {

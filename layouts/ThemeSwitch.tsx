@@ -26,7 +26,7 @@ const ThemeSwitch = ({ setIsMoodOpen }: ThemeSwitchPropsDT) => {
   }
 
   return (
-    <div className="flex flex-col gap-1 absolute right-1 top-10 bg-white dark:bg-black shadow-lg rounded-md w-44 p-2">
+    <div className="flex flex-col gap-1 absolute right-1 top-12 bg-white dark:bg-black shadow-lg rounded-md w-44 p-2">
       {themes.map((t) => (
         <button
           key={t.value}

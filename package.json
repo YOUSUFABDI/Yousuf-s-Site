@@ -14,6 +14,8 @@
     "axios": "^1.6.7",
     "clsx": "^2.1.0",
     "framer-motion": "^10.17.12",
+    "lucide": "^0.378.0",
+    "lucide-react": "^0.378.0",
     "next": "14.0.4",
     "postinstall": "^0.9.0",
     "react": "^18",
