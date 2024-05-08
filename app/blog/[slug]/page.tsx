@@ -1,19 +1,20 @@
 "use client"
 
-import React from "react"
-import BlogInro from "../components/ui/BlogInro"
 import SubTitle from "@/layouts/SubTitle"
-import Paragraph from "../../../layouts/Paragraph"
-import Box from "../components/ui/Box"
-import BlogTitle from "../components/ui/BlogTitle"
-import Avatar from "../../../layouts/Avatar"
-import Article from "../components/ui/Article"
-import Note from "../../../layouts/Note"
-import GoBack from "../../../layouts/GoBack"
-import { BlogPostDT, PostPagePropsDT } from "@/lib/types"
-import Skeleton from "../../../layouts/Skeleton"
-import useSWR from "swr"
 import Fetcher from "@/lib/fetcher"
+import { BlogPostDT, PostPagePropsDT } from "@/lib/types"
+import React from "react"
+import useSWR from "swr"
+import Avatar from "../../../layouts/Avatar"
+import GoBack from "../../../layouts/GoBack"
+import Note from "../../../layouts/Note"
+import Paragraph from "../../../layouts/Paragraph"
+import Article from "../components/ui/Article"
+import BlogInro from "../components/ui/BlogInro"
+import BlogTitle from "../components/ui/BlogTitle"
+import Box from "../components/ui/Box"
+
+import { motion } from "framer-motion"
 
 export default function Page({ params }: PostPagePropsDT) {
   const { data, isLoading } = useSWR(
@@ -28,8 +29,8 @@ export default function Page({ params }: PostPagePropsDT) {
   if (isLoading) {
     return (
       <Article>
-        {[1, 2, 3, 4, 5].map((el, index) => (
-          <Skeleton key={`${el + index}`} />
+        {[1].map((el, index) => (
+          <SkeletonArticle key={`${el + index}`} />
         ))}
       </Article>
     )
@@ -89,5 +90,59 @@ export default function Page({ params }: PostPagePropsDT) {
 
       <GoBack text="All blogs" link="blog" />
     </Article>
+  )
+}
+
+const SkeletonArticle = () => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="flex flex-col gap-5 my-14 pagePb"
+    >
+      {/* Placeholder for Box with BlogTitle, SubTitle, Avatar */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className="flex items-center gap-5"
+      >
+        <div className="h-10 w-10  bg-gray-200 rounded-md p-4 animate-pulse"></div>
+        <div className="flex flex-col gap-2">
+          <div className="h-4 w-36 bg-gray-200 rounded-md  animate-pulse"></div>
+          <div className="h-4 w-20 bg-gray-200 rounded-md  animate-pulse"></div>
+        </div>
+      </motion.div>
+
+      {/* Placeholder for Avatar */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="h-48 bg-gray-200 rounded-md animate-pulse"
+      ></motion.div>
+
+      {/* Placeholder for Box with BlogTitle and Paragraphs */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="flex flex-col gap-1"
+      >
+        <div className="h-8 w-36 bg-gray-200 rounded-md  animate-pulse"></div>
+        <div className="h-10 w-96 bg-gray-200 rounded-md  animate-pulse"></div>
+        <div className="h-10 w-96 bg-gray-200 rounded-md  animate-pulse"></div>
+        <div className="h-10 w-96 bg-gray-200 rounded-md  animate-pulse"></div>
+      </motion.div>
+
+      {/* Placeholder for Avatar */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        className="h-48 bg-gray-200 rounded-md  animate-pulse"
+      ></motion.div>
+    </motion.div>
   )
 }
