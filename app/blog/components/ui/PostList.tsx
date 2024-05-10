@@ -14,11 +14,18 @@ import useSWR from "swr"
 
 const PostList = () => {
   const [displayedPosts, setDisplayedPosts] = useState(3)
+  const [search, setSearch] = useState("")
 
   const { data: posts, isLoading } = useSWR(
     `/api/posts/get_more_posts?offset=${displayedPosts}`,
     Fetcher
   )
+
+  const { data: allPosts } = useSWR(`/api/posts/get_posts`, Fetcher)
+
+  const handleSearch = (value: string) => {
+    setSearch(value)
+  }
 
   const loadMorePosts = () => {
     setDisplayedPosts((prevDisplayedPosts) => prevDisplayedPosts + 3)
@@ -32,6 +39,17 @@ const PostList = () => {
       return
     }
   }
+
+  const filteredPosts = posts?.filter((post: BlogPostDT) => {
+    const lowerCaseSearch = search.toLowerCase()
+
+    return (
+      post.mainTitle.toLowerCase().includes(lowerCaseSearch) ||
+      post.description.toLowerCase().includes(lowerCaseSearch) ||
+      post.tag.toLowerCase().includes(lowerCaseSearch) ||
+      post.creatorName.toLowerCase().includes(lowerCaseSearch)
+    )
+  })
 
   return (
     <div className="flex flex-col my-14 w-full">
@@ -48,11 +66,28 @@ const PostList = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
+            className="flex justify-between"
           >
-            <SubTitle>
-              <FlipNumber>{displayedPosts}</FlipNumber> posts about tech, code,
-              more...
-            </SubTitle>
+            <div>
+              <SubTitle>
+                <FlipNumber>{displayedPosts}</FlipNumber> posts about tech,
+                code, more...
+              </SubTitle>
+              <div className="flex items-center gap-4 mt-1">
+                <button className="text-white">#Tech</button>
+                <button className="text-white">#Coding</button>
+              </div>
+            </div>
+
+            <div>
+              <input
+                type="text"
+                placeholder="search.."
+                className="w-full bg-gradient-to-r from-neutral-400 to-slate-900 dark:from-[#282828] dark:to-[#000000] rounded-md text-white pl-2 py-2"
+                value={search}
+                onChange={(e) => handleSearch(e.target.value)}
+              />
+            </div>
           </motion.div>
         </div>
         {isLoading ? (
@@ -65,17 +100,17 @@ const PostList = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="grid grid-cols-[1fr, 1fr, 1fr, 1fr] grid-rows-[1fr, 1fr, 1fr, 1fr] gap-y-[10px] gap-x-7"
             >
-              {posts?.map((post: BlogPostDT, index: any) => (
+              {filteredPosts?.map((post: BlogPostDT, index: any) => (
                 <Link
                   key={post.blogID}
                   href={`blog/${post.blogID}`}
                   className={`relative bg-gradient-to-r from-neutral-400 to-slate-900 dark:from-[#282828] dark:to-[#000000]  rounded-xl text-white animate-in 
             ${
               index === 0 &&
-              "col-start-1 col-end-3 row-start-1 row-end-3 h-[420px] "
+              "col-start-1 col-end-3 row-start-1 row-end-3 h-full lg:h-[420px] "
             }
-            ${index === 1 && "col-start-3 col-end-4 h-[200px]"}
-            ${index === 2 && "col-start-3 col-end-4 h-[200px]"}
+            ${index === 1 && "col-start-3 col-end-4 h-full lg:h-[200px]"}
+            ${index === 2 && "col-start-3 col-end-4 h-full lg:h-[200px]"}
     `}
                   style={{ "--index": 3 } as React.CSSProperties}
                 >
@@ -93,11 +128,7 @@ const PostList = () => {
                   {/* top */}
 
                   {/* bottom */}
-                  <div
-                    className={`flex flex-col p-[10px] w-full ${
-                      index === 0 && "h-[308px]"
-                    }`}
-                  >
+                  <div className={`flex flex-col p-[10px] w-full`}>
                     <div className="flex flex-col gap-[10px]">
                       <Title customClasses="font-bold text-lg text-white">
                         {post.mainTitle.length > 8
@@ -110,19 +141,19 @@ const PostList = () => {
                           : post.description}
                       </Paragraph>
                       <div className="flex flex-col gap-[6px]">
-                        <div className="flex items-center justify-between">
-                          <Paragraph customClasses="text-base text-white">
+                        <div className="flex flex-col lg:flex-row lg:items-center justify-between w-full lg:gap-10 ">
+                          <Paragraph customClasses="text-base text-white flex-1 ">
                             By {post.creatorName}
                           </Paragraph>
-                          <Paragraph customClasses="text-base text-white">
+                          <Paragraph customClasses="text-base text-white flex-1 ">
                             On {post.createdDate}
                           </Paragraph>
                         </div>
-                        <div className="flex items-center justify-between">
-                          <Paragraph customClasses="text-base text-white">
+                        <div className="flex flex-col lg:flex-row lg:items-center justify-between w-full lg:gap-10">
+                          <Paragraph customClasses="text-base text-white flex-1 ">
                             Reading time: 10-25 minutes
                           </Paragraph>
-                          <Paragraph customClasses="text-base text-white">
+                          <Paragraph customClasses="text-base text-white self-start flex-1 ">
                             Views: {post.views}
                           </Paragraph>
                         </div>
@@ -130,7 +161,9 @@ const PostList = () => {
                     </div>
                     <Link
                       href={`blog/${post.blogID}`}
-                      className="uppercase font-bold text-lg underline absolute bottom-[10px]"
+                      className={`uppercase  font-bold text-sm lg:text-lg underline absolute bottom-[10px] ${
+                        index === 0 ? "block" : "hidden lg:block"
+                      } `}
                     >
                       Continue Reading
                     </Link>

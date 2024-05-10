@@ -46,7 +46,7 @@ const Intro: React.FC<IntroPropsDT> = ({ totalPost, totalViews }) => {
           >
             <Avatar
               img="https://blog.yusufdev.com/images/yusuf.png"
-              customClasses="h-24 w-24 rounded-full"
+              customClasses="h-24 w-24 rounded-full aspect-square"
               height={24}
               width={24}
             />

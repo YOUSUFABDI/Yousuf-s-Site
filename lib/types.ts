@@ -185,6 +185,7 @@ export type BlogPostDT = {
   titles: BlogPostTitleDT[]
   images: BlogPostImageDT[]
   allImages: BlogPostAllImgsDT[]
+  tag: string
 }
 
 // home page types
