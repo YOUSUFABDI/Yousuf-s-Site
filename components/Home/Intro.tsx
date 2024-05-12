@@ -1,10 +1,10 @@
 import React from "react"
 import { FiArrowUpRight } from "react-icons/fi"
 import { motion } from "framer-motion"
-import Title from "../../layouts/Title"
-import SubTitle from "../../layouts/SubTitle"
+import Title from "@/layouts/Title"
+import SubTitle from "@/layouts/SubTitle"
 import { MdOutlineFileDownload, MdOutlineShowChart } from "react-icons/md"
-import Avatar from "../../layouts/Avatar"
+import Avatar from "@/layouts/Avatar"
 import Link from "next/link"
 import { AiFillEye, AiFillGithub } from "react-icons/ai"
 import { IntroPropsDT } from "@/lib/types"
@@ -45,7 +45,7 @@ const Intro: React.FC<IntroPropsDT> = ({ totalPost, totalViews }) => {
             transition={{ duration: 0.5, delay: 0.5 }}
           >
             <Avatar
-              img="https://blog.yusufdev.com/images/yusuf.png"
+              img="https://blog.yusufdev.com/images/yu.png"
               customClasses="h-24 w-24 rounded-full aspect-square"
               height={24}
               width={24}

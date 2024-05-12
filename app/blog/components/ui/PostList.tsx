@@ -10,13 +10,13 @@ import { motion } from "framer-motion"
 import { SquareChevronLeft, SquareChevronRight } from "lucide-react"
 import Link from "next/link"
 import React, { useState } from "react"
-import useSWR from "swr"
+import useSWR, { mutate } from "swr"
 
 const PostList = () => {
   const [displayedPosts, setDisplayedPosts] = useState(3)
   const [search, setSearch] = useState("")
 
-  const { data: posts, isLoading } = useSWR(
+  const { isLoading } = useSWR(
     `/api/posts/get_more_posts?offset=${displayedPosts}`,
     Fetcher
   )
@@ -28,7 +28,14 @@ const PostList = () => {
   }
 
   const loadMorePosts = () => {
-    setDisplayedPosts((prevDisplayedPosts) => prevDisplayedPosts + 3)
+    const remainingPosts = allPosts.length - displayedPosts
+    const postsToLoad = Math.min(3, remainingPosts)
+    const nextOffset = displayedPosts + postsToLoad
+
+    if (postsToLoad > 0) {
+      setDisplayedPosts(nextOffset)
+      mutate(`/api/posts/get_more_posts?offset=${nextOffset}`)
+    }
   }
 
   const showPreviousPosts = () => {
@@ -40,7 +47,7 @@ const PostList = () => {
     }
   }
 
-  const filteredPosts = posts?.filter((post: BlogPostDT) => {
+  const filteredPosts = allPosts?.filter((post: BlogPostDT) => {
     const lowerCaseSearch = search.toLowerCase()
 
     return (
@@ -50,6 +57,12 @@ const PostList = () => {
       post.creatorName.toLowerCase().includes(lowerCaseSearch)
     )
   })
+
+  const startIndex = Math.max(0, filteredPosts?.length - displayedPosts)
+  const displayedFilteredPosts = filteredPosts?.slice(
+    startIndex,
+    startIndex + 3
+  )
 
   return (
     <div className="flex flex-col my-14 w-full">
@@ -100,7 +113,7 @@ const PostList = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="grid grid-cols-[1fr, 1fr, 1fr, 1fr] grid-rows-[1fr, 1fr, 1fr, 1fr] gap-y-[10px] gap-x-[10px] lg:gap-x-7"
             >
-              {filteredPosts?.map((post: BlogPostDT, index: any) => (
+              {displayedFilteredPosts?.map((post: BlogPostDT, index: any) => (
                 <Link
                   key={post.blogID}
                   href={`blog/${post.blogID}`}
@@ -137,7 +150,7 @@ const PostList = () => {
                       </Title>
                       <Paragraph customClasses="text-sm text-white">
                         {post.description.length > 50
-                          ? `${post.description.slice(0, 50)}`
+                          ? `${post.description.slice(0, 23)}...`
                           : post.description}
                       </Paragraph>
                       <div className="flex flex-col gap-[6px]">
