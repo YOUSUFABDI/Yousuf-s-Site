@@ -87,8 +87,12 @@ const PostList = () => {
                 code, more...
               </SubTitle>
               <div className="flex items-center gap-4 mt-1">
-                <button className="text-white">#Tech</button>
-                <button className="text-white">#Coding</button>
+                <button className="text-lightPrimary dark:text-darkPrimary">
+                  #Tech
+                </button>
+                <button className="text-lightPrimary dark:text-darkPrimary">
+                  #Coding
+                </button>
               </div>
             </div>
 
