@@ -11,7 +11,7 @@ const Projects = ({ projects }: ProjectListPropsDT) => {
       <ProjectsHeader />
 
       <div className="flex flex-col gap-[1.875rem] md:gap-10">
-        {projects.map((project) => (
+        {projects?.map((project) => (
           <Project key={project.id} {...project} />
         ))}
       </div>

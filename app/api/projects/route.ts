@@ -1,9 +1,12 @@
 import { NextRequest } from "next/server"
-import { getProjects } from "@/lib/utils"
+import path from "path"
+import { promises as fs } from "fs"
 
 export async function GET(req: NextRequest) {
   try {
-    const projects = await getProjects()
+    const dataFilePath = await path.join(process.cwd(), "/public/projects.json")
+    const data = await fs.readFile(dataFilePath, "utf-8")
+    const projects = await JSON.parse(data)
 
     if (!projects) {
       return new Response("projects not found", { status: 404 })
