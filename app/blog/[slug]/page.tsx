@@ -47,12 +47,14 @@ export default function Page({ params }: PostPagePropsDT) {
           date={post?.createdDate}
           views={post?.views}
         />
-        <Avatar
-          img={post?.allImages[0].image}
-          customClasses="w-[1020px] rounded-md"
-          width={1020}
-          height={548}
-        />
+        {post?.allImages[0]?.image && (
+          <Avatar
+            img={post?.allImages[0]?.image && post?.allImages[0]?.image}
+            customClasses="w-[1020px] rounded-md"
+            width={1020}
+            height={548}
+          />
+        )}
       </Box>
 
       {post?.titles.map((title) => (
