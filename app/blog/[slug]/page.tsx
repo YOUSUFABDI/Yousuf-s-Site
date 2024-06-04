@@ -73,7 +73,10 @@ export default function Page({ params }: PostPagePropsDT) {
             </React.Fragment>
           ))}
           {title.images.map((image) => (
-            <Avatar className="w-[1020px] rounded-md h-[390px]">
+            <Avatar
+              key={image.imageID}
+              className="w-[1020px] rounded-md h-[390px]"
+            >
               <AvatarImage
                 className="object-cover object-center"
                 src={image.image}
