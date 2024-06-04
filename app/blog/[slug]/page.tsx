@@ -5,7 +5,6 @@ import Fetcher from "@/lib/fetcher"
 import { BlogPostDT, PostPagePropsDT } from "@/lib/types"
 import React from "react"
 import useSWR from "swr"
-import Avatar from "../../../layouts/Avatar"
 import GoBack from "../../../layouts/GoBack"
 import Note from "../../../layouts/Note"
 import Paragraph from "../../../layouts/Paragraph"
@@ -13,8 +12,8 @@ import Article from "../components/ui/Article"
 import BlogInro from "../components/ui/BlogInro"
 import BlogTitle from "../components/ui/BlogTitle"
 import Box from "../components/ui/Box"
-
 import { motion } from "framer-motion"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 export default function Page({ params }: PostPagePropsDT) {
   const { data, isLoading } = useSWR(
@@ -48,12 +47,13 @@ export default function Page({ params }: PostPagePropsDT) {
           views={post?.views}
         />
         {post?.allImages[0]?.image && (
-          <Avatar
-            img={post?.allImages[0]?.image && post?.allImages[0]?.image}
-            customClasses="w-[1020px] rounded-md"
-            width={1020}
-            height={548}
-          />
+          <Avatar className="w-[1020px] rounded-md h-[390px]">
+            <AvatarImage
+              className="object-cover object-center"
+              src={post?.allImages[0]?.image && post?.allImages[0]?.image}
+            />
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
         )}
       </Box>
 
@@ -70,24 +70,25 @@ export default function Page({ params }: PostPagePropsDT) {
             </React.Fragment>
           ))}
           {title.images.map((image) => (
-            <Avatar
-              img={image.image}
-              key={image.imageID}
-              customClasses="w-[1020px] rounded-md"
-              width={1020}
-              height={548}
-            />
+            <Avatar className="w-[1020px] rounded-md h-[390px]">
+              <AvatarImage
+                className="object-cover object-center"
+                src={image.image}
+              />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
           ))}
         </Box>
       ))}
 
       <div className={`${post?.allImages[1] ? "block" : "hidden"}`}>
-        <Avatar
-          img={post?.allImages[1] && post?.allImages[1].image}
-          customClasses="w-[1020px] rounded-md"
-          width={1020}
-          height={548}
-        />
+        <Avatar className="w-[1020px] rounded-md h-[390px]">
+          <AvatarImage
+            className="object-cover object-center"
+            src={post?.allImages[1] && post?.allImages[1].image}
+          />
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
       </div>
 
       <GoBack text="All blogs" link="blog" />
@@ -110,7 +111,7 @@ const SkeletonArticle = () => {
         transition={{ duration: 0.5, delay: 0.1 }}
         className="flex items-center gap-5"
       >
-        <div className="h-10 w-10  bg-gray-200 rounded-md p-4 animate-pulse"></div>
+        <div className="h-10 w-10  bg-gray-200 rounded-full p-4 animate-pulse"></div>
         <div className="flex flex-col gap-2">
           <div className="h-4 w-36 bg-gray-200 rounded-md  animate-pulse"></div>
           <div className="h-4 w-20 bg-gray-200 rounded-md  animate-pulse"></div>

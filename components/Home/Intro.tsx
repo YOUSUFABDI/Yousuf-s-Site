@@ -4,13 +4,13 @@ import { motion } from "framer-motion"
 import Title from "@/layouts/Title"
 import SubTitle from "@/layouts/SubTitle"
 import { MdOutlineFileDownload, MdOutlineShowChart } from "react-icons/md"
-import Avatar from "@/layouts/Avatar"
 import Link from "next/link"
 import { AiFillEye, AiFillGithub } from "react-icons/ai"
 import { IntroPropsDT } from "@/lib/types"
 import useSWR from "swr"
 import Fetcher from "@/lib/fetcher"
 import FlipNumber from "@/layouts/FlipNumber"
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
 
 const Intro: React.FC<IntroPropsDT> = ({ totalPost, totalViews }) => {
   const { data } = useSWR(`/api/github`, Fetcher, {
@@ -44,12 +44,13 @@ const Intro: React.FC<IntroPropsDT> = ({ totalPost, totalViews }) => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
           >
-            <Avatar
-              img="https://blog.yusufdev.com/images/yu.png"
-              customClasses="h-24 w-24 rounded-full aspect-square"
-              height={24}
-              width={24}
-            />
+            <Avatar className="bg-[#2A2A2A] h-24 w-24 rounded-full">
+              <AvatarImage
+                className="aspect-square object-cover object-top"
+                src="https://blog.yusufdev.com/images/yu.png"
+              />
+              <AvatarFallback>Img</AvatarFallback>
+            </Avatar>
           </motion.div>
 
           <motion.div

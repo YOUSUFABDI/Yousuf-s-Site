@@ -1,16 +1,17 @@
 import React from "react"
-import Avatar from "../../../layouts/Avatar"
 import Title from "@/layouts/Title"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 const LinksIntro: React.FC = () => {
   return (
     <div className="flex flex-col gap-5 items-center">
-      <Avatar
-        img="https://blog.yusufdev.com/images/yu.png"
-        customClasses="h-24 w-24 rounded-full"
-        width={24}
-        height={24}
-      />
+      <Avatar className="bg-[#2A2A2A] h-24 w-24 rounded-full">
+        <AvatarImage
+          className="object-cover object-center"
+          src="https://blog.yusufdev.com/images/yu.png"
+        />
+        <AvatarFallback>CN</AvatarFallback>
+      </Avatar>
 
       <div className="flex flex-col gap-1 items-center">
         <Title>Yousuf Abdi</Title>

@@ -3,7 +3,7 @@
 import React from "react"
 import { motion } from "framer-motion"
 import { ProjectDemoPropsDT } from "@/lib/types"
-import Image from "next/image"
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 
 const ProjectDemo: React.FC<ProjectDemoPropsDT> = ({ images }) => {
   return (
@@ -18,13 +18,10 @@ const ProjectDemo: React.FC<ProjectDemoPropsDT> = ({ images }) => {
           className="flex justify-center bg-[#E8E8E8] dark:bg-projectBg h-[233px] md:h-[400px] rounded-md"
           key={index}
         >
-          <Image
-            height={200}
-            width={300}
-            className="object-contain"
-            src={image}
-            alt={`${image}${index}`}
-          />
+          <Avatar className="w-[300px] h-[200px] rounded-none self-center object-contain">
+            <AvatarImage className="object-cover object-center" src={image} />
+            {/* <AvatarFallback className="rounded-none">CN</AvatarFallback> */}
+          </Avatar>
         </div>
       ))}
     </motion.div>
