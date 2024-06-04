@@ -47,7 +47,10 @@ export default function Page({ params }: PostPagePropsDT) {
           views={post?.views}
         />
         {post?.allImages[0]?.image && (
-          <Avatar className="w-[1020px] rounded-md h-[390px]">
+          <Avatar
+            key={post.allImages[0].imageID}
+            className="w-[1020px] rounded-md h-[390px]"
+          >
             <AvatarImage
               className="object-cover object-center"
               src={post?.allImages[0]?.image && post?.allImages[0]?.image}
