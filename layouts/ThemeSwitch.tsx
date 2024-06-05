@@ -14,7 +14,7 @@ const ThemeSwitch = ({ setIsMoodOpen }: ThemeSwitchPropsDT) => {
   }
 
   const [mood, setMood] = useState(initialMood)
-  console.log(mood)
+  // console.log(mood)
 
   const handleButtonClick = (
     selectedTheme: string,

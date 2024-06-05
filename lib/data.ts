@@ -59,8 +59,6 @@ export const skills = [
   "Firebase",
   "MongoDB",
   "Redux",
-  // 'GraphQL',
-  // 'Apollo',
   "Express",
   "PhP",
   "MySQL",

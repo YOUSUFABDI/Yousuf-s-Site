@@ -22,8 +22,10 @@ export function useSectionInView(sectionName: SectionName, threshold = 0.75) {
 
 export default function useIsMount() {
   const isMountRef = useRef(true)
+
   useEffect(() => {
     isMountRef.current = false
   }, [])
+
   return isMountRef.current
 }
