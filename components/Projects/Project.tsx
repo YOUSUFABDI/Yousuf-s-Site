@@ -30,7 +30,9 @@ const Project: React.FC<ProjecTypePropsDT> = ({
               className="object-cover object-center"
               src={coverImage}
             />
-            {/* <AvatarFallback>CN</AvatarFallback> */}
+            <AvatarFallback className="h-full w-full rounded-none bg-transparent dark:bg-transparent dark:text-white">
+              Img
+            </AvatarFallback>
           </Avatar>
         </div>
 

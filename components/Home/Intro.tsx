@@ -49,7 +49,9 @@ const Intro: React.FC<IntroPropsDT> = ({ totalPost, totalViews }) => {
                 className="aspect-square object-cover object-top"
                 src="https://blog.yusufdev.com/images/yu.png"
               />
-              <AvatarFallback>Img</AvatarFallback>
+              <AvatarFallback className="bg-transparent dark:bg-transparent text-white">
+                Img
+              </AvatarFallback>
             </Avatar>
           </motion.div>
 
