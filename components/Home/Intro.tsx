@@ -27,7 +27,7 @@ const Intro: React.FC<IntroPropsDT> = ({ totalPost, totalViews }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <Title>Yousuf Abdi</Title>
+            <Title>Yousuf Abdi M.</Title>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 10 }}
