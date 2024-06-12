@@ -17,8 +17,7 @@ const Header: React.FC = () => {
   const menuRef = useRef<HTMLDivElement>(null)
   const moodRef = useRef<HTMLDivElement>(null)
 
-  const { activeSection, setActiveSection, setTimeOfLastClick } =
-    useActiveSectionContext()
+  const { setActiveSection } = useActiveSectionContext()
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {

@@ -1,5 +1,6 @@
 "use client"
 
+import { buttonVariants } from "@/components/ui/button"
 import FlipNumber from "@/layouts/FlipNumber"
 import Paragraph from "@/layouts/Paragraph"
 import SubTitle from "@/layouts/SubTitle"
@@ -93,6 +94,9 @@ const PostList = () => {
                 <button className="text-lightPrimary dark:text-darkPrimary">
                   #Coding
                 </button>
+                <Link href="/sign-in" className={buttonVariants()}>
+                  Sign In
+                </Link>
               </div>
             </div>
 
