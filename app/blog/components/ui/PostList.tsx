@@ -94,9 +94,6 @@ const PostList = () => {
                 <button className="text-lightPrimary dark:text-darkPrimary">
                   #Coding
                 </button>
-                <Link href="/sign-in" className={buttonVariants()}>
-                  Sign In
-                </Link>
               </div>
             </div>
 

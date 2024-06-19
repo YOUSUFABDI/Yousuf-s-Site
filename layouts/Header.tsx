@@ -9,6 +9,7 @@ import { links } from "@/lib/data"
 import clsx from "clsx"
 import { useActiveSectionContext } from "@/context/active-section-context"
 import { SmallScreensNavbarPropsDT } from "@/lib/types"
+import { buttonVariants } from "@/components/ui/button"
 
 const Header: React.FC = () => {
   const [isMoodOpen, setIsMoodOpen] = useState<boolean>(false)
@@ -159,6 +160,10 @@ const LargeScreensNavbar: React.FC = () => {
           {link.name}
         </Link>
       ))}
+
+      <Link href="/sign-in" className={buttonVariants()}>
+        Sign In
+      </Link>
     </nav>
   )
 }
