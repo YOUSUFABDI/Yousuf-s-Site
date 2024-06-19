@@ -1,15 +1,16 @@
 "use client"
 
-import React, { useState, useEffect, useRef } from "react"
+import { buttonVariants } from "@/components/ui/button"
+import { useActiveSectionContext } from "@/context/active-section-context"
+import { links } from "@/lib/data"
+import { SmallScreensNavbarPropsDT } from "@/lib/types"
+import clsx from "clsx"
+import Link from "next/link"
+import React, { useEffect, useRef, useState } from "react"
 import { AiOutlinePlus } from "react-icons/ai"
 import { BsFillSunFill } from "react-icons/bs"
 import ThemeSwitch from "./ThemeSwitch"
-import Link from "next/link"
-import { links } from "@/lib/data"
-import clsx from "clsx"
-import { useActiveSectionContext } from "@/context/active-section-context"
-import { SmallScreensNavbarPropsDT } from "@/lib/types"
-import { buttonVariants } from "@/components/ui/button"
+import { signOut, useSession } from "next-auth/react"
 
 const Header: React.FC = () => {
   const [isMoodOpen, setIsMoodOpen] = useState<boolean>(false)
@@ -139,6 +140,8 @@ const LargeScreensNavbar: React.FC = () => {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext()
 
+  const { data: session } = useSession()
+
   return (
     <nav className="hidden md:flex items-center gap-6 text-sm">
       {links.map((link) => (
@@ -161,9 +164,21 @@ const LargeScreensNavbar: React.FC = () => {
         </Link>
       ))}
 
-      <Link href="/sign-in" className={buttonVariants()}>
-        Sign In
-      </Link>
+      {session ? (
+        <div className="flex items-center gap-4">
+          <span>{session.user?.name}</span>
+          <button
+            onClick={() => signOut()}
+            className={buttonVariants({ variant: "ghost" })}
+          >
+            Sign Out
+          </button>
+        </div>
+      ) : (
+        <Link href="/sign-in" className={buttonVariants()}>
+          Sign In
+        </Link>
+      )}
     </nav>
   )
 }

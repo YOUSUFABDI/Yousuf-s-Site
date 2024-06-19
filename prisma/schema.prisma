@@ -43,6 +43,7 @@ model User {
   emailVerified DateTime?
   username      String?   @unique
   image         String?
+  role          UserRole  @default(USER)
   accounts      Account[]
   sessions      Session[]
 }
@@ -97,4 +98,9 @@ model AllImages {
   blog    Blog   @relation(fields: [blogID], references: [blogID], onDelete: Cascade)
 
   @@index([blogID], map: "Title_blogID_fkey")
+}
+
+enum UserRole {
+  ADMIN
+  USER
 }
