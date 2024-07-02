@@ -8,7 +8,7 @@ import Title from "@/layouts/Title"
 import Fetcher from "@/lib/fetcher"
 import { BlogPostDT } from "@/lib/types"
 import { motion } from "framer-motion"
-import { SquareChevronLeft, SquareChevronRight } from "lucide-react"
+import { SmilePlus, SquareChevronLeft, SquareChevronRight } from "lucide-react"
 import Link from "next/link"
 import React, { useState } from "react"
 import useSWR, { mutate } from "swr"
@@ -119,23 +119,22 @@ const PostList = () => {
               className="grid grid-cols-[1fr, 1fr, 1fr, 1fr] grid-rows-[1fr, 1fr, 1fr, 1fr] gap-y-[10px] gap-x-[10px] lg:gap-x-7"
             >
               {displayedFilteredPosts?.map((post: BlogPostDT, index: any) => (
-                <Link
+                <div
                   key={post.blogID}
-                  href={`blog/${post.blogID}`}
                   className={`relative bg-gradient-to-r from-neutral-400 to-slate-900 dark:from-[#282828] dark:to-[#000000]  rounded-xl text-white animate-in 
             ${
               index === 0 &&
-              "col-start-1 col-end-3 row-start-1 row-end-3 h-full lg:h-[420px] "
+              "col-start-1 col-end-3 row-start-1 row-end-3 lg:h-full h-fit"
             }
-            ${index === 1 && "col-start-3 col-end-4 h-full lg:h-[200px]"}
-            ${index === 2 && "col-start-3 col-end-4 h-full lg:h-[200px]"}
+            ${index === 1 && "col-start-3 col-end-4 lg:h-full h-[250px]"}
+            ${index === 2 && "col-start-3 col-end-4 lg:h-full h-[250px]"}
     `}
                   style={{ "--index": 3 } as React.CSSProperties}
                 >
                   {/* top */}
                   {index === 0 && (
                     <div
-                      className="h-[200px] object-cover rounded-tl-xl rounded-tr-xl"
+                      className="h-[250px] lg:h-[200px] object-cover rounded-tl-xl rounded-tr-xl"
                       style={{
                         backgroundImage: `linear-gradient(to right bottom, rgba(17, 17, 17, 0.3), #282828), url(${post.coverImage})`,
                         backgroundSize: "cover",
@@ -154,7 +153,7 @@ const PostList = () => {
                           : post.mainTitle}
                       </Title>
                       <Paragraph customClasses="text-sm text-white">
-                        {post.description.length > 50
+                        {post.description.length > 40
                           ? `${post.description.slice(0, 23)}...`
                           : post.description}
                       </Paragraph>
@@ -177,17 +176,19 @@ const PostList = () => {
                         </div>
                       </div>
                     </div>
-                    <Link
-                      href={`blog/${post.blogID}`}
-                      className={`uppercase  font-bold text-sm lg:text-lg underline absolute bottom-[10px] ${
-                        index === 0 ? "block" : "hidden lg:block"
-                      } `}
-                    >
-                      Continue Reading
-                    </Link>
+
+                    <div className="flex flex-col lg:flex-row lg:items-center justify-around lg:justify-between relative h-[100px] lg:h-full">
+                      <Link
+                        href={`blog/${post.blogID}`}
+                        className={`uppercase font-bold text-sm lg:text-base underline bottom-[10px] h-fit w-fit`}
+                      >
+                        Continue Reading
+                      </Link>
+                      <Emojis />
+                    </div>
                   </div>
                   {/* bottom */}
-                </Link>
+                </div>
               ))}
             </motion.div>
 
@@ -213,6 +214,26 @@ const PostList = () => {
 }
 
 export default PostList
+
+const Emojis = () => {
+  return (
+    <div className="">
+      <div className="flex items-center gap-5">
+        <SmilePlus className="cursor-pointer" />
+        <div className="flex items-center gap-1">
+          <div className="bg-hoverDark flex items-center gap-[2px] p-1 rounded-md">
+            <img src="./heart.png" alt="heart" />
+            <FlipNumber>{0}</FlipNumber>
+          </div>
+          <div className="bg-hoverDark flex items-center gap-[2px] p-1 rounded-md">
+            <img src="./clap.png" alt="clap" />
+            <FlipNumber>{0}</FlipNumber>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 const SkeletonPostList = () => {
   const skeletonPosts = Array.from({ length: 3 }, (_, index) => index)

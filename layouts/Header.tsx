@@ -140,7 +140,7 @@ const LargeScreensNavbar: React.FC = () => {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSectionContext()
 
-  const { data: session } = useSession()
+  // const { data: session } = useSession()
 
   return (
     <nav className="hidden md:flex items-center gap-6 text-sm">
@@ -164,7 +164,7 @@ const LargeScreensNavbar: React.FC = () => {
         </Link>
       ))}
 
-      {session ? (
+      {/* {session ? (
         <div className="flex items-center gap-4">
           <span>{session.user?.name}</span>
           <button
@@ -178,7 +178,7 @@ const LargeScreensNavbar: React.FC = () => {
         <Link href="/sign-in" className={buttonVariants()}>
           Sign In
         </Link>
-      )}
+      )} */}
     </nav>
   )
 }
