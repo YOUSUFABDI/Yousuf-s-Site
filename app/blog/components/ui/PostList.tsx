@@ -1,6 +1,11 @@
 "use client"
 
 import { buttonVariants } from "@/components/ui/button"
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card"
 import FlipNumber from "@/layouts/FlipNumber"
 import Paragraph from "@/layouts/Paragraph"
 import SubTitle from "@/layouts/SubTitle"
@@ -184,7 +189,7 @@ const PostList = () => {
                       >
                         Continue Reading
                       </Link>
-                      <Emojis />
+                      <Emojis blogID={post.blogID} />
                     </div>
                   </div>
                   {/* bottom */}
@@ -215,23 +220,125 @@ const PostList = () => {
 
 export default PostList
 
-const Emojis = () => {
+// const Emojis = ({ blogID }: { blogID: number }) => {
+//   return (
+//     <HoverCard>
+//       <div className="flex items-center gap-5">
+//         <HoverCardTrigger>
+//           <SmilePlus className="cursor-pointer" />
+//         </HoverCardTrigger>
+//         <div className="flex items-center gap-1">
+//           <div className="bg-hoverDark flex items-center gap-[2px] p-1 rounded-md">
+//             <img src="./heart.png" alt="heart" />
+//             <FlipNumber>{0}</FlipNumber>
+//           </div>
+//           <div className="bg-hoverDark flex items-center gap-[2px] p-1 rounded-md">
+//             <img src="./clap.png" alt="clap" />
+//             <FlipNumber>{0}</FlipNumber>
+//           </div>
+//         </div>
+//         <HoverCardContent
+//           style={{
+//             backgroundColor: "#222222",
+//             borderColor: "transparent",
+//             width: "fit-content",
+//             height: "fit-content",
+//             position: "absolute",
+//             top: "-80px",
+//             padding: 5,
+//           }}
+//         >
+//           <div className="flex items-center gap-2">
+//             <div className="h-[30px] w-[50px] cursor-pointer">
+//               <img
+//                 className="h-full w-full object-contain"
+//                 src="./heart.png"
+//                 alt="heart"
+//               />
+//             </div>
+//             <div className="h-full w-full cursor-pointer">
+//               <img
+//                 className="h-[30px] w-[50px] object-contain"
+//                 src="./clap.png"
+//                 alt="clap"
+//               />
+//             </div>
+//           </div>
+//         </HoverCardContent>
+//       </div>
+//     </HoverCard>
+//   )
+// }
+
+const Emojis = ({ blogID }: { blogID: number }) => {
+  const { data: emojis, mutate } = useSWR(
+    `/api/posts/emojis/${blogID}`,
+    Fetcher
+  )
+  const handleEmojiClick = async (type: string) => {
+    await fetch(`/api/posts/emojis/${blogID}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ type }),
+    })
+    mutate()
+  }
+
   return (
-    <div className="">
+    <HoverCard>
       <div className="flex items-center gap-5">
-        <SmilePlus className="cursor-pointer" />
+        <HoverCardTrigger>
+          <SmilePlus className="cursor-pointer" />
+        </HoverCardTrigger>
         <div className="flex items-center gap-1">
-          <div className="bg-hoverDark flex items-center gap-[2px] p-1 rounded-md">
-            <img src="./heart.png" alt="heart" />
-            <FlipNumber>{0}</FlipNumber>
-          </div>
-          <div className="bg-hoverDark flex items-center gap-[2px] p-1 rounded-md">
-            <img src="./clap.png" alt="clap" />
-            <FlipNumber>{0}</FlipNumber>
-          </div>
+          {emojis?.map((emoji) => (
+            <div
+              key={emoji.emojiID}
+              className="bg-hoverDark flex items-center gap-[2px] p-1 rounded-md"
+            >
+              <img src={`./${emoji.type}.png`} alt={emoji.type} />
+              <FlipNumber>{emoji.count}</FlipNumber>
+            </div>
+          ))}
         </div>
+        <HoverCardContent
+          style={{
+            backgroundColor: "#222222",
+            borderColor: "transparent",
+            width: "fit-content",
+            height: "fit-content",
+            position: "absolute",
+            top: "-80px",
+            padding: 5,
+          }}
+        >
+          <div className="flex items-center gap-2">
+            <div
+              className="h-[30px] w-[50px] cursor-pointer"
+              onClick={() => handleEmojiClick("heart")}
+            >
+              <img
+                className="h-full w-full object-contain"
+                src="./heart.png"
+                alt="heart"
+              />
+            </div>
+            <div
+              className="h-full w-full cursor-pointer"
+              onClick={() => handleEmojiClick("clap")}
+            >
+              <img
+                className="h-[30px] w-[50px] object-contain"
+                src="./clap.png"
+                alt="clap"
+              />
+            </div>
+          </div>
+        </HoverCardContent>
       </div>
-    </div>
+    </HoverCard>
   )
 }
 

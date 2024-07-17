@@ -23,6 +23,7 @@ export async function GET(req: NextRequest) {
             },
           },
           allImages: true,
+          likes: true,
         },
       })
 

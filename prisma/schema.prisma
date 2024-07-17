@@ -60,7 +60,21 @@ model Blog {
   tag          String
   allImages    AllImages[]
   titles       Title[]
+  emojis        Emoji[]
 }
+
+model Emoji {
+  emojiID  Int    @id @default(autoincrement())
+  type     String
+  count    Int    @default(0)
+  blogID   Int
+  blog     Blog   @relation(fields: [blogID], references: [blogID], onDelete: Cascade)
+
+  @@unique([blogID, type])
+  @@index([blogID], map: "Emoji_blogID_fkey")
+}
+
+
 
 model Title {
   titleID    Int         @id @default(autoincrement())
