@@ -74,8 +74,6 @@ model Emoji {
   @@index([blogID], map: "Emoji_blogID_fkey")
 }
 
-
-
 model Title {
   titleID    Int         @id @default(autoincrement())
   title      String
