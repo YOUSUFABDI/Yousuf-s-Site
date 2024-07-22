@@ -5,6 +5,7 @@ import Header from "@/layouts/Header"
 import ActiveSectionContextProvider from "@/context/active-section-context"
 import { ThemeContextProvider } from "@/context/ThemeContex"
 import Footer from "@/layouts/Footer"
+import Providers from "@/components/Providers"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -16,8 +17,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  authModal,
 }: {
   children: React.ReactNode
+  authModal: React.ReactNode
 }) {
   return (
     <html lang="en">
@@ -33,9 +36,14 @@ export default function RootLayout({
       <body className={`${inter.className} bg-lightBg dark:bg-darkBg`}>
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
-            <Header />
-            <main className="max-w-[43.75rem] mx-5 md:mx-auto">{children}</main>
-            <Footer />
+            <Providers>
+              <Header />
+              {authModal}
+              <main className="max-w-[43.75rem] mx-5 md:mx-auto">
+                {children}
+              </main>
+              <Footer />
+            </Providers>
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
       </body>

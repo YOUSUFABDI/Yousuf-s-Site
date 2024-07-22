@@ -7,6 +7,47 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId], map: "Account_userId_fkey")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId], map: "Session_userId_fkey")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime?
+  username      String?   @unique
+  image         String?
+  role          UserRole  @default(USER)
+  accounts      Account[]
+  sessions      Session[]
+}
+
 model Blog {
   blogID       Int         @id @default(autoincrement())
   mainTitle    String
@@ -19,6 +60,18 @@ model Blog {
   tag          String
   allImages    AllImages[]
   titles       Title[]
+  emojis        Emoji[]
+}
+
+model Emoji {
+  emojiID  Int    @id @default(autoincrement())
+  type     String
+  count    Int    @default(0)
+  blogID   Int
+  blog     Blog   @relation(fields: [blogID], references: [blogID], onDelete: Cascade)
+
+  @@unique([blogID, type])
+  @@index([blogID], map: "Emoji_blogID_fkey")
 }
 
 model Title {
@@ -57,4 +110,9 @@ model AllImages {
   blog    Blog   @relation(fields: [blogID], references: [blogID], onDelete: Cascade)
 
   @@index([blogID], map: "Title_blogID_fkey")
+}
+
+enum UserRole {
+  ADMIN
+  USER
 }
