@@ -18,10 +18,7 @@ const Work: React.FC = () => {
       <div className="flex flex-col flex-1 gap-5 text-sm  text-lightPrimary dark:text-darkPrimary">
         <div className="flex flex-col gap-5">
           <span>1+ years of professional development experience.</span>
-          <span>
-            I began my professional career at Rasin Tech, one of the largest ICT
-            tech companies in Somalia.
-          </span>
+          <span>I began my professional career at Rasin Tech in Somalia.</span>
         </div>
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-9">
