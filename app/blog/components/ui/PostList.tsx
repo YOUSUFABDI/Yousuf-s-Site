@@ -11,6 +11,8 @@ import { SquareChevronLeft, SquareChevronRight } from "lucide-react"
 import Link from "next/link"
 import React, { useState } from "react"
 import useSWR, { mutate } from "swr"
+import Emojis from "./Emojis"
+import SkeletonPostList from "./SkeletonPostList"
 
 const PostList = () => {
   const [displayedPosts, setDisplayedPosts] = useState(3)
@@ -118,23 +120,22 @@ const PostList = () => {
               className="grid grid-cols-[1fr, 1fr, 1fr, 1fr] grid-rows-[1fr, 1fr, 1fr, 1fr] gap-y-[10px] gap-x-[10px] lg:gap-x-7"
             >
               {displayedFilteredPosts?.map((post: BlogPostDT, index: any) => (
-                <Link
+                <div
                   key={post.blogID}
-                  href={`blog/${post.blogID}`}
                   className={`relative bg-gradient-to-r from-neutral-400 to-slate-900 dark:from-[#282828] dark:to-[#000000]  rounded-xl text-white animate-in 
             ${
               index === 0 &&
-              "col-start-1 col-end-3 row-start-1 row-end-3 h-full lg:h-[420px] "
+              "col-start-1 col-end-3 row-start-1 row-end-3 lg:h-full h-fit"
             }
-            ${index === 1 && "col-start-3 col-end-4 h-full lg:h-[200px]"}
-            ${index === 2 && "col-start-3 col-end-4 h-full lg:h-[200px]"}
+            ${index === 1 && "col-start-3 col-end-4 lg:h-full h-[250px]"}
+            ${index === 2 && "col-start-3 col-end-4 lg:h-full h-[250px]"}
     `}
                   style={{ "--index": 3 } as React.CSSProperties}
                 >
                   {/* top */}
                   {index === 0 && (
                     <div
-                      className="h-[200px] object-cover rounded-tl-xl rounded-tr-xl"
+                      className="h-[250px] lg:h-[200px] object-cover rounded-tl-xl rounded-tr-xl"
                       style={{
                         backgroundImage: `linear-gradient(to right bottom, rgba(17, 17, 17, 0.3), #282828), url(${post.coverImage})`,
                         backgroundSize: "cover",
@@ -153,7 +154,7 @@ const PostList = () => {
                           : post.mainTitle}
                       </Title>
                       <Paragraph customClasses="text-sm text-white">
-                        {post.description.length > 50
+                        {post.description.length > 40
                           ? `${post.description.slice(0, 23)}...`
                           : post.description}
                       </Paragraph>
@@ -176,17 +177,19 @@ const PostList = () => {
                         </div>
                       </div>
                     </div>
-                    <Link
-                      href={`blog/${post.blogID}`}
-                      className={`uppercase  font-bold text-sm lg:text-lg underline absolute bottom-[10px] ${
-                        index === 0 ? "block" : "hidden lg:block"
-                      } `}
-                    >
-                      Continue Reading
-                    </Link>
+
+                    <div className="flex flex-col lg:flex-row lg:items-center justify-around lg:justify-between relative h-[100px] lg:h-full">
+                      <Link
+                        href={`blog/${post.blogID}`}
+                        className={`uppercase font-bold text-sm lg:text-base underline bottom-[10px] h-fit w-fit`}
+                      >
+                        Continue Reading
+                      </Link>
+                      <Emojis blogID={post.blogID} />
+                    </div>
                   </div>
                   {/* bottom */}
-                </Link>
+                </div>
               ))}
             </motion.div>
 
@@ -212,115 +215,3 @@ const PostList = () => {
 }
 
 export default PostList
-
-const SkeletonPostList = () => {
-  const skeletonPosts = Array.from({ length: 3 }, (_, index) => index)
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.3 }}
-      className="grid grid-cols-[1fr, 1fr, 1fr, 1fr] grid-rows-[1fr, 1fr, 1fr, 1fr] gap-y-[10px] gap-x-7"
-    >
-      {skeletonPosts.map((index) => (
-        <div
-          key={index}
-          className={`relative bg-gradient-to-r from-neutral-400 to-slate-900 dark:from-[#282828] dark:to-[#000000]  rounded-xl text-white animate-in 
-          ${
-            index === 0 &&
-            "col-start-1 col-end-3 row-start-1 row-end-3 h-[420px] "
-          }
-          ${index === 1 && "col-start-3 col-end-4 h-[200px]"}
-          ${index === 2 && "col-start-3 col-end-4 h-[200px]"}
-        `}
-          style={{ "--index": 3 } as React.CSSProperties}
-        >
-          {/* top */}
-          {index === 0 && (
-            <div
-              className="h-[200px] object-cover rounded-tl-xl rounded-tr-xl"
-              style={{
-                background: "gray",
-              }}
-            ></div>
-          )}
-          {/* top */}
-
-          {/* bottom */}
-          <div
-            className={`flex flex-col p-[10px] w-full ${
-              index === 0 && "h-[308px]"
-            }`}
-          >
-            <div className="flex flex-col gap-[10px]">
-              <div
-                className="font-bold text-lg text-white"
-                style={{
-                  width: "80%",
-                  height: "20px",
-                  background: "gray",
-                }}
-              ></div>
-              <div
-                className="text-sm text-white"
-                style={{
-                  width: "100%",
-                  height: "50px",
-                  background: "gray",
-                }}
-              ></div>
-              <div className="flex flex-col gap-[6px]">
-                <div className="flex items-center justify-between">
-                  <div
-                    className="text-base text-white"
-                    style={{
-                      width: "40%",
-                      height: "20px",
-                      background: "gray",
-                    }}
-                  ></div>
-                  <div
-                    className="text-base text-white"
-                    style={{
-                      width: "40%",
-                      height: "20px",
-                      background: "gray",
-                    }}
-                  ></div>
-                </div>
-                <div className="flex items-center justify-between">
-                  <div
-                    className="text-base text-white"
-                    style={{
-                      width: "40%",
-                      height: "20px",
-                      background: "gray",
-                    }}
-                  ></div>
-                  <div
-                    className="text-base text-white"
-                    style={{
-                      width: "40%",
-                      height: "20px",
-                      background: "gray",
-                    }}
-                  ></div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="uppercase font-bold text-lg underline absolute bottom-[10px]"
-              style={{
-                width: "200px",
-                height: "20px",
-                background: "gray",
-              }}
-            ></div>
-          </div>
-          {/* bottom */}
-        </div>
-      ))}
-    </motion.div>
-  )
-}
