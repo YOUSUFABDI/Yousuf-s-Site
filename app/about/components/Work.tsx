@@ -27,7 +27,7 @@ const Work: React.FC = () => {
               alt="rasiinLogo"
             />
             <div className="flex flex-col gap-1">
-              <Title>Full Stack Engineer</Title>
+              <Title>Frontend Developer</Title>
               <SubTitle>Rasin Tech</SubTitle>
             </div>
           </div>
