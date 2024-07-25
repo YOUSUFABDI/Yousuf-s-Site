@@ -133,16 +133,18 @@ const PostList = () => {
                   style={{ "--index": 3 } as React.CSSProperties}
                 >
                   {/* top */}
-                  {index === 0 && (
-                    <div
-                      className=" h-[250px] lg:h-[200px] object-cover rounded-tl-xl rounded-tr-xl"
-                      style={{
-                        backgroundImage: `linear-gradient(to right bottom, rgba(17, 17, 17, 0.3), #282828), url(${post.coverImage})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                      }}
-                    ></div>
-                  )}
+                  {/* {index === 0 && ( */}
+                  <div
+                    className={`${
+                      index === 0 && "h-[250px] lg:h-[200px]"
+                    } object-cover rounded-tl-xl rounded-tr-xl`}
+                    style={{
+                      backgroundImage: `linear-gradient(to right bottom, rgba(17, 17, 17, 0.3), #282828), url(${post.coverImage})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }}
+                  ></div>
+                  {/* // )} */}
                   {/* top */}
 
                   {/* bottom */}
