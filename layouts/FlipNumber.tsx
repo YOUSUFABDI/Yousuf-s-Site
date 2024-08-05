@@ -6,7 +6,7 @@ type FlipNumberProps = {
   children: number
 }
 
-function FlipNumber({ children }: FlipNumberProps) {
+function FlipNumber({ children, ...props }: FlipNumberProps) {
   const isMount = useIsMount()
   const [keyframe, setKeyframe] = useState<"initial" | "moveDown" | "out">(
     "initial"
