@@ -1,6 +1,7 @@
 "use client"
 
 import FlipNumber from "@/layouts/FlipNumber"
+import Note from "@/layouts/Note"
 import Paragraph from "@/layouts/Paragraph"
 import SubTitle from "@/layouts/SubTitle"
 import Title from "@/layouts/Title"
@@ -9,49 +10,31 @@ import { BlogPostDT } from "@/lib/types"
 import { motion } from "framer-motion"
 import { SquareChevronLeft, SquareChevronRight } from "lucide-react"
 import Link from "next/link"
-import React, { useState } from "react"
-import useSWR, { mutate } from "swr"
+import React, { useEffect, useState } from "react"
+import useSWR from "swr"
 import Emojis from "./Emojis"
 import SkeletonPostList from "./SkeletonPostList"
-import Note from "@/layouts/Note"
 
 const PostList = () => {
-  const [displayedPosts, setDisplayedPosts] = useState(3)
   const [search, setSearch] = useState("")
   const [selectedTag, setSelectedTag] = useState<string | null>(null)
+  const [posts, setPosts] = useState<BlogPostDT[]>([])
+  const [currentPage, setCurrentPage] = useState(0)
+  const postsPerPage = 3
 
-  const { isLoading } = useSWR(
-    `/api/posts/get_more_posts?offset=${displayedPosts}`,
-    Fetcher
-  )
+  const { data: allPosts, isLoading } = useSWR(`/api/posts/get_posts`, Fetcher)
 
-  const { data: allPosts } = useSWR(`/api/posts/get_posts`, Fetcher)
+  useEffect(() => {
+    if (allPosts) {
+      setPosts(allPosts)
+    }
+  }, [allPosts])
 
   const handleSearch = (value: string) => {
     setSearch(value)
   }
 
-  const loadMorePosts = () => {
-    const remainingPosts = allPosts.length - displayedPosts
-    const postsToLoad = Math.min(3, remainingPosts)
-    const nextOffset = displayedPosts + postsToLoad
-
-    if (postsToLoad > 0) {
-      setDisplayedPosts(nextOffset)
-      mutate(`/api/posts/get_more_posts?offset=${nextOffset}`)
-    }
-  }
-
-  const showPreviousPosts = () => {
-    if (displayedPosts >= 6) {
-      setDisplayedPosts((prevDisplayedPosts) => prevDisplayedPosts - 3)
-    } else {
-      setDisplayedPosts(3)
-      return
-    }
-  }
-
-  const filteredPosts = allPosts?.filter((post: BlogPostDT) => {
+  const filteredPosts = posts?.filter((post: BlogPostDT) => {
     const lowerCaseSearch = search.toLowerCase()
     const matchesSearch =
       post.mainTitle.toLowerCase().includes(lowerCaseSearch) ||
@@ -64,11 +47,23 @@ const PostList = () => {
     return matchesSearch && matchesTag
   })
 
-  const startIndex = Math.max(0, filteredPosts?.length - displayedPosts)
+  const startIndex = currentPage * postsPerPage
   const displayedFilteredPosts = filteredPosts?.slice(
     startIndex,
-    startIndex + 3
+    startIndex + postsPerPage
   )
+
+  const loadMorePosts = () => {
+    if (startIndex + postsPerPage < (filteredPosts?.length || 0)) {
+      setCurrentPage((prev) => prev + 1)
+    }
+  }
+
+  const showPreviousPosts = () => {
+    if (currentPage > 0) {
+      setCurrentPage((prev) => prev - 1)
+    }
+  }
 
   const handleTagClick = (tag: string) => {
     setSelectedTag(tag)
@@ -142,10 +137,14 @@ const PostList = () => {
                         className={`relative bg-gradient-to-r from-[#222222] to-[#B4B4B4] dark:from-[#282828] dark:to-[#000000]  rounded-xl text-white animate-in 
               ${
                 index === 0 &&
-                "col-start-1 col-end-3 row-start-1 row-end-3 lg:h-full h-fit"
+                "lg:col-start-1 lg:col-end-3 lg:row-start-1 lg:row-end-3 lg:h-full h-fit"
               }
-              ${index === 1 && "col-start-3 col-end-4 lg:h-full h-[250px]"}
-              ${index === 2 && "col-start-3 col-end-4 lg:h-full h-[250px]"}
+              ${
+                index === 1 && "lg:col-start-3 lg:col-end-4 lg:h-full h-[250px]"
+              }
+              ${
+                index === 2 && "lg:col-start-3 lg:col-end-4 lg:h-full h-[250px]"
+              }
       `}
                         style={{ "--index": 3 } as React.CSSProperties}
                       >
