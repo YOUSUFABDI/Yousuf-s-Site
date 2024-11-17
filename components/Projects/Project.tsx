@@ -27,7 +27,7 @@ const Project: React.FC<ProjecTypePropsDT> = ({
         <div className="flex justify-center flex-[0.3] bg-[#E8E8E8] dark:bg-projectBg rounded-md w-full md:w-fit px-8 pt-7">
           <Avatar className="object-contain self-end rounded-none w-[200px] h-[100px]">
             <AvatarImage
-              className="object-cover object-center"
+              className="object-contain object-center"
               src={coverImage}
             />
             <AvatarFallback className="h-full w-full rounded-none bg-transparent dark:bg-transparent dark:text-white">

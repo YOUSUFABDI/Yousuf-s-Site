@@ -19,7 +19,7 @@ const ProjectDemo: React.FC<ProjectDemoPropsDT> = ({ images }) => {
           key={index}
         >
           <Avatar className="w-[300px] h-[200px] rounded-none self-center object-contain">
-            <AvatarImage className="object-cover object-center" src={image} />
+            <AvatarImage className="object-contain object-center" src={image} />
             <AvatarFallback className="h-full w-full rounded-none bg-transparent dark:bg-transparent dark:text-white">
               Img
             </AvatarFallback>

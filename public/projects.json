@@ -29,5 +29,22 @@
     "tags": ["Web app", "Php", "Python", "Mysql", "Reactjs", "CSS"],
     "githubLink": "https://github.com/YOUSUFABDI/Baargeele",
     "liveDemo": "https://github.com/YOUSUFABDI/Baargeele"
+  },
+  {
+    "id": 3,
+    "projectName": "Note Taker",
+    "createdDT": 2023,
+    "description": "Cool Note Taker 😎",
+    "coverImage": "https://blog.yusufdev.com/images/notetaker.jpg",
+    "images": [
+      "https://blog.yusufdev.com/images/notetaker.jpg",
+      "https://blog.yusufdev.com/images/notetaker2.jpg",
+      "https://blog.yusufdev.com/images/notetaker3.jpg",
+      "https://blog.yusufdev.com/images/notetaker4.jpg",
+      "https://blog.yusufdev.com/images/notetaker5.jpg"
+    ],
+    "tags": ["Mobile app", "React native", "Firebase", "Typescript"],
+    "githubLink": "https://github.com/YOUSUFABDI/NoteTakerRN",
+    "liveDemo": "https://github.com/YOUSUFABDI/NoteTakerRN"
   }
 ]
