@@ -27,7 +27,7 @@ const Intro: React.FC<IntroPropsDT> = ({ totalPost, totalViews }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <Title>Yousuf Abdi</Title>
+            <Title>Yusuf Abdi</Title>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -129,9 +129,9 @@ const Intro: React.FC<IntroPropsDT> = ({ totalPost, totalViews }) => {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-lightPrimary dark:text-darkPrimary font-medium text-sm"
         >
-          Hi, I'm <span className="uppercase">Yousuf Abdi</span>, a software
+          Hi, I'm <span className="uppercase">Yusuf Abdi</span>, a software
           engineer who loves building cool things with code. In addition to
-          coding, I also make Blogging where I focus on technology.
+          coding, I also make Bloggs where I focus on technology.
         </motion.p>
       </div>
 

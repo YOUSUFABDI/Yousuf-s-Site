@@ -1,14 +1,48 @@
 [
   {
+    "id": 4,
+    "projectName": "Ekeyboard",
+    "createdDT": 2023,
+    "description": "An ecommerce platform 🛒",
+    "coverImage": "/images/e-1.png",
+    "images": [
+      "/images/e-1.png",
+      "/images/e-2.png",
+      "/images/e-3.png",
+      "/images/e-4.png"
+    ],
+    "tags": ["Web app", "Reactjs", "Typescript", "Tailwindcss"],
+    "githubLink": "https://github.com/YOUSUFABDI/ekeyboard-frontend",
+    "liveDemo": "https://ekeyboard-frontend.vercel.app/"
+  },
+  {
+    "id": 3,
+    "projectName": "Note Taker",
+    "createdDT": 2023,
+    "description": "Cool Note Taker 😎",
+    "coverImage": "https://blog.yusufdev.com/images/notetaker.jpg",
+    "images": [
+      "https://blog.yusufdev.com/images/notetaker.jpg",
+      "https://blog.yusufdev.com/images/notetaker2.jpg",
+      "https://blog.yusufdev.com/images/notetaker3.jpg",
+      "https://blog.yusufdev.com/images/notetaker4.jpg",
+      "https://blog.yusufdev.com/images/notetaker5.jpg"
+    ],
+    "tags": ["Mobile app", "React native", "Firebase", "Typescript"],
+    "githubLink": "https://github.com/YOUSUFABDI/NoteTakerRN",
+    "liveDemo": "https://github.com/YOUSUFABDI/NoteTakerRN"
+  },
+  {
     "id": 1,
     "projectName": "Som BD",
     "createdDT": 2023,
     "description": "Somali Blood donation is a system that makes it easy for people to donate blood online in a timely manner for both donors and recipients.",
-    "coverImage": "https://blog.yusufdev.com/images/somBDImg.png",
+    "coverImage": "/images/sbd-1.png",
     "images": [
-      "https://blog.yusufdev.com/images/somBdImgs/somBdTablet-phonemockup.png",
-      "https://blog.yusufdev.com/images/somBdImgs/somBdtabletMockupSm.png",
-      "https://blog.yusufdev.com/images/somBdImgs/somBdtabletMockupnLg.png"
+      "/images/sbd-1.png",
+      "/images/sbd-2.png",
+      "/images/sbd-3.png",
+      "/images/sbd-4.png"
     ],
     "tags": ["Web app", "Php", "Mysql", "Javascript", "Bootsrap"],
     "githubLink": "https://github.com/YOUSUFABDI/som-bd-system",
@@ -28,23 +62,6 @@
     ],
     "tags": ["Web app", "Php", "Python", "Mysql", "Reactjs", "CSS"],
     "githubLink": "https://github.com/YOUSUFABDI/Baargeele",
-    "liveDemo": "https://github.com/YOUSUFABDI/Baargeele"
-  },
-  {
-    "id": 3,
-    "projectName": "Note Taker",
-    "createdDT": 2023,
-    "description": "Cool Note Taker 😎",
-    "coverImage": "https://blog.yusufdev.com/images/notetaker.jpg",
-    "images": [
-      "https://blog.yusufdev.com/images/notetaker.jpg",
-      "https://blog.yusufdev.com/images/notetaker2.jpg",
-      "https://blog.yusufdev.com/images/notetaker3.jpg",
-      "https://blog.yusufdev.com/images/notetaker4.jpg",
-      "https://blog.yusufdev.com/images/notetaker5.jpg"
-    ],
-    "tags": ["Mobile app", "React native", "Firebase", "Typescript"],
-    "githubLink": "https://github.com/YOUSUFABDI/NoteTakerRN",
-    "liveDemo": "https://github.com/YOUSUFABDI/NoteTakerRN"
+    "liveDemo": "https://baargeele.vercel.app/"
   }
 ]

@@ -25,7 +25,7 @@ export const themes = [
 export const aboutMe = [
   {
     id: 1,
-    info: "Hello world, I'm Yousuf Abdi!",
+    info: "Hello world, I'm Yusuf Abdi!",
   },
   {
     id: 2,
@@ -37,7 +37,7 @@ export const aboutMe = [
   },
   {
     id: 4,
-    info: "When I'm not at my desk I am probably lifting weights, playing basketball, playing video games, or at a coffee shop :)",
+    info: "When I'm not at my desk I am probably lifting weights, playing basketball, learning, or at a coffee shop :)",
   },
 ]
 
