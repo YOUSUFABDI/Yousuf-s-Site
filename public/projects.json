@@ -7,11 +7,12 @@
     "coverImage": "/images/e-1.png",
     "images": [
       "/images/e-1.png",
+      "/images/e-5.png",
       "/images/e-2.png",
       "/images/e-3.png",
       "/images/e-4.png"
     ],
-    "tags": ["Web app", "Reactjs", "Typescript", "Tailwindcss"],
+    "tags": ["Web app", "Reactjs", "Redux", "Typescript", "Tailwindcss"],
     "githubLink": "https://github.com/YOUSUFABDI/ekeyboard-frontend",
     "liveDemo": "https://ekeyboard-frontend.vercel.app/"
   },
