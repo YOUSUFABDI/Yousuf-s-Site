@@ -21,7 +21,7 @@ const AboutMe: React.FC = () => {
           <span key={info.id}>{info.info}</span>
         ))}
         <a
-          href="./yusuf-resume-pdf.pdf"
+          href=""
           download
           className="flex items-center gap-2 md:gap-3 w-fit border dark:border-darkSecondary/50 whitespace-nowrap rounded-xl px-5 py-3 text-lightSecondary dark:text-darkSecondary hover:border-lightPrimary dark:hover:border-darkPrimary hover:text-lightPrimary dark:hover:text-darkPrimary transition-colors duration-300 ease-in-out"
         >

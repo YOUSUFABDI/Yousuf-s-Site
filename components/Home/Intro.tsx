@@ -171,7 +171,7 @@ const Intro: React.FC<IntroPropsDT> = ({ totalPost, totalViews }) => {
           className="text-lightSecondary dark:text-darkSecondary"
         >
           <a
-            href="./yusuf-resume-pdf.pdf"
+            href=""
             download
             className="flex items-center gap-2 md:gap-3 hover:text-lightPrimary dark:hover:text-darkPrimary transition-colors duration-300 ease-in-out"
           >
