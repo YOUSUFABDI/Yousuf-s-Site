@@ -14,13 +14,13 @@ export const links = [
     name: "Blog",
     to: "/blog",
   },
-]
+];
 
 export const themes = [
   { name: "Light", value: "light" },
   { name: "Dark", value: "dark" },
   { name: "Automatic", value: "automatic" },
-]
+];
 
 export const aboutMe = [
   {
@@ -39,7 +39,7 @@ export const aboutMe = [
     id: 4,
     info: "When I'm not at my desk I am probably lifting weights, playing basketball, learning, or at a coffee shop :)",
   },
-]
+];
 
 export const skills = [
   "HTML",
@@ -47,6 +47,7 @@ export const skills = [
   "Tailwind",
   "Bootstrap",
   "JavaScript",
+  "Frappe framework",
   "TypeScript",
   "React",
   "React Native",
@@ -63,4 +64,4 @@ export const skills = [
   "Flask",
   "Git",
   "Github",
-]
+];

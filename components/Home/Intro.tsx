@@ -1,22 +1,22 @@
-import React from "react"
-import { FiArrowUpRight } from "react-icons/fi"
-import { motion } from "framer-motion"
-import Title from "@/layouts/Title"
-import SubTitle from "@/layouts/SubTitle"
-import { MdOutlineFileDownload, MdOutlineShowChart } from "react-icons/md"
-import Link from "next/link"
-import { AiFillEye, AiFillGithub } from "react-icons/ai"
-import { IntroPropsDT } from "@/lib/types"
-import useSWR from "swr"
-import Fetcher from "@/lib/fetcher"
-import FlipNumber from "@/layouts/FlipNumber"
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar"
+import React from "react";
+import { FiArrowUpRight } from "react-icons/fi";
+import { motion } from "framer-motion";
+import Title from "@/layouts/Title";
+import SubTitle from "@/layouts/SubTitle";
+import { MdOutlineFileDownload, MdOutlineShowChart } from "react-icons/md";
+import Link from "next/link";
+import { AiFillEye, AiFillGithub } from "react-icons/ai";
+import { IntroPropsDT } from "@/lib/types";
+import useSWR from "swr";
+import Fetcher from "@/lib/fetcher";
+import FlipNumber from "@/layouts/FlipNumber";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 const Intro: React.FC<IntroPropsDT> = ({ totalPost, totalViews }) => {
   const { data } = useSWR(`/api/github`, Fetcher, {
     revalidateOnFocus: false,
-  })
-  const repos = data?.repos
+  });
+  const repos = data?.repos;
 
   return (
     <div className="flex flex-col gap-10">
@@ -171,7 +171,7 @@ const Intro: React.FC<IntroPropsDT> = ({ totalPost, totalViews }) => {
           className="text-lightSecondary dark:text-darkSecondary"
         >
           <a
-            href=""
+            href="/yusuf-resume.pdf"
             download
             className="flex items-center gap-2 md:gap-3 hover:text-lightPrimary dark:hover:text-darkPrimary transition-colors duration-300 ease-in-out"
           >
@@ -181,7 +181,7 @@ const Intro: React.FC<IntroPropsDT> = ({ totalPost, totalViews }) => {
         </motion.div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Intro
+export default Intro;
