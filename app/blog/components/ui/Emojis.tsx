@@ -1,38 +1,38 @@
-import FlipNumber from "@/layouts/FlipNumber"
-import fetcher from "@/lib/fetcher"
-import axios from "axios"
-import { SmilePlus } from "lucide-react"
-import { useState } from "react"
-import useSWR from "swr"
+import FlipNumber from "@/layouts/FlipNumber";
+import fetcher from "@/lib/fetcher";
+import axios from "axios";
+import { SmilePlus } from "lucide-react";
+import { useState } from "react";
+import useSWR from "swr";
 
 const Emojis = ({ blogID }: { blogID: number }) => {
-  const [isHoverCardOpen, setIsHoverCardOpen] = useState(false)
+  const [isHoverCardOpen, setIsHoverCardOpen] = useState(false);
 
   const { data: emojis, mutate } = useSWR(
-    `/api/posts/emojis/${blogID}`,
+    `http://localhost:3000/api/posts/emojis/${blogID}`,
     fetcher
-  )
+  );
 
   const handleEmojiClick = async (type: string) => {
-    setIsHoverCardOpen(false)
+    setIsHoverCardOpen(false);
 
     const updatedEmojis = emojis.map((emoji: any) =>
       emoji.type === type ? { ...emoji, count: emoji.count + 1 } : emoji
-    )
-    mutate(updatedEmojis, false)
+    );
+    mutate(updatedEmojis, false);
 
     try {
-      await axios.post(`/api/posts/emojis/${blogID}`, { type })
-      mutate()
+      await axios.post(`/api/posts/emojis/${blogID}`, { type });
+      mutate();
     } catch (error) {
-      console.error(error)
-      mutate()
+      console.error(error);
+      mutate();
     }
-  }
+  };
 
   const toggleHoverCard = () => {
-    setIsHoverCardOpen((prev) => !prev)
-  }
+    setIsHoverCardOpen((prev) => !prev);
+  };
 
   return (
     <div className="relative flex items-center gap-5">
@@ -80,7 +80,7 @@ const Emojis = ({ blogID }: { blogID: number }) => {
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default Emojis
+export default Emojis;

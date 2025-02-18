@@ -1,29 +1,29 @@
-"use client"
+"use client";
 
-import SubTitle from "@/layouts/SubTitle"
-import Fetcher from "@/lib/fetcher"
-import { BlogPostDT, PostPagePropsDT } from "@/lib/types"
-import React from "react"
-import useSWR from "swr"
-import GoBack from "../../../layouts/GoBack"
-import Note from "../../../layouts/Note"
-import Paragraph from "../../../layouts/Paragraph"
-import Article from "../components/ui/Article"
-import BlogInro from "../components/ui/BlogInro"
-import BlogTitle from "../components/ui/BlogTitle"
-import Box from "../components/ui/Box"
-import { motion } from "framer-motion"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import SubTitle from "@/layouts/SubTitle";
+import Fetcher from "@/lib/fetcher";
+import { BlogPostDT, PostPagePropsDT } from "@/lib/types";
+import React from "react";
+import useSWR from "swr";
+import GoBack from "../../../layouts/GoBack";
+import Note from "../../../layouts/Note";
+import Paragraph from "../../../layouts/Paragraph";
+import Article from "../components/ui/Article";
+import BlogInro from "../components/ui/BlogInro";
+import BlogTitle from "../components/ui/BlogTitle";
+import Box from "../components/ui/Box";
+import { motion } from "framer-motion";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function Page({ params }: PostPagePropsDT) {
   const { data, isLoading } = useSWR(
-    `/api/posts/get_posts?slug=${params.slug}`,
+    `http://localhost:3000/api/posts/get_posts?slug=${params.slug}`,
     Fetcher,
     {
       revalidateOnFocus: false,
     }
-  )
-  const post: BlogPostDT = data
+  );
+  const post: BlogPostDT = data;
 
   if (isLoading) {
     return (
@@ -32,7 +32,7 @@ export default function Page({ params }: PostPagePropsDT) {
           <SkeletonArticle key={`${el + index}`} />
         ))}
       </Article>
-    )
+    );
   }
 
   return (
@@ -52,7 +52,7 @@ export default function Page({ params }: PostPagePropsDT) {
             className="w-[1020px] rounded-md h-[390px]"
           >
             <AvatarImage
-              className="object-cover object-center"
+              className="object-cover object-center w-[1020px] rounded-md h-[390px]"
               src={post?.allImages[0]?.image && post?.allImages[0]?.image}
             />
             <AvatarFallback>CN</AvatarFallback>
@@ -99,7 +99,7 @@ export default function Page({ params }: PostPagePropsDT) {
 
       <GoBack text="All blogs" link="blog" />
     </Article>
-  )
+  );
 }
 
 const SkeletonArticle = () => {
@@ -153,5 +153,5 @@ const SkeletonArticle = () => {
         className="h-48 bg-gray-200 rounded-md  animate-pulse"
       ></motion.div>
     </motion.div>
-  )
-}
+  );
+};

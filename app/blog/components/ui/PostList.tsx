@@ -1,73 +1,76 @@
-"use client"
+"use client";
 
-import FlipNumber from "@/layouts/FlipNumber"
-import Note from "@/layouts/Note"
-import Paragraph from "@/layouts/Paragraph"
-import SubTitle from "@/layouts/SubTitle"
-import Title from "@/layouts/Title"
-import Fetcher from "@/lib/fetcher"
-import { BlogPostDT } from "@/lib/types"
-import { motion } from "framer-motion"
-import { SquareChevronLeft, SquareChevronRight } from "lucide-react"
-import Link from "next/link"
-import React, { useEffect, useState } from "react"
-import useSWR from "swr"
-import Emojis from "./Emojis"
-import SkeletonPostList from "./SkeletonPostList"
+import FlipNumber from "@/layouts/FlipNumber";
+import Note from "@/layouts/Note";
+import Paragraph from "@/layouts/Paragraph";
+import SubTitle from "@/layouts/SubTitle";
+import Title from "@/layouts/Title";
+import Fetcher from "@/lib/fetcher";
+import { BlogPostDT } from "@/lib/types";
+import { motion } from "framer-motion";
+import { SquareChevronLeft, SquareChevronRight } from "lucide-react";
+import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import useSWR from "swr";
+import Emojis from "./Emojis";
+import SkeletonPostList from "./SkeletonPostList";
 
 const PostList = () => {
-  const [search, setSearch] = useState("")
-  const [selectedTag, setSelectedTag] = useState<string | null>(null)
-  const [posts, setPosts] = useState<BlogPostDT[]>([])
-  const [currentPage, setCurrentPage] = useState(0)
-  const postsPerPage = 3
+  const [search, setSearch] = useState("");
+  const [selectedTag, setSelectedTag] = useState<string | null>(null);
+  const [posts, setPosts] = useState<BlogPostDT[]>([]);
+  const [currentPage, setCurrentPage] = useState(0);
+  const postsPerPage = 3;
 
-  const { data: allPosts, isLoading } = useSWR(`/api/posts/get_posts`, Fetcher)
+  const { data: allPosts, isLoading } = useSWR(
+    `http://localhost:3000/api/posts/get_posts`,
+    Fetcher
+  );
 
   useEffect(() => {
     if (allPosts) {
-      setPosts(allPosts)
+      setPosts(allPosts);
     }
-  }, [allPosts])
+  }, [allPosts]);
 
   const handleSearch = (value: string) => {
-    setSearch(value)
-  }
+    setSearch(value);
+  };
 
   const filteredPosts = posts?.filter((post: BlogPostDT) => {
-    const lowerCaseSearch = search.toLowerCase()
+    const lowerCaseSearch = search.toLowerCase();
     const matchesSearch =
       post.mainTitle.toLowerCase().includes(lowerCaseSearch) ||
       post.description.toLowerCase().includes(lowerCaseSearch) ||
       post.tag.toLowerCase().includes(lowerCaseSearch) ||
-      post.creatorName.toLowerCase().includes(lowerCaseSearch)
+      post.creatorName.toLowerCase().includes(lowerCaseSearch);
 
-    const matchesTag = selectedTag ? post.tag === selectedTag : true
+    const matchesTag = selectedTag ? post.tag === selectedTag : true;
 
-    return matchesSearch && matchesTag
-  })
+    return matchesSearch && matchesTag;
+  });
 
-  const startIndex = currentPage * postsPerPage
+  const startIndex = currentPage * postsPerPage;
   const displayedFilteredPosts = filteredPosts?.slice(
     startIndex,
     startIndex + postsPerPage
-  )
+  );
 
   const loadMorePosts = () => {
     if (startIndex + postsPerPage < (filteredPosts?.length || 0)) {
-      setCurrentPage((prev) => prev + 1)
+      setCurrentPage((prev) => prev + 1);
     }
-  }
+  };
 
   const showPreviousPosts = () => {
     if (currentPage > 0) {
-      setCurrentPage((prev) => prev - 1)
+      setCurrentPage((prev) => prev - 1);
     }
-  }
+  };
 
   const handleTagClick = (tag: string) => {
-    setSelectedTag(tag)
-  }
+    setSelectedTag(tag);
+  };
 
   return (
     <div className="flex flex-col my-14 w-full">
@@ -234,7 +237,7 @@ const PostList = () => {
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PostList
+export default PostList;

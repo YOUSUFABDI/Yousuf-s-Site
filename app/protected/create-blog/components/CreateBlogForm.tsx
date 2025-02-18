@@ -1,26 +1,26 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import axios from "axios"
+import { useState } from "react";
+import axios from "axios";
 
 type Title = {
-  title: string
-  images: { image: string }[]
-  paragraphs: { paragraph: string }[]
-}
+  title: string;
+  images: { image: string }[];
+  paragraphs: { paragraph: string }[];
+};
 
 type FormData = {
-  mainTitle: string
-  description: string
-  views: number
-  createdDate: string
-  creatorImage: string
-  creatorName: string
-  coverImage: string
-  tag: string
-  titles: Title[]
-  allImages: { image: string }[]
-}
+  mainTitle: string;
+  description: string;
+  views: number;
+  createdDate: string;
+  creatorImage: string;
+  creatorName: string;
+  coverImage: string;
+  tag: string;
+  titles: Title[];
+  allImages: { image: string }[];
+};
 
 const CreateBlogForm = () => {
   const [formData, setFormData] = useState<FormData>({
@@ -36,44 +36,44 @@ const CreateBlogForm = () => {
       { title: "", images: [{ image: "" }], paragraphs: [{ paragraph: "" }] },
     ],
     allImages: [{ image: "" }],
-  })
-  const [loading, setLoading] = useState(false)
+  });
+  const [loading, setLoading] = useState(false);
 
   const handleInputChange = (field: string, value: string | number) => {
-    setFormData({ ...formData, [field]: value })
-  }
+    setFormData({ ...formData, [field]: value });
+  };
 
   const handleTitleChange = (index: number, value: string) => {
-    const updatedTitles = [...formData.titles]
-    updatedTitles[index].title = value
-    setFormData({ ...formData, titles: updatedTitles })
-  }
+    const updatedTitles = [...formData.titles];
+    updatedTitles[index].title = value;
+    setFormData({ ...formData, titles: updatedTitles });
+  };
 
   const handleImageChange = (
     titleIndex: number,
     imageIndex: number,
     value: string
   ) => {
-    const updatedTitles = [...formData.titles]
-    updatedTitles[titleIndex].images[imageIndex].image = value
-    setFormData({ ...formData, titles: updatedTitles })
-  }
+    const updatedTitles = [...formData.titles];
+    updatedTitles[titleIndex].images[imageIndex].image = value;
+    setFormData({ ...formData, titles: updatedTitles });
+  };
 
   const handleParagraphChange = (
     titleIndex: number,
     paragraphIndex: number,
     value: string
   ) => {
-    const updatedTitles = [...formData.titles]
-    updatedTitles[titleIndex].paragraphs[paragraphIndex].paragraph = value
-    setFormData({ ...formData, titles: updatedTitles })
-  }
+    const updatedTitles = [...formData.titles];
+    updatedTitles[titleIndex].paragraphs[paragraphIndex].paragraph = value;
+    setFormData({ ...formData, titles: updatedTitles });
+  };
 
   const handleAllImagesChange = (index: number, value: string) => {
-    const updatedAllImages = [...formData.allImages]
-    updatedAllImages[index].image = value
-    setFormData({ ...formData, allImages: updatedAllImages })
-  }
+    const updatedAllImages = [...formData.allImages];
+    updatedAllImages[index].image = value;
+    setFormData({ ...formData, allImages: updatedAllImages });
+  };
 
   const handleAddTitle = () => {
     setFormData({
@@ -82,30 +82,30 @@ const CreateBlogForm = () => {
         ...formData.titles,
         { title: "", images: [{ image: "" }], paragraphs: [{ paragraph: "" }] },
       ],
-    })
-  }
+    });
+  };
 
   const handleAddParagraph = (titleIndex: number) => {
-    const updatedTitles = [...formData.titles]
-    updatedTitles[titleIndex].paragraphs.push({ paragraph: "" })
-    setFormData({ ...formData, titles: updatedTitles })
-  }
+    const updatedTitles = [...formData.titles];
+    updatedTitles[titleIndex].paragraphs.push({ paragraph: "" });
+    setFormData({ ...formData, titles: updatedTitles });
+  };
 
   const handleAddImage = (titleIndex: number) => {
-    const updatedTitles = [...formData.titles]
-    updatedTitles[titleIndex].images.push({ image: "" })
-    setFormData({ ...formData, titles: updatedTitles })
-  }
+    const updatedTitles = [...formData.titles];
+    updatedTitles[titleIndex].images.push({ image: "" });
+    setFormData({ ...formData, titles: updatedTitles });
+  };
 
   const handleAddAllImages = () => {
     setFormData({
       ...formData,
       allImages: [...formData.allImages, { image: "" }],
-    })
-  }
+    });
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
 
     const filteredFormData = {
       ...formData,
@@ -117,21 +117,21 @@ const CreateBlogForm = () => {
       coverImage: formData.coverImage !== "" ? formData.coverImage : undefined,
       creatorImage:
         formData.creatorImage !== "" ? formData.creatorImage : undefined,
-    }
+    };
 
-    setLoading(true)
+    setLoading(true);
     try {
       const response = await axios.post(
-        "https://www.yusufdev.com/api/createPost",
+        "http://localhost:3000/api/createPost",
         filteredFormData
-      )
-      const data = await response.data
+      );
+      const data = await response.data;
     } catch (error) {
-      console.error("Error creating blog post:", error)
+      console.error("Error creating blog post:", error);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit} className="max-w-2xl mx-auto">
@@ -274,7 +274,7 @@ const CreateBlogForm = () => {
         {loading ? "Creating..." : "Create Blog Post"}
       </button>
     </form>
-  )
-}
+  );
+};
 
-export default CreateBlogForm
+export default CreateBlogForm;

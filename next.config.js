@@ -2,12 +2,12 @@
 const nextConfig = {
   images: {
     domains: [
-      "www.yusufdev.com",
-      "blog.yusufdev.com",
+      "http://localhost:3000",
+      // "blog.yusufdev.com",
       "lh3.googleusercontent.com",
     ],
     deviceSizes: [320, 640, 768, 1024, 1280, 1536, 2000],
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
