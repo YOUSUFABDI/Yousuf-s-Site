@@ -22,10 +22,7 @@ const PostList = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const postsPerPage = 3;
 
-  const { data: allPosts, isLoading } = useSWR(
-    `http://localhost:3000/api/posts/get_posts`,
-    Fetcher
-  );
+  const { data: allPosts, isLoading } = useSWR(`/api/posts/get_posts`, Fetcher);
 
   useEffect(() => {
     if (allPosts) {

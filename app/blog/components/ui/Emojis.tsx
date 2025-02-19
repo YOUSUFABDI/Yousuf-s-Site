@@ -9,7 +9,7 @@ const Emojis = ({ blogID }: { blogID: number }) => {
   const [isHoverCardOpen, setIsHoverCardOpen] = useState(false);
 
   const { data: emojis, mutate } = useSWR(
-    `http://localhost:3000/api/posts/emojis/${blogID}`,
+    `/api/posts/emojis/${blogID}`,
     fetcher
   );
 

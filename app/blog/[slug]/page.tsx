@@ -17,7 +17,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function Page({ params }: PostPagePropsDT) {
   const { data, isLoading } = useSWR(
-    `http://localhost:3000/api/posts/get_posts?slug=${params.slug}`,
+    `/api/posts/get_posts?slug=${params.slug}`,
     Fetcher,
     {
       revalidateOnFocus: false,

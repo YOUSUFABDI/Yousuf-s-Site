@@ -121,10 +121,7 @@ const CreateBlogForm = () => {
 
     setLoading(true);
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/createPost",
-        filteredFormData
-      );
+      const response = await axios.post("/api/createPost", filteredFormData);
       const data = await response.data;
     } catch (error) {
       console.error("Error creating blog post:", error);
