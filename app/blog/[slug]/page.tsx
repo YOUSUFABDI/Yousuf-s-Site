@@ -52,7 +52,7 @@ export default function Page({ params }: PostPagePropsDT) {
             className="w-[1020px] rounded-md h-[390px]"
           >
             <AvatarImage
-              className="object-cover object-center w-[1020px] rounded-md h-[390px]"
+              className="object-cover object-center"
               src={post?.allImages[0]?.image && post?.allImages[0]?.image}
             />
             <AvatarFallback>CN</AvatarFallback>
@@ -75,7 +75,7 @@ export default function Page({ params }: PostPagePropsDT) {
           {title.images.map((image) => (
             <Avatar
               key={image.imageID}
-              className="w-[1020px] rounded-md h-[390px]"
+              className="w-full rounded-md h-[390px] object-cover object-center"
             >
               <AvatarImage
                 className="object-cover object-center"
